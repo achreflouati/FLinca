@@ -1,0 +1,41 @@
+{
+    "frappe": {
+        "resolution": {
+            "commit_hash": null,
+            "branch": null
+        },
+        "required": [],
+        "idx": 1,
+        "version": "15.50.0"
+    },
+    "healthcare": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "db44419f3a40ce98ccf0dfefe7aa14fe29c3e0a3",
+            "branch": "develop"
+        },
+        "required": [],
+        "idx": 2,
+        "version": "16.0.0-dev"
+    },
+    "linca": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "effced0aaaa0897e416f9dd771a3744b40ccf27a",
+            "branch": "develop"
+        },
+        "required": [],
+        "idx": 3,
+        "version": "0.0.1"
+    },
+    "erpnext": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "d1fee96f75efedd45024e4d6d581c9c3f687594a",
+            "branch": "version-15"
+        },
+        "required": [],
+        "idx": 4,
+        "version": "15.48.4"
+    }
+}

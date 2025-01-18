@@ -1,0 +1,128 @@
+3050:C 14 Jan 2025 07:50:50.200 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+3050:C 14 Jan 2025 07:50:50.201 # Redis version=6.0.16, bits=64, commit=00000000, modified=0, pid=3050, just started
+3050:C 14 Jan 2025 07:50:50.201 # Configuration loaded
+3050:M 14 Jan 2025 07:50:50.201 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+3050:M 14 Jan 2025 07:50:50.202 * Running mode=standalone, port=11008.
+3050:M 14 Jan 2025 07:50:50.202 # Server initialized
+3050:M 14 Jan 2025 07:50:50.202 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+3050:M 14 Jan 2025 07:50:50.212 * Ready to accept connections
+3050:signal-handler (1736865321) Received SIGTERM scheduling shutdown...
+3050:M 14 Jan 2025 14:35:21.429 # User requested shutdown...
+3050:M 14 Jan 2025 14:35:21.429 * Removing the pid file.
+3050:M 14 Jan 2025 14:35:21.429 # Redis is now ready to exit, bye bye...
+1026:C 14 Jan 2025 14:35:39.636 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1026:C 14 Jan 2025 14:35:39.636 # Redis version=6.0.16, bits=64, commit=00000000, modified=0, pid=1026, just started
+1026:C 14 Jan 2025 14:35:39.636 # Configuration loaded
+1026:M 14 Jan 2025 14:35:39.637 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+1026:M 14 Jan 2025 14:35:39.638 * Running mode=standalone, port=11008.
+1026:M 14 Jan 2025 14:35:39.638 # Server initialized
+1026:M 14 Jan 2025 14:35:39.638 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1026:M 14 Jan 2025 14:35:39.648 * Ready to accept connections
+1026:signal-handler (1736947786) Received SIGTERM scheduling shutdown...
+1026:M 15 Jan 2025 13:29:46.673 # User requested shutdown...
+1026:M 15 Jan 2025 13:29:46.673 * Removing the pid file.
+1026:M 15 Jan 2025 13:29:46.673 # Redis is now ready to exit, bye bye...
+1012:C 15 Jan 2025 13:30:04.544 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1012:C 15 Jan 2025 13:30:04.544 # Redis version=6.0.16, bits=64, commit=00000000, modified=0, pid=1012, just started
+1012:C 15 Jan 2025 13:30:04.544 # Configuration loaded
+1012:M 15 Jan 2025 13:30:04.549 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+1012:M 15 Jan 2025 13:30:04.559 * Running mode=standalone, port=11008.
+1012:M 15 Jan 2025 13:30:04.560 # Server initialized
+1012:M 15 Jan 2025 13:30:04.560 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1012:M 15 Jan 2025 13:30:04.595 * Ready to accept connections
+1012:signal-handler (1736958672) Received SIGTERM scheduling shutdown...
+1012:M 15 Jan 2025 16:31:12.549 # User requested shutdown...
+1012:M 15 Jan 2025 16:31:12.549 * Removing the pid file.
+1012:M 15 Jan 2025 16:31:12.549 # Redis is now ready to exit, bye bye...
+1011:C 15 Jan 2025 16:31:30.948 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1011:C 15 Jan 2025 16:31:30.948 # Redis version=6.0.16, bits=64, commit=00000000, modified=0, pid=1011, just started
+1011:C 15 Jan 2025 16:31:30.948 # Configuration loaded
+1011:M 15 Jan 2025 16:31:30.949 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+1011:M 15 Jan 2025 16:31:30.952 * Running mode=standalone, port=11008.
+1011:M 15 Jan 2025 16:31:30.952 # Server initialized
+1011:M 15 Jan 2025 16:31:30.952 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1011:M 15 Jan 2025 16:31:30.969 * Ready to accept connections
+1011:signal-handler (1736962226) Received SIGTERM scheduling shutdown...
+1011:M 15 Jan 2025 17:30:26.609 # User requested shutdown...
+1011:M 15 Jan 2025 17:30:26.609 * Removing the pid file.
+1011:M 15 Jan 2025 17:30:26.610 # Redis is now ready to exit, bye bye...
+1025:C 15 Jan 2025 17:30:44.338 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1025:C 15 Jan 2025 17:30:44.338 # Redis version=6.0.16, bits=64, commit=00000000, modified=0, pid=1025, just started
+1025:C 15 Jan 2025 17:30:44.338 # Configuration loaded
+1025:M 15 Jan 2025 17:30:44.338 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+1025:M 15 Jan 2025 17:30:44.347 * Running mode=standalone, port=11008.
+1025:M 15 Jan 2025 17:30:44.347 # Server initialized
+1025:M 15 Jan 2025 17:30:44.347 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1025:M 15 Jan 2025 17:30:44.361 * Ready to accept connections
+1025:signal-handler (1737015557) Received SIGTERM scheduling shutdown...
+1025:M 16 Jan 2025 08:19:17.829 # User requested shutdown...
+1025:M 16 Jan 2025 08:19:17.829 * Removing the pid file.
+1025:M 16 Jan 2025 08:19:17.829 # Redis is now ready to exit, bye bye...
+1023:C 16 Jan 2025 08:19:36.380 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1023:C 16 Jan 2025 08:19:36.380 # Redis version=6.0.16, bits=64, commit=00000000, modified=0, pid=1023, just started
+1023:C 16 Jan 2025 08:19:36.380 # Configuration loaded
+1023:M 16 Jan 2025 08:19:36.380 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+1023:M 16 Jan 2025 08:19:36.387 * Running mode=standalone, port=11008.
+1023:M 16 Jan 2025 08:19:36.387 # Server initialized
+1023:M 16 Jan 2025 08:19:36.387 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1023:M 16 Jan 2025 08:19:36.397 * Ready to accept connections
+1023:signal-handler (1737036566) Received SIGTERM scheduling shutdown...
+1023:M 16 Jan 2025 14:09:26.691 # User requested shutdown...
+1023:M 16 Jan 2025 14:09:26.691 * Removing the pid file.
+1023:M 16 Jan 2025 14:09:26.692 # Redis is now ready to exit, bye bye...
+1019:C 16 Jan 2025 14:09:45.224 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1019:C 16 Jan 2025 14:09:45.224 # Redis version=6.0.16, bits=64, commit=00000000, modified=0, pid=1019, just started
+1019:C 16 Jan 2025 14:09:45.224 # Configuration loaded
+1019:M 16 Jan 2025 14:09:45.225 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+1019:M 16 Jan 2025 14:09:45.227 * Running mode=standalone, port=11008.
+1019:M 16 Jan 2025 14:09:45.227 # Server initialized
+1019:M 16 Jan 2025 14:09:45.227 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1019:M 16 Jan 2025 14:09:45.248 * Ready to accept connections
+1019:signal-handler (1737055568) Received SIGTERM scheduling shutdown...
+1019:M 16 Jan 2025 19:26:08.557 # User requested shutdown...
+1019:M 16 Jan 2025 19:26:08.557 * Removing the pid file.
+1019:M 16 Jan 2025 19:26:08.558 # Redis is now ready to exit, bye bye...
+1027:C 16 Jan 2025 19:26:29.841 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1027:C 16 Jan 2025 19:26:29.841 # Redis version=6.0.16, bits=64, commit=00000000, modified=0, pid=1027, just started
+1027:C 16 Jan 2025 19:26:29.841 # Configuration loaded
+1027:M 16 Jan 2025 19:26:29.841 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+1027:M 16 Jan 2025 19:26:29.848 * Running mode=standalone, port=11008.
+1027:M 16 Jan 2025 19:26:29.848 # Server initialized
+1027:M 16 Jan 2025 19:26:29.848 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1027:M 16 Jan 2025 19:26:29.874 * Ready to accept connections
+1027:signal-handler (1737056313) Received SIGTERM scheduling shutdown...
+1027:M 16 Jan 2025 19:38:33.523 # User requested shutdown...
+1027:M 16 Jan 2025 19:38:33.523 * Removing the pid file.
+1027:M 16 Jan 2025 19:38:33.524 # Redis is now ready to exit, bye bye...
+4033:C 16 Jan 2025 19:38:35.047 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+4033:C 16 Jan 2025 19:38:35.047 # Redis version=6.0.16, bits=64, commit=00000000, modified=0, pid=4033, just started
+4033:C 16 Jan 2025 19:38:35.047 # Configuration loaded
+4033:M 16 Jan 2025 19:38:35.047 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+4033:M 16 Jan 2025 19:38:35.053 * Running mode=standalone, port=11008.
+4033:M 16 Jan 2025 19:38:35.053 # Server initialized
+4033:M 16 Jan 2025 19:38:35.053 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+4033:M 16 Jan 2025 19:38:35.072 * Ready to accept connections
+4033:signal-handler (1737056875) Received SIGTERM scheduling shutdown...
+4033:M 16 Jan 2025 19:47:55.958 # User requested shutdown...
+4033:M 16 Jan 2025 19:47:55.958 * Removing the pid file.
+4033:M 16 Jan 2025 19:47:55.958 # Redis is now ready to exit, bye bye...
+1030:C 16 Jan 2025 19:48:17.974 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1030:C 16 Jan 2025 19:48:17.974 # Redis version=6.0.16, bits=64, commit=00000000, modified=0, pid=1030, just started
+1030:C 16 Jan 2025 19:48:17.974 # Configuration loaded
+1030:M 16 Jan 2025 19:48:17.975 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+1030:M 16 Jan 2025 19:48:17.984 * Running mode=standalone, port=11008.
+1030:M 16 Jan 2025 19:48:17.984 # Server initialized
+1030:M 16 Jan 2025 19:48:17.984 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1030:M 16 Jan 2025 19:48:17.996 * Ready to accept connections
+1030:signal-handler (1737057641) Received SIGTERM scheduling shutdown...
+1030:M 16 Jan 2025 20:00:41.610 # User requested shutdown...
+1030:M 16 Jan 2025 20:00:41.610 * Removing the pid file.
+1030:M 16 Jan 2025 20:00:41.610 # Redis is now ready to exit, bye bye...
+1022:C 16 Jan 2025 20:00:59.528 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1022:C 16 Jan 2025 20:00:59.528 # Redis version=6.0.16, bits=64, commit=00000000, modified=0, pid=1022, just started
+1022:C 16 Jan 2025 20:00:59.528 # Configuration loaded
+1022:M 16 Jan 2025 20:00:59.528 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+1022:M 16 Jan 2025 20:00:59.531 * Running mode=standalone, port=11008.
+1022:M 16 Jan 2025 20:00:59.531 # Server initialized
+1022:M 16 Jan 2025 20:00:59.531 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1022:M 16 Jan 2025 20:00:59.542 * Ready to accept connections

@@ -1,0 +1,2072 @@
+[2025-01-14 07:50:51 +0000] [3051] [INFO] Starting gunicorn 22.0.0
+[2025-01-14 07:50:51 +0000] [3051] [INFO] Listening at: http://127.0.0.1:8008 (3051)
+[2025-01-14 07:50:51 +0000] [3051] [INFO] Using worker: sync
+[2025-01-14 07:50:51 +0000] [3106] [INFO] Booting worker with pid: 3106
+[2025-01-14 07:50:51 +0000] [3107] [INFO] Booting worker with pid: 3107
+[2025-01-14 07:50:51 +0000] [3108] [INFO] Booting worker with pid: 3108
+[2025-01-14 07:50:52 +0000] [3109] [INFO] Booting worker with pid: 3109
+[2025-01-14 07:50:52 +0000] [3110] [INFO] Booting worker with pid: 3110
+[2025-01-14 12:02:33 +0000] [3107] [ERROR] Error handling request /
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 118, in resolve_redirect
+    redirects += frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 167, in execute
+    if is_virtual_doctype(self.doctype):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/caching.py", line 121, in site_cache_wrapper
+    _SITE_CACHE[func_key][frappe.local.site][func_call_key] = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/utils/__init__.py", line 135, in is_virtual_doctype
+    return frappe.db.get_value("DocType", doctype, "is_virtual")
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
+    result = self.get_values(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 123, in application
+    response = get_response()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 28, in get_response
+    response = ErrorPage(exception=e).render()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 530, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
+    context.boot = get_boot_data()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 169, in get_boot_data
+    apps = get_apps() or []
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/apps.py", line 15, in get_apps
+    allowed_workspaces = get_workspace_sidebar_items().get("pages")
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/desktop.py", line 447, in get_workspace_sidebar_items
+    all_pages = frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 167, in execute
+    if is_virtual_doctype(self.doctype):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/caching.py", line 121, in site_cache_wrapper
+    _SITE_CACHE[func_key][frappe.local.site][func_call_key] = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/utils/__init__.py", line 135, in is_virtual_doctype
+    return frappe.db.get_value("DocType", doctype, "is_virtual")
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
+    result = self.get_values(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 118, in resolve_redirect
+    redirects += frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 167, in execute
+    if is_virtual_doctype(self.doctype):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/caching.py", line 121, in site_cache_wrapper
+    _SITE_CACHE[func_key][frappe.local.site][func_call_key] = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/utils/__init__.py", line 135, in is_virtual_doctype
+    return frappe.db.get_value("DocType", doctype, "is_virtual")
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
+    result = self.get_values(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 178, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 79, in application
+    app(environ, start_response),
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 190, in application
+    resp = f(*args[:-2] + (request,))
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 132, in application
+    response = handle_exception(e)
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 395, in handle_exception
+    response = get_response("message", http_status_code=http_status_code)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 28, in get_response
+    response = ErrorPage(exception=e).render()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 530, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
+    context.boot = get_boot_data()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 169, in get_boot_data
+    apps = get_apps() or []
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/apps.py", line 15, in get_apps
+    allowed_workspaces = get_workspace_sidebar_items().get("pages")
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/desktop.py", line 447, in get_workspace_sidebar_items
+    all_pages = frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 167, in execute
+    if is_virtual_doctype(self.doctype):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/caching.py", line 121, in site_cache_wrapper
+    _SITE_CACHE[func_key][frappe.local.site][func_call_key] = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/utils/__init__.py", line 135, in is_virtual_doctype
+    return frappe.db.get_value("DocType", doctype, "is_virtual")
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
+    result = self.get_values(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+[2025-01-14 12:04:47 +0000] [3107] [ERROR] Error handling request /
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 99, in application
+    init_request(request)
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 195, in init_request
+    frappe.local.http_request = HTTPRequest()
+  File "/home/plm/ariasousse/apps/frappe/frappe/auth.py", line 44, in __init__
+    self.set_session()
+  File "/home/plm/ariasousse/apps/frappe/frappe/auth.py", line 78, in set_session
+    frappe.local.login_manager = LoginManager()
+  File "/home/plm/ariasousse/apps/frappe/frappe/auth.py", line 120, in __init__
+    self.make_session(resume=True)
+  File "/home/plm/ariasousse/apps/frappe/frappe/auth.py", line 213, in make_session
+    frappe.local.session_obj = Session(
+  File "/home/plm/ariasousse/apps/frappe/frappe/sessions.py", line 221, in __init__
+    self.resume()
+  File "/home/plm/ariasousse/apps/frappe/frappe/sessions.py", line 292, in resume
+    data = self.get_session_record()
+  File "/home/plm/ariasousse/apps/frappe/frappe/sessions.py", line 310, in get_session_record
+    r = self.get_session_data()
+  File "/home/plm/ariasousse/apps/frappe/frappe/sessions.py", line 327, in get_session_data
+    data = self.get_session_data_from_db()
+  File "/home/plm/ariasousse/apps/frappe/frappe/sessions.py", line 356, in get_session_data_from_db
+    ).run()
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 118, in resolve_redirect
+    redirects += frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 167, in execute
+    if is_virtual_doctype(self.doctype):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/caching.py", line 121, in site_cache_wrapper
+    _SITE_CACHE[func_key][frappe.local.site][func_call_key] = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/utils/__init__.py", line 135, in is_virtual_doctype
+    return frappe.db.get_value("DocType", doctype, "is_virtual")
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
+    result = self.get_values(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 178, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 79, in application
+    app(environ, start_response),
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 190, in application
+    resp = f(*args[:-2] + (request,))
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 132, in application
+    response = handle_exception(e)
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 395, in handle_exception
+    response = get_response("message", http_status_code=http_status_code)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 28, in get_response
+    response = ErrorPage(exception=e).render()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 530, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
+    context.boot = get_boot_data()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 169, in get_boot_data
+    apps = get_apps() or []
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/apps.py", line 15, in get_apps
+    allowed_workspaces = get_workspace_sidebar_items().get("pages")
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/desktop.py", line 447, in get_workspace_sidebar_items
+    all_pages = frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 167, in execute
+    if is_virtual_doctype(self.doctype):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/caching.py", line 121, in site_cache_wrapper
+    _SITE_CACHE[func_key][frappe.local.site][func_call_key] = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/utils/__init__.py", line 135, in is_virtual_doctype
+    return frappe.db.get_value("DocType", doctype, "is_virtual")
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
+    result = self.get_values(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+[2025-01-14 12:04:47 +0000] [3108] [ERROR] Error handling request /favicon.ico
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 99, in application
+    init_request(request)
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 195, in init_request
+    frappe.local.http_request = HTTPRequest()
+  File "/home/plm/ariasousse/apps/frappe/frappe/auth.py", line 44, in __init__
+    self.set_session()
+  File "/home/plm/ariasousse/apps/frappe/frappe/auth.py", line 78, in set_session
+    frappe.local.login_manager = LoginManager()
+  File "/home/plm/ariasousse/apps/frappe/frappe/auth.py", line 120, in __init__
+    self.make_session(resume=True)
+  File "/home/plm/ariasousse/apps/frappe/frappe/auth.py", line 213, in make_session
+    frappe.local.session_obj = Session(
+  File "/home/plm/ariasousse/apps/frappe/frappe/sessions.py", line 221, in __init__
+    self.resume()
+  File "/home/plm/ariasousse/apps/frappe/frappe/sessions.py", line 292, in resume
+    data = self.get_session_record()
+  File "/home/plm/ariasousse/apps/frappe/frappe/sessions.py", line 310, in get_session_record
+    r = self.get_session_data()
+  File "/home/plm/ariasousse/apps/frappe/frappe/sessions.py", line 327, in get_session_data
+    data = self.get_session_data_from_db()
+  File "/home/plm/ariasousse/apps/frappe/frappe/sessions.py", line 356, in get_session_data_from_db
+    ).run()
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 118, in resolve_redirect
+    redirects += frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 167, in execute
+    if is_virtual_doctype(self.doctype):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/caching.py", line 121, in site_cache_wrapper
+    _SITE_CACHE[func_key][frappe.local.site][func_call_key] = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/utils/__init__.py", line 135, in is_virtual_doctype
+    return frappe.db.get_value("DocType", doctype, "is_virtual")
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
+    result = self.get_values(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 178, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 79, in application
+    app(environ, start_response),
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 190, in application
+    resp = f(*args[:-2] + (request,))
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 132, in application
+    response = handle_exception(e)
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 395, in handle_exception
+    response = get_response("message", http_status_code=http_status_code)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 28, in get_response
+    response = ErrorPage(exception=e).render()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 530, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
+    context.boot = get_boot_data()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 169, in get_boot_data
+    apps = get_apps() or []
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/apps.py", line 15, in get_apps
+    allowed_workspaces = get_workspace_sidebar_items().get("pages")
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/desktop.py", line 447, in get_workspace_sidebar_items
+    all_pages = frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 167, in execute
+    if is_virtual_doctype(self.doctype):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/caching.py", line 121, in site_cache_wrapper
+    _SITE_CACHE[func_key][frappe.local.site][func_call_key] = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/utils/__init__.py", line 135, in is_virtual_doctype
+    return frappe.db.get_value("DocType", doctype, "is_virtual")
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
+    result = self.get_values(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+[2025-01-14 13:33:30 +0000] [3051] [INFO] Handling signal: term
+[2025-01-14 13:33:30 +0000] [3107] [INFO] Worker exiting (pid: 3107)
+[2025-01-14 13:33:30 +0000] [3106] [INFO] Worker exiting (pid: 3106)
+[2025-01-14 13:33:30 +0000] [3108] [INFO] Worker exiting (pid: 3108)
+[2025-01-14 13:33:30 +0000] [3109] [INFO] Worker exiting (pid: 3109)
+[2025-01-14 13:33:30 +0000] [3110] [INFO] Worker exiting (pid: 3110)
+[2025-01-14 13:33:30 +0000] [3051] [INFO] Shutting down: Master
+[2025-01-14 13:33:32 +0000] [67684] [INFO] Starting gunicorn 22.0.0
+[2025-01-14 13:33:32 +0000] [67684] [INFO] Listening at: http://127.0.0.1:8008 (67684)
+[2025-01-14 13:33:32 +0000] [67684] [INFO] Using worker: sync
+[2025-01-14 13:33:32 +0000] [67697] [INFO] Booting worker with pid: 67697
+[2025-01-14 13:33:32 +0000] [67698] [INFO] Booting worker with pid: 67698
+[2025-01-14 13:33:32 +0000] [67699] [INFO] Booting worker with pid: 67699
+[2025-01-14 13:33:32 +0000] [67700] [INFO] Booting worker with pid: 67700
+[2025-01-14 13:33:32 +0000] [67701] [INFO] Booting worker with pid: 67701
+[2025-01-14 14:35:21 +0000] [67684] [INFO] Handling signal: term
+[2025-01-14 14:35:21 +0000] [67699] [INFO] Worker exiting (pid: 67699)
+[2025-01-14 14:35:21 +0000] [67697] [INFO] Worker exiting (pid: 67697)
+[2025-01-14 14:35:21 +0000] [67698] [INFO] Worker exiting (pid: 67698)
+[2025-01-14 14:35:21 +0000] [67700] [INFO] Worker exiting (pid: 67700)
+[2025-01-14 14:35:21 +0000] [67701] [INFO] Worker exiting (pid: 67701)
+[2025-01-14 14:35:21 +0000] [67684] [INFO] Shutting down: Master
+[2025-01-14 14:35:43 +0000] [1027] [INFO] Starting gunicorn 22.0.0
+[2025-01-14 14:35:43 +0000] [1027] [INFO] Listening at: http://127.0.0.1:8008 (1027)
+[2025-01-14 14:35:43 +0000] [1027] [INFO] Using worker: sync
+[2025-01-14 14:35:43 +0000] [1184] [INFO] Booting worker with pid: 1184
+[2025-01-14 14:35:43 +0000] [1186] [INFO] Booting worker with pid: 1186
+[2025-01-14 14:35:44 +0000] [1188] [INFO] Booting worker with pid: 1188
+[2025-01-14 14:35:44 +0000] [1191] [INFO] Booting worker with pid: 1191
+[2025-01-14 14:35:44 +0000] [1193] [INFO] Booting worker with pid: 1193
+[2025-01-15 13:29:46 +0000] [1027] [INFO] Handling signal: term
+[2025-01-15 13:29:46 +0000] [1184] [INFO] Worker exiting (pid: 1184)
+[2025-01-15 13:29:46 +0000] [1186] [INFO] Worker exiting (pid: 1186)
+[2025-01-15 13:29:46 +0000] [1188] [INFO] Worker exiting (pid: 1188)
+[2025-01-15 13:29:46 +0000] [1191] [INFO] Worker exiting (pid: 1191)
+[2025-01-15 13:29:46 +0000] [1193] [INFO] Worker exiting (pid: 1193)
+[2025-01-15 13:29:46 +0000] [1027] [INFO] Shutting down: Master
+[2025-01-15 13:30:09 +0000] [1013] [INFO] Starting gunicorn 22.0.0
+[2025-01-15 13:30:09 +0000] [1013] [INFO] Listening at: http://127.0.0.1:8008 (1013)
+[2025-01-15 13:30:09 +0000] [1013] [INFO] Using worker: sync
+[2025-01-15 13:30:09 +0000] [1168] [INFO] Booting worker with pid: 1168
+[2025-01-15 13:30:09 +0000] [1170] [INFO] Booting worker with pid: 1170
+[2025-01-15 13:30:09 +0000] [1174] [INFO] Booting worker with pid: 1174
+[2025-01-15 13:30:09 +0000] [1175] [INFO] Booting worker with pid: 1175
+[2025-01-15 13:30:09 +0000] [1176] [INFO] Booting worker with pid: 1176
+[2025-01-15 16:31:12 +0000] [1013] [INFO] Handling signal: term
+[2025-01-15 16:31:12 +0000] [1170] [INFO] Worker exiting (pid: 1170)
+[2025-01-15 16:31:12 +0000] [1168] [INFO] Worker exiting (pid: 1168)
+[2025-01-15 16:31:12 +0000] [1174] [INFO] Worker exiting (pid: 1174)
+[2025-01-15 16:31:12 +0000] [1175] [INFO] Worker exiting (pid: 1175)
+[2025-01-15 16:31:12 +0000] [1176] [INFO] Worker exiting (pid: 1176)
+[2025-01-15 16:31:12 +0000] [1013] [INFO] Shutting down: Master
+[2025-01-15 16:31:35 +0000] [1012] [INFO] Starting gunicorn 22.0.0
+[2025-01-15 16:31:35 +0000] [1012] [INFO] Listening at: http://127.0.0.1:8008 (1012)
+[2025-01-15 16:31:35 +0000] [1012] [INFO] Using worker: sync
+[2025-01-15 16:31:35 +0000] [1171] [INFO] Booting worker with pid: 1171
+[2025-01-15 16:31:35 +0000] [1173] [INFO] Booting worker with pid: 1173
+[2025-01-15 16:31:35 +0000] [1175] [INFO] Booting worker with pid: 1175
+[2025-01-15 16:31:35 +0000] [1177] [INFO] Booting worker with pid: 1177
+[2025-01-15 16:31:35 +0000] [1179] [INFO] Booting worker with pid: 1179
+[2025-01-15 17:30:26 +0000] [1012] [INFO] Handling signal: term
+[2025-01-15 17:30:26 +0000] [1179] [INFO] Worker exiting (pid: 1179)
+[2025-01-15 17:30:26 +0000] [1171] [INFO] Worker exiting (pid: 1171)
+[2025-01-15 17:30:26 +0000] [1173] [INFO] Worker exiting (pid: 1173)
+[2025-01-15 17:30:26 +0000] [1177] [INFO] Worker exiting (pid: 1177)
+[2025-01-15 17:30:26 +0000] [1175] [INFO] Worker exiting (pid: 1175)
+[2025-01-15 17:30:26 +0000] [1012] [INFO] Shutting down: Master
+[2025-01-15 17:30:48 +0000] [1026] [INFO] Starting gunicorn 22.0.0
+[2025-01-15 17:30:48 +0000] [1026] [INFO] Listening at: http://127.0.0.1:8008 (1026)
+[2025-01-15 17:30:48 +0000] [1026] [INFO] Using worker: sync
+[2025-01-15 17:30:48 +0000] [1183] [INFO] Booting worker with pid: 1183
+[2025-01-15 17:30:48 +0000] [1185] [INFO] Booting worker with pid: 1185
+[2025-01-15 17:30:49 +0000] [1188] [INFO] Booting worker with pid: 1188
+[2025-01-15 17:30:49 +0000] [1190] [INFO] Booting worker with pid: 1190
+[2025-01-15 17:30:49 +0000] [1191] [INFO] Booting worker with pid: 1191
+[2025-01-16 08:19:17 +0000] [1026] [INFO] Handling signal: term
+[2025-01-16 08:19:17 +0000] [1183] [INFO] Worker exiting (pid: 1183)
+[2025-01-16 08:19:17 +0000] [1188] [INFO] Worker exiting (pid: 1188)
+[2025-01-16 08:19:17 +0000] [1185] [INFO] Worker exiting (pid: 1185)
+[2025-01-16 08:19:17 +0000] [1190] [INFO] Worker exiting (pid: 1190)
+[2025-01-16 08:19:17 +0000] [1191] [INFO] Worker exiting (pid: 1191)
+[2025-01-16 08:19:17 +0000] [1026] [INFO] Shutting down: Master
+[2025-01-16 08:19:40 +0000] [1024] [INFO] Starting gunicorn 22.0.0
+[2025-01-16 08:19:40 +0000] [1024] [INFO] Listening at: http://127.0.0.1:8008 (1024)
+[2025-01-16 08:19:40 +0000] [1024] [INFO] Using worker: sync
+[2025-01-16 08:19:40 +0000] [1178] [INFO] Booting worker with pid: 1178
+[2025-01-16 08:19:40 +0000] [1181] [INFO] Booting worker with pid: 1181
+[2025-01-16 08:19:40 +0000] [1185] [INFO] Booting worker with pid: 1185
+[2025-01-16 08:19:40 +0000] [1187] [INFO] Booting worker with pid: 1187
+[2025-01-16 08:19:40 +0000] [1189] [INFO] Booting worker with pid: 1189
+[2025-01-16 14:09:26 +0000] [1024] [INFO] Handling signal: term
+[2025-01-16 14:09:26 +0000] [1187] [INFO] Worker exiting (pid: 1187)
+[2025-01-16 14:09:26 +0000] [1178] [INFO] Worker exiting (pid: 1178)
+[2025-01-16 14:09:26 +0000] [1189] [INFO] Worker exiting (pid: 1189)
+[2025-01-16 14:09:26 +0000] [1181] [INFO] Worker exiting (pid: 1181)
+[2025-01-16 14:09:26 +0000] [1185] [INFO] Worker exiting (pid: 1185)
+[2025-01-16 14:09:26 +0000] [1024] [INFO] Shutting down: Master
+[2025-01-16 14:09:49 +0000] [1020] [INFO] Starting gunicorn 22.0.0
+[2025-01-16 14:09:49 +0000] [1020] [INFO] Listening at: http://127.0.0.1:8008 (1020)
+[2025-01-16 14:09:49 +0000] [1020] [INFO] Using worker: sync
+[2025-01-16 14:09:49 +0000] [1174] [INFO] Booting worker with pid: 1174
+[2025-01-16 14:09:49 +0000] [1177] [INFO] Booting worker with pid: 1177
+[2025-01-16 14:09:49 +0000] [1178] [INFO] Booting worker with pid: 1178
+[2025-01-16 14:09:49 +0000] [1180] [INFO] Booting worker with pid: 1180
+[2025-01-16 14:09:49 +0000] [1182] [INFO] Booting worker with pid: 1182
+[2025-01-16 19:26:08 +0000] [1020] [INFO] Handling signal: term
+[2025-01-16 19:26:08 +0000] [1174] [INFO] Worker exiting (pid: 1174)
+[2025-01-16 19:26:08 +0000] [1177] [INFO] Worker exiting (pid: 1177)
+[2025-01-16 19:26:08 +0000] [1182] [INFO] Worker exiting (pid: 1182)
+[2025-01-16 19:26:08 +0000] [1178] [INFO] Worker exiting (pid: 1178)
+[2025-01-16 19:26:08 +0000] [1180] [INFO] Worker exiting (pid: 1180)
+[2025-01-16 19:26:08 +0000] [1020] [INFO] Shutting down: Master
+[2025-01-16 19:26:34 +0000] [1028] [INFO] Starting gunicorn 22.0.0
+[2025-01-16 19:26:34 +0000] [1028] [INFO] Listening at: http://127.0.0.1:8008 (1028)
+[2025-01-16 19:26:34 +0000] [1028] [INFO] Using worker: sync
+[2025-01-16 19:26:34 +0000] [1183] [INFO] Booting worker with pid: 1183
+[2025-01-16 19:26:34 +0000] [1188] [INFO] Booting worker with pid: 1188
+[2025-01-16 19:26:34 +0000] [1191] [INFO] Booting worker with pid: 1191
+[2025-01-16 19:26:34 +0000] [1193] [INFO] Booting worker with pid: 1193
+[2025-01-16 19:26:34 +0000] [1194] [INFO] Booting worker with pid: 1194
+[2025-01-16 19:38:33 +0000] [1028] [INFO] Handling signal: term
+[2025-01-16 19:38:33 +0000] [1188] [INFO] Worker exiting (pid: 1188)
+[2025-01-16 19:38:33 +0000] [1183] [INFO] Worker exiting (pid: 1183)
+[2025-01-16 19:38:33 +0000] [1193] [INFO] Worker exiting (pid: 1193)
+[2025-01-16 19:38:33 +0000] [1191] [INFO] Worker exiting (pid: 1191)
+[2025-01-16 19:38:33 +0000] [1194] [INFO] Worker exiting (pid: 1194)
+[2025-01-16 19:38:33 +0000] [1028] [INFO] Shutting down: Master
+[2025-01-16 19:38:38 +0000] [4034] [INFO] Starting gunicorn 22.0.0
+[2025-01-16 19:38:38 +0000] [4034] [INFO] Listening at: http://127.0.0.1:8008 (4034)
+[2025-01-16 19:38:38 +0000] [4034] [INFO] Using worker: sync
+[2025-01-16 19:38:38 +0000] [4114] [INFO] Booting worker with pid: 4114
+[2025-01-16 19:38:38 +0000] [4117] [INFO] Booting worker with pid: 4117
+[2025-01-16 19:38:38 +0000] [4118] [INFO] Booting worker with pid: 4118
+[2025-01-16 19:38:38 +0000] [4122] [INFO] Booting worker with pid: 4122
+[2025-01-16 19:38:38 +0000] [4124] [INFO] Booting worker with pid: 4124
+[2025-01-16 19:47:55 +0000] [4034] [INFO] Handling signal: term
+[2025-01-16 19:47:55 +0000] [4117] [INFO] Worker exiting (pid: 4117)
+[2025-01-16 19:47:55 +0000] [4114] [INFO] Worker exiting (pid: 4114)
+[2025-01-16 19:47:55 +0000] [4118] [INFO] Worker exiting (pid: 4118)
+[2025-01-16 19:47:55 +0000] [4122] [INFO] Worker exiting (pid: 4122)
+[2025-01-16 19:47:55 +0000] [4124] [INFO] Worker exiting (pid: 4124)
+[2025-01-16 19:47:55 +0000] [4034] [INFO] Shutting down: Master
+[2025-01-16 19:48:22 +0000] [1031] [INFO] Starting gunicorn 22.0.0
+[2025-01-16 19:48:22 +0000] [1031] [INFO] Listening at: http://127.0.0.1:8008 (1031)
+[2025-01-16 19:48:22 +0000] [1031] [INFO] Using worker: sync
+[2025-01-16 19:48:22 +0000] [1187] [INFO] Booting worker with pid: 1187
+[2025-01-16 19:48:22 +0000] [1190] [INFO] Booting worker with pid: 1190
+[2025-01-16 19:48:22 +0000] [1194] [INFO] Booting worker with pid: 1194
+[2025-01-16 19:48:22 +0000] [1195] [INFO] Booting worker with pid: 1195
+[2025-01-16 19:48:22 +0000] [1196] [INFO] Booting worker with pid: 1196
+[2025-01-16 20:00:41 +0000] [1031] [INFO] Handling signal: term
+[2025-01-16 20:00:41 +0000] [1187] [INFO] Worker exiting (pid: 1187)
+[2025-01-16 20:00:41 +0000] [1190] [INFO] Worker exiting (pid: 1190)
+[2025-01-16 20:00:41 +0000] [1194] [INFO] Worker exiting (pid: 1194)
+[2025-01-16 20:00:41 +0000] [1195] [INFO] Worker exiting (pid: 1195)
+[2025-01-16 20:00:41 +0000] [1196] [INFO] Worker exiting (pid: 1196)
+[2025-01-16 20:00:41 +0000] [1031] [INFO] Shutting down: Master
+[2025-01-16 20:01:04 +0000] [1023] [INFO] Starting gunicorn 22.0.0
+[2025-01-16 20:01:04 +0000] [1023] [INFO] Listening at: http://127.0.0.1:8008 (1023)
+[2025-01-16 20:01:04 +0000] [1023] [INFO] Using worker: sync
+[2025-01-16 20:01:04 +0000] [1178] [INFO] Booting worker with pid: 1178
+[2025-01-16 20:01:04 +0000] [1183] [INFO] Booting worker with pid: 1183
+[2025-01-16 20:01:04 +0000] [1185] [INFO] Booting worker with pid: 1185
+[2025-01-16 20:01:04 +0000] [1187] [INFO] Booting worker with pid: 1187
+[2025-01-16 20:01:04 +0000] [1189] [INFO] Booting worker with pid: 1189
+[2025-01-17 11:22:23 +0000] [1023] [INFO] Handling signal: term
+[2025-01-17 11:22:23 +0000] [1187] [INFO] Worker exiting (pid: 1187)
+[2025-01-17 11:22:23 +0000] [1183] [INFO] Worker exiting (pid: 1183)
+[2025-01-17 11:22:23 +0000] [1178] [INFO] Worker exiting (pid: 1178)
+[2025-01-17 11:22:23 +0000] [1185] [INFO] Worker exiting (pid: 1185)
+[2025-01-17 11:22:23 +0000] [1189] [INFO] Worker exiting (pid: 1189)
+[2025-01-17 11:22:23 +0000] [1023] [INFO] Shutting down: Master
+[2025-01-17 11:22:26 +0000] [45132] [INFO] Starting gunicorn 22.0.0
+[2025-01-17 11:22:26 +0000] [45132] [INFO] Listening at: http://127.0.0.1:8008 (45132)
+[2025-01-17 11:22:26 +0000] [45132] [INFO] Using worker: sync
+[2025-01-17 11:22:26 +0000] [45153] [INFO] Booting worker with pid: 45153
+[2025-01-17 11:22:26 +0000] [45154] [INFO] Booting worker with pid: 45154
+[2025-01-17 11:22:26 +0000] [45155] [INFO] Booting worker with pid: 45155
+[2025-01-17 11:22:26 +0000] [45159] [INFO] Booting worker with pid: 45159
+[2025-01-17 11:22:26 +0000] [45160] [INFO] Booting worker with pid: 45160
+[2025-01-17 18:35:35 +0000] [45159] [ERROR] Error handling request /
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 118, in resolve_redirect
+    redirects += frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 123, in application
+    response = get_response()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 28, in get_response
+    response = ErrorPage(exception=e).render()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 530, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
+    context.boot = get_boot_data()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 169, in get_boot_data
+    apps = get_apps() or []
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/apps.py", line 15, in get_apps
+    allowed_workspaces = get_workspace_sidebar_items().get("pages")
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/desktop.py", line 447, in get_workspace_sidebar_items
+    all_pages = frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 118, in resolve_redirect
+    redirects += frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 178, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 79, in application
+    app(environ, start_response),
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 190, in application
+    resp = f(*args[:-2] + (request,))
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 132, in application
+    response = handle_exception(e)
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 395, in handle_exception
+    response = get_response("message", http_status_code=http_status_code)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 28, in get_response
+    response = ErrorPage(exception=e).render()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 530, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
+    context.boot = get_boot_data()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 169, in get_boot_data
+    apps = get_apps() or []
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/apps.py", line 15, in get_apps
+    allowed_workspaces = get_workspace_sidebar_items().get("pages")
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/desktop.py", line 447, in get_workspace_sidebar_items
+    all_pages = frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+[2025-01-17 20:33:13 +0000] [45155] [ERROR] Error handling request /
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 118, in resolve_redirect
+    redirects += frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 167, in execute
+    if is_virtual_doctype(self.doctype):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/caching.py", line 121, in site_cache_wrapper
+    _SITE_CACHE[func_key][frappe.local.site][func_call_key] = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/utils/__init__.py", line 135, in is_virtual_doctype
+    return frappe.db.get_value("DocType", doctype, "is_virtual")
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
+    result = self.get_values(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 123, in application
+    response = get_response()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 28, in get_response
+    response = ErrorPage(exception=e).render()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 530, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
+    context.boot = get_boot_data()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 169, in get_boot_data
+    apps = get_apps() or []
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/apps.py", line 15, in get_apps
+    allowed_workspaces = get_workspace_sidebar_items().get("pages")
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/desktop.py", line 447, in get_workspace_sidebar_items
+    all_pages = frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 167, in execute
+    if is_virtual_doctype(self.doctype):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/caching.py", line 121, in site_cache_wrapper
+    _SITE_CACHE[func_key][frappe.local.site][func_call_key] = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/utils/__init__.py", line 135, in is_virtual_doctype
+    return frappe.db.get_value("DocType", doctype, "is_virtual")
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
+    result = self.get_values(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 118, in resolve_redirect
+    redirects += frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 167, in execute
+    if is_virtual_doctype(self.doctype):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/caching.py", line 121, in site_cache_wrapper
+    _SITE_CACHE[func_key][frappe.local.site][func_call_key] = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/utils/__init__.py", line 135, in is_virtual_doctype
+    return frappe.db.get_value("DocType", doctype, "is_virtual")
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
+    result = self.get_values(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 178, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 79, in application
+    app(environ, start_response),
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 190, in application
+    resp = f(*args[:-2] + (request,))
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 132, in application
+    response = handle_exception(e)
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 395, in handle_exception
+    response = get_response("message", http_status_code=http_status_code)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 28, in get_response
+    response = ErrorPage(exception=e).render()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 530, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
+    context.boot = get_boot_data()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 169, in get_boot_data
+    apps = get_apps() or []
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/apps.py", line 15, in get_apps
+    allowed_workspaces = get_workspace_sidebar_items().get("pages")
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/desktop.py", line 447, in get_workspace_sidebar_items
+    all_pages = frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 167, in execute
+    if is_virtual_doctype(self.doctype):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/caching.py", line 121, in site_cache_wrapper
+    _SITE_CACHE[func_key][frappe.local.site][func_call_key] = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/utils/__init__.py", line 135, in is_virtual_doctype
+    return frappe.db.get_value("DocType", doctype, "is_virtual")
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
+    result = self.get_values(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+[2025-01-17 20:46:29 +0000] [45155] [ERROR] Error handling request /
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 118, in resolve_redirect
+    redirects += frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 167, in execute
+    if is_virtual_doctype(self.doctype):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/caching.py", line 121, in site_cache_wrapper
+    _SITE_CACHE[func_key][frappe.local.site][func_call_key] = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/utils/__init__.py", line 135, in is_virtual_doctype
+    return frappe.db.get_value("DocType", doctype, "is_virtual")
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
+    result = self.get_values(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 123, in application
+    response = get_response()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 28, in get_response
+    response = ErrorPage(exception=e).render()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 530, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
+    context.boot = get_boot_data()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 169, in get_boot_data
+    apps = get_apps() or []
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/apps.py", line 15, in get_apps
+    allowed_workspaces = get_workspace_sidebar_items().get("pages")
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/desktop.py", line 447, in get_workspace_sidebar_items
+    all_pages = frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 167, in execute
+    if is_virtual_doctype(self.doctype):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/caching.py", line 121, in site_cache_wrapper
+    _SITE_CACHE[func_key][frappe.local.site][func_call_key] = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/utils/__init__.py", line 135, in is_virtual_doctype
+    return frappe.db.get_value("DocType", doctype, "is_virtual")
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
+    result = self.get_values(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 118, in resolve_redirect
+    redirects += frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 167, in execute
+    if is_virtual_doctype(self.doctype):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/caching.py", line 121, in site_cache_wrapper
+    _SITE_CACHE[func_key][frappe.local.site][func_call_key] = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/utils/__init__.py", line 135, in is_virtual_doctype
+    return frappe.db.get_value("DocType", doctype, "is_virtual")
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
+    result = self.get_values(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 178, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 79, in application
+    app(environ, start_response),
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 190, in application
+    resp = f(*args[:-2] + (request,))
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 132, in application
+    response = handle_exception(e)
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 395, in handle_exception
+    response = get_response("message", http_status_code=http_status_code)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 28, in get_response
+    response = ErrorPage(exception=e).render()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 530, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
+    context.boot = get_boot_data()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 169, in get_boot_data
+    apps = get_apps() or []
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/apps.py", line 15, in get_apps
+    allowed_workspaces = get_workspace_sidebar_items().get("pages")
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/desktop.py", line 447, in get_workspace_sidebar_items
+    all_pages = frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 167, in execute
+    if is_virtual_doctype(self.doctype):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/caching.py", line 121, in site_cache_wrapper
+    _SITE_CACHE[func_key][frappe.local.site][func_call_key] = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/utils/__init__.py", line 135, in is_virtual_doctype
+    return frappe.db.get_value("DocType", doctype, "is_virtual")
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
+    result = self.get_values(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+[2025-01-18 05:10:43 +0000] [45159] [ERROR] Error handling request /logon.htm
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 118, in resolve_redirect
+    redirects += frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 123, in application
+    response = get_response()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 28, in get_response
+    response = ErrorPage(exception=e).render()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 530, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
+    context.boot = get_boot_data()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 169, in get_boot_data
+    apps = get_apps() or []
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/apps.py", line 15, in get_apps
+    allowed_workspaces = get_workspace_sidebar_items().get("pages")
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/desktop.py", line 447, in get_workspace_sidebar_items
+    all_pages = frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 118, in resolve_redirect
+    redirects += frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 178, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 79, in application
+    app(environ, start_response),
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 190, in application
+    resp = f(*args[:-2] + (request,))
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 132, in application
+    response = handle_exception(e)
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 395, in handle_exception
+    response = get_response("message", http_status_code=http_status_code)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 28, in get_response
+    response = ErrorPage(exception=e).render()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 530, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
+    context.boot = get_boot_data()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 169, in get_boot_data
+    apps = get_apps() or []
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/apps.py", line 15, in get_apps
+    allowed_workspaces = get_workspace_sidebar_items().get("pages")
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/desktop.py", line 447, in get_workspace_sidebar_items
+    all_pages = frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+[2025-01-18 06:56:37 +0000] [45154] [ERROR] Error handling request /logon.htm
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 118, in resolve_redirect
+    redirects += frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 167, in execute
+    if is_virtual_doctype(self.doctype):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/caching.py", line 121, in site_cache_wrapper
+    _SITE_CACHE[func_key][frappe.local.site][func_call_key] = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/utils/__init__.py", line 135, in is_virtual_doctype
+    return frappe.db.get_value("DocType", doctype, "is_virtual")
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
+    result = self.get_values(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 123, in application
+    response = get_response()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 28, in get_response
+    response = ErrorPage(exception=e).render()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 530, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
+    context.boot = get_boot_data()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 169, in get_boot_data
+    apps = get_apps() or []
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/apps.py", line 15, in get_apps
+    allowed_workspaces = get_workspace_sidebar_items().get("pages")
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/desktop.py", line 447, in get_workspace_sidebar_items
+    all_pages = frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 167, in execute
+    if is_virtual_doctype(self.doctype):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/caching.py", line 121, in site_cache_wrapper
+    _SITE_CACHE[func_key][frappe.local.site][func_call_key] = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/utils/__init__.py", line 135, in is_virtual_doctype
+    return frappe.db.get_value("DocType", doctype, "is_virtual")
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
+    result = self.get_values(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 118, in resolve_redirect
+    redirects += frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 167, in execute
+    if is_virtual_doctype(self.doctype):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/caching.py", line 121, in site_cache_wrapper
+    _SITE_CACHE[func_key][frappe.local.site][func_call_key] = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/utils/__init__.py", line 135, in is_virtual_doctype
+    return frappe.db.get_value("DocType", doctype, "is_virtual")
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
+    result = self.get_values(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 178, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 79, in application
+    app(environ, start_response),
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 190, in application
+    resp = f(*args[:-2] + (request,))
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 132, in application
+    response = handle_exception(e)
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 395, in handle_exception
+    response = get_response("message", http_status_code=http_status_code)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 28, in get_response
+    response = ErrorPage(exception=e).render()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 530, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
+    context.boot = get_boot_data()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 169, in get_boot_data
+    apps = get_apps() or []
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/apps.py", line 15, in get_apps
+    allowed_workspaces = get_workspace_sidebar_items().get("pages")
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/desktop.py", line 447, in get_workspace_sidebar_items
+    all_pages = frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 167, in execute
+    if is_virtual_doctype(self.doctype):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/caching.py", line 121, in site_cache_wrapper
+    _SITE_CACHE[func_key][frappe.local.site][func_call_key] = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/utils/__init__.py", line 135, in is_virtual_doctype
+    return frappe.db.get_value("DocType", doctype, "is_virtual")
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
+    result = self.get_values(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
