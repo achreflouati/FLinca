@@ -1,4 +1,4 @@
-2025-01-17 20:00:31,814 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 00:58:48,443 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -36,7 +36,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:01:31,918 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 00:59:48,547 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -74,7 +74,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:02:32,027 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:00:48,654 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -112,7 +112,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:03:32,132 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:01:48,755 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -150,7 +150,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:04:32,238 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:02:48,856 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -188,7 +188,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:05:32,343 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:03:48,969 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -226,7 +226,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:06:32,451 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:04:49,064 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -264,7 +264,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:07:32,556 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:05:49,170 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -302,7 +302,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:08:32,667 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:06:49,257 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -340,7 +340,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:09:32,755 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:07:49,363 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -378,7 +378,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:10:32,826 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:08:49,460 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -416,7 +416,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:11:32,936 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:09:49,549 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -454,7 +454,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:12:33,039 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:10:49,638 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -492,7 +492,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:13:33,143 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:11:49,738 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -530,7 +530,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:14:33,240 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:12:49,840 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -568,7 +568,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:15:33,348 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:13:49,950 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -606,7 +606,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:16:33,459 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:14:50,054 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -644,7 +644,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:17:33,568 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:15:50,146 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -682,7 +682,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:18:33,677 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:16:50,256 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -720,7 +720,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:19:33,784 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:17:50,360 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -758,7 +758,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:20:33,892 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:18:50,458 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -796,7 +796,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:21:33,995 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:19:50,559 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -834,7 +834,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:22:34,105 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:20:50,669 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -872,7 +872,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:23:34,187 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:21:50,769 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -910,7 +910,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:24:34,298 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:22:50,876 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -948,7 +948,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:25:34,364 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:23:50,974 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -986,7 +986,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:26:34,456 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:24:51,079 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -1024,7 +1024,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:27:34,555 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:25:51,188 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -1062,7 +1062,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:28:34,659 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:26:51,295 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -1100,7 +1100,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:29:34,762 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:27:51,398 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -1138,7 +1138,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:30:34,861 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:28:51,501 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -1176,7 +1176,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:31:34,925 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:29:51,606 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -1214,7 +1214,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:32:35,022 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:30:51,625 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -1252,7 +1252,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:33:35,125 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:31:51,736 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -1290,7 +1290,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:34:35,234 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:32:51,840 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -1328,7 +1328,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:35:35,337 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:33:51,939 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -1366,7 +1366,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:36:35,439 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:34:52,042 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -1404,7 +1404,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:37:35,544 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:35:52,153 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -1442,7 +1442,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:38:35,647 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:36:52,262 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -1480,7 +1480,7 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-17 20:39:35,745 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
+2025-01-19 01:37:52,367 ERROR scheduler Exception in Enqueue Events for Site abc.localhost
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(

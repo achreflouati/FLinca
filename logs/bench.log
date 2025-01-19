@@ -562,3 +562,9 @@
 2025-01-18 15:52:13,964 INFO /usr/local/bin/bench version --format plain
 2025-01-18 15:53:07,222 INFO /usr/local/bin/bench --site abc.localhost serve --port 8004
 2025-01-18 15:53:16,190 INFO /usr/local/bin/bench --site abc.localhost serve --port 9000
+2025-01-18 18:00:01,927 INFO /usr/local/bin/bench --verbose --site all backup
+2025-01-19 00:00:02,274 INFO /usr/local/bin/bench --verbose --site all backup
+2025-01-19 06:00:02,194 INFO /usr/local/bin/bench --verbose --site all backup
+2025-01-19 12:00:02,502 INFO /usr/local/bin/bench --verbose --site all backup
+2025-01-19 13:11:09,383 INFO /usr/local/bin/bench --site abc.localhost serve --port 9000
+2025-01-19 13:21:27,455 INFO /usr/local/bin/bench --site abc.localhost serve --port 9000

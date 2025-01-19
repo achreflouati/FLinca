@@ -2201,3 +2201,1035 @@ Backup Summary for aria.localhost at 2025-01-18 13:00:12.265457
 Config  : ./aria.localhost/private/backups/20250118_130008-aria_localhost-site_config_backup.json 94.0B
 Database: ./aria.localhost/private/backups/20250118_130008-aria_localhost-database.sql.gz         622.4KiB
 Backup for Site aria.localhost has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399 | /usr/bin/gzip >> ./abc.localhost/private/backups/20250118_190004-abc_localhost-database.sql.gz
+
+b'mariadb-dump: Got error: 2002: "Can\'t connect to server on \'127.0.0.1\' (115)" when trying to connect\n'
+Backup failed for Site abc.localhost. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 848, in backup
+    odb = scheduled_backup(
+      context = {'sites': ['abc.localhost', 'aria.localhost'], 'force': False, 'verbose': True, 'profile': False}
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0xffff88b33880>
+      exit_code = 0
+      rollback_callback = None
+      site = 'abc.localhost'
+  File "apps/frappe/frappe/utils/backups.py", line 568, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0xffff881037f0>
+  File "apps/frappe/frappe/utils/backups.py", line 626, in new_backup
+    odb.get_backup(older_than, ignore_files, force=force)
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0xffff881037f0>
+      odb = <frappe.utils.backups.BackupGenerator object at 0xffff88103880>
+  File "apps/frappe/frappe/utils/backups.py", line 195, in get_backup
+    self.delete_if_step_fails(self.take_dump, self.backup_path_db)
+      self = <frappe.utils.backups.BackupGenerator object at 0xffff88103880>
+      older_than = 6
+      ignore_files = True
+      force = True
+      last_db = False
+      last_file = False
+      last_private_file = False
+      site_config_backup_path = False
+  File "apps/frappe/frappe/utils/backups.py", line 520, in delete_if_step_fails
+    raise e
+      self = <frappe.utils.backups.BackupGenerator object at 0xffff88103880>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0xffff88103880>>
+      paths = ('./abc.localhost/private/backups/20250118_190004-abc_localhost-database.sql.gz',)
+      path = './abc.localhost/private/backups/20250118_190004-abc_localhost-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 515, in delete_if_step_fails
+    step()
+      self = <frappe.utils.backups.BackupGenerator object at 0xffff88103880>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0xffff88103880>>
+      paths = ('./abc.localhost/private/backups/20250118_190004-abc_localhost-database.sql.gz',)
+      path = './abc.localhost/private/backups/20250118_190004-abc_localhost-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 468, in take_dump
+    frappe.utils.execute_in_shell(command, low_priority=True, check_exit_code=True)
+      shlex = <module 'shlex' from '/usr/lib/python3.10/shlex.py'>
+      frappe = <module 'frappe' from 'apps/frappe/frappe/__init__.py'>
+      get_app_branch = <function get_app_branch at 0xffff88b177f0>
+      gzip_exc = '/usr/bin/gzip'
+      database_header_content = ['begin frappe metadata', '[frappe]', 'version = 15.50.0', 'branch = version-15', 'end frappe metadata', '']
+      generated_header = '-- begin frappe metadata\n-- [frappe]\n-- version = 15.50.0\n-- branch = version-15\n-- end frappe metadata\n-- \n'
+      f = <_io.TextIOWrapper name='./abc.localhost/private/backups/20250118_190004-abc_localhost-database.sql.gz' encoding='UTF-8'>
+      cmd = ['/usr/bin/mariadb-dump', '--user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=Gmg46SF4xwnWqGxJ --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399']
+      extra = []
+      get_command = <function get_command at 0xffff88b0f010>
+      bin = '/usr/bin/mariadb-dump'
+      args = ['--user=_32a6c6f08bcb8399', '--host=127.0.0.1', '--port=3306', '--password=Gmg46SF4xwnWqGxJ', '--single-transaction', '--quick', '--lock-tables=false', '_32a6c6f08bcb8399']
+      bin_name = 'mariadb-dump'
+      command = 'set -o pipefail; /usr/bin/mariadb-dump --user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=Gmg46SF4xwnWqGxJ --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399 | /usr/bin/gzip >> ./abc.localhost/private/backups/20250118_190004-abc_localhost-database.sql.gz'
+      self = <frappe.utils.backups.BackupGenerator object at 0xffff88103880>
+  File "apps/frappe/frappe/utils/__init__.py", line 484, in execute_in_shell
+    raise frappe.CommandFailedError(
+      cmd = 'set -o pipefail; /usr/bin/mariadb-dump --user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=Gmg46SF4xwnWqGxJ --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399 | /usr/bin/gzip >> ./abc.localhost/private/backups/20250118_190004-abc_localhost-database.sql.gz'
+      verbose = False
+      low_priority = True
+      check_exit_code = True
+      shlex = <module 'shlex' from '/usr/lib/python3.10/shlex.py'>
+      tempfile = <module 'tempfile' from '/usr/lib/python3.10/tempfile.py'>
+      Popen = <class 'subprocess.Popen'>
+      stdout = <_io.BufferedRandom name=6>
+      stderr = <_io.BufferedRandom name=7>
+      kwargs = <exception while printing> Traceback (most recent call last):
+          File "env/lib/python3.10/site-packages/traceback_with_variables/core.py", line 222, in _to_cropped_str
+            raw = print_(obj)
+          File "apps/frappe/frappe/utils/__init__.py", line 326, in dict_printer
+            v = deepcopy(v)
+          File "/usr/lib/python3.10/copy.py", line 146, in deepcopy
+            y = copier(x, memo)
+          File "/usr/lib/python3.10/copy.py", line 231, in _deepcopy_dict
+            y[deepcopy(key, memo)] = deepcopy(value, memo)
+          File "/usr/lib/python3.10/copy.py", line 161, in deepcopy
+            rv = reductor(4)
+        TypeError: cannot pickle '_io.BufferedRandom' object
+        
+      p = <Popen: returncode: 2 args: 'set -o pipefail; /usr/bin/mariadb-dump --user=_...>
+      exit_code = 2
+      out = b''
+      err = b'mariadb-dump: Got error: 2002: "Can\'t connect to server on \'127.0.0.1\' (115)" when trying to connect\n'
+      failed = 2
+frappe.exceptions.CommandFailedError: Command failed
+File ./abc.localhost/private/backups/20250118_173004-abc_localhost-site_config_backup.json is recent
+File ./abc.localhost/private/backups/20250118_173004-abc_localhost-database.sql.gz is recent
+set -o pipefail; /usr/bin/mariadb-dump --user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399 | /usr/bin/gzip >> ./abc.localhost/private/backups/20250118_190004-abc_localhost-database.sql.gz
+
+b'mariadb-dump: Got error: 2002: "Can\'t connect to server on \'127.0.0.1\' (115)" when trying to connect\n'
+Backup failed for Site aria.localhost. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 848, in backup
+    odb = scheduled_backup(
+      context = {'sites': ['abc.localhost', 'aria.localhost'], 'force': False, 'verbose': True, 'profile': False}
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0xffff88b33880>
+      exit_code = 1
+      rollback_callback = None
+      site = 'aria.localhost'
+  File "apps/frappe/frappe/utils/backups.py", line 568, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0xffff88102200>
+  File "apps/frappe/frappe/utils/backups.py", line 626, in new_backup
+    odb.get_backup(older_than, ignore_files, force=force)
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0xffff88102200>
+      odb = <frappe.utils.backups.BackupGenerator object at 0xffff88103760>
+  File "apps/frappe/frappe/utils/backups.py", line 195, in get_backup
+    self.delete_if_step_fails(self.take_dump, self.backup_path_db)
+      self = <frappe.utils.backups.BackupGenerator object at 0xffff88103760>
+      older_than = 6
+      ignore_files = True
+      force = True
+      last_db = False
+      last_file = False
+      last_private_file = False
+      site_config_backup_path = False
+  File "apps/frappe/frappe/utils/backups.py", line 520, in delete_if_step_fails
+    raise e
+      self = <frappe.utils.backups.BackupGenerator object at 0xffff88103760>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0xffff88103760>>
+      paths = ('./abc.localhost/private/backups/20250118_190004-abc_localhost-database.sql.gz',)
+      path = './abc.localhost/private/backups/20250118_190004-abc_localhost-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 515, in delete_if_step_fails
+    step()
+      self = <frappe.utils.backups.BackupGenerator object at 0xffff88103760>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0xffff88103760>>
+      paths = ('./abc.localhost/private/backups/20250118_190004-abc_localhost-database.sql.gz',)
+      path = './abc.localhost/private/backups/20250118_190004-abc_localhost-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 468, in take_dump
+    frappe.utils.execute_in_shell(command, low_priority=True, check_exit_code=True)
+      shlex = <module 'shlex' from '/usr/lib/python3.10/shlex.py'>
+      frappe = <module 'frappe' from 'apps/frappe/frappe/__init__.py'>
+      get_app_branch = <function get_app_branch at 0xffff88b177f0>
+      gzip_exc = '/usr/bin/gzip'
+      database_header_content = ['begin frappe metadata', '[frappe]', 'version = 15.50.0', 'branch = version-15', 'end frappe metadata', '']
+      generated_header = '-- begin frappe metadata\n-- [frappe]\n-- version = 15.50.0\n-- branch = version-15\n-- end frappe metadata\n-- \n'
+      f = <_io.TextIOWrapper name='./abc.localhost/private/backups/20250118_190004-abc_localhost-database.sql.gz' encoding='UTF-8'>
+      cmd = ['/usr/bin/mariadb-dump', '--user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=Gmg46SF4xwnWqGxJ --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399']
+      extra = []
+      get_command = <function get_command at 0xffff88b0f010>
+      bin = '/usr/bin/mariadb-dump'
+      args = ['--user=_32a6c6f08bcb8399', '--host=127.0.0.1', '--port=3306', '--password=Gmg46SF4xwnWqGxJ', '--single-transaction', '--quick', '--lock-tables=false', '_32a6c6f08bcb8399']
+      bin_name = 'mariadb-dump'
+      command = 'set -o pipefail; /usr/bin/mariadb-dump --user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=Gmg46SF4xwnWqGxJ --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399 | /usr/bin/gzip >> ./abc.localhost/private/backups/20250118_190004-abc_localhost-database.sql.gz'
+      self = <frappe.utils.backups.BackupGenerator object at 0xffff88103760>
+  File "apps/frappe/frappe/utils/__init__.py", line 484, in execute_in_shell
+    raise frappe.CommandFailedError(
+      cmd = 'set -o pipefail; /usr/bin/mariadb-dump --user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=Gmg46SF4xwnWqGxJ --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399 | /usr/bin/gzip >> ./abc.localhost/private/backups/20250118_190004-abc_localhost-database.sql.gz'
+      verbose = False
+      low_priority = True
+      check_exit_code = True
+      shlex = <module 'shlex' from '/usr/lib/python3.10/shlex.py'>
+      tempfile = <module 'tempfile' from '/usr/lib/python3.10/tempfile.py'>
+      Popen = <class 'subprocess.Popen'>
+      stdout = <_io.BufferedRandom name=6>
+      stderr = <_io.BufferedRandom name=7>
+      kwargs = <exception while printing> Traceback (most recent call last):
+          File "env/lib/python3.10/site-packages/traceback_with_variables/core.py", line 222, in _to_cropped_str
+            raw = print_(obj)
+          File "apps/frappe/frappe/utils/__init__.py", line 326, in dict_printer
+            v = deepcopy(v)
+          File "/usr/lib/python3.10/copy.py", line 146, in deepcopy
+            y = copier(x, memo)
+          File "/usr/lib/python3.10/copy.py", line 231, in _deepcopy_dict
+            y[deepcopy(key, memo)] = deepcopy(value, memo)
+          File "/usr/lib/python3.10/copy.py", line 161, in deepcopy
+            rv = reductor(4)
+        TypeError: cannot pickle '_io.BufferedRandom' object
+        
+      p = <Popen: returncode: 2 args: 'set -o pipefail; /usr/bin/mariadb-dump --user=_...>
+      exit_code = 2
+      out = b''
+      err = b'mariadb-dump: Got error: 2002: "Can\'t connect to server on \'127.0.0.1\' (115)" when trying to connect\n'
+      failed = 2
+frappe.exceptions.CommandFailedError: Command failed
+set -o pipefail; /usr/bin/mariadb-dump --user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399 | /usr/bin/gzip >> ./abc.localhost/private/backups/20250119_010004-abc_localhost-database.sql.gz
+
+b'mariadb-dump: Got error: 2002: "Can\'t connect to server on \'127.0.0.1\' (115)" when trying to connect\n'
+Backup failed for Site abc.localhost. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 848, in backup
+    odb = scheduled_backup(
+      context = {'sites': ['abc.localhost', 'aria.localhost'], 'force': False, 'verbose': True, 'profile': False}
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0xffff8ec13880>
+      exit_code = 0
+      rollback_callback = None
+      site = 'abc.localhost'
+  File "apps/frappe/frappe/utils/backups.py", line 568, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0xffff8e1e37f0>
+  File "apps/frappe/frappe/utils/backups.py", line 626, in new_backup
+    odb.get_backup(older_than, ignore_files, force=force)
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0xffff8e1e37f0>
+      odb = <frappe.utils.backups.BackupGenerator object at 0xffff8e1e3880>
+  File "apps/frappe/frappe/utils/backups.py", line 195, in get_backup
+    self.delete_if_step_fails(self.take_dump, self.backup_path_db)
+      self = <frappe.utils.backups.BackupGenerator object at 0xffff8e1e3880>
+      older_than = 6
+      ignore_files = True
+      force = True
+      last_db = False
+      last_file = False
+      last_private_file = False
+      site_config_backup_path = False
+  File "apps/frappe/frappe/utils/backups.py", line 520, in delete_if_step_fails
+    raise e
+      self = <frappe.utils.backups.BackupGenerator object at 0xffff8e1e3880>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0xffff8e1e3880>>
+      paths = ('./abc.localhost/private/backups/20250119_010004-abc_localhost-database.sql.gz',)
+      path = './abc.localhost/private/backups/20250119_010004-abc_localhost-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 515, in delete_if_step_fails
+    step()
+      self = <frappe.utils.backups.BackupGenerator object at 0xffff8e1e3880>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0xffff8e1e3880>>
+      paths = ('./abc.localhost/private/backups/20250119_010004-abc_localhost-database.sql.gz',)
+      path = './abc.localhost/private/backups/20250119_010004-abc_localhost-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 468, in take_dump
+    frappe.utils.execute_in_shell(command, low_priority=True, check_exit_code=True)
+      shlex = <module 'shlex' from '/usr/lib/python3.10/shlex.py'>
+      frappe = <module 'frappe' from 'apps/frappe/frappe/__init__.py'>
+      get_app_branch = <function get_app_branch at 0xffff8ebf77f0>
+      gzip_exc = '/usr/bin/gzip'
+      database_header_content = ['begin frappe metadata', '[frappe]', 'version = 15.50.0', 'branch = version-15', 'end frappe metadata', '']
+      generated_header = '-- begin frappe metadata\n-- [frappe]\n-- version = 15.50.0\n-- branch = version-15\n-- end frappe metadata\n-- \n'
+      f = <_io.TextIOWrapper name='./abc.localhost/private/backups/20250119_010004-abc_localhost-database.sql.gz' encoding='UTF-8'>
+      cmd = ['/usr/bin/mariadb-dump', '--user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=Gmg46SF4xwnWqGxJ --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399']
+      extra = []
+      get_command = <function get_command at 0xffff8ebef010>
+      bin = '/usr/bin/mariadb-dump'
+      args = ['--user=_32a6c6f08bcb8399', '--host=127.0.0.1', '--port=3306', '--password=Gmg46SF4xwnWqGxJ', '--single-transaction', '--quick', '--lock-tables=false', '_32a6c6f08bcb8399']
+      bin_name = 'mariadb-dump'
+      command = 'set -o pipefail; /usr/bin/mariadb-dump --user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=Gmg46SF4xwnWqGxJ --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399 | /usr/bin/gzip >> ./abc.localhost/private/backups/20250119_010004-abc_localhost-database.sql.gz'
+      self = <frappe.utils.backups.BackupGenerator object at 0xffff8e1e3880>
+  File "apps/frappe/frappe/utils/__init__.py", line 484, in execute_in_shell
+    raise frappe.CommandFailedError(
+      cmd = 'set -o pipefail; /usr/bin/mariadb-dump --user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=Gmg46SF4xwnWqGxJ --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399 | /usr/bin/gzip >> ./abc.localhost/private/backups/20250119_010004-abc_localhost-database.sql.gz'
+      verbose = False
+      low_priority = True
+      check_exit_code = True
+      shlex = <module 'shlex' from '/usr/lib/python3.10/shlex.py'>
+      tempfile = <module 'tempfile' from '/usr/lib/python3.10/tempfile.py'>
+      Popen = <class 'subprocess.Popen'>
+      stdout = <_io.BufferedRandom name=6>
+      stderr = <_io.BufferedRandom name=7>
+      kwargs = <exception while printing> Traceback (most recent call last):
+          File "env/lib/python3.10/site-packages/traceback_with_variables/core.py", line 222, in _to_cropped_str
+            raw = print_(obj)
+          File "apps/frappe/frappe/utils/__init__.py", line 326, in dict_printer
+            v = deepcopy(v)
+          File "/usr/lib/python3.10/copy.py", line 146, in deepcopy
+            y = copier(x, memo)
+          File "/usr/lib/python3.10/copy.py", line 231, in _deepcopy_dict
+            y[deepcopy(key, memo)] = deepcopy(value, memo)
+          File "/usr/lib/python3.10/copy.py", line 161, in deepcopy
+            rv = reductor(4)
+        TypeError: cannot pickle '_io.BufferedRandom' object
+        
+      p = <Popen: returncode: 2 args: 'set -o pipefail; /usr/bin/mariadb-dump --user=_...>
+      exit_code = 2
+      out = b''
+      err = b'mariadb-dump: Got error: 2002: "Can\'t connect to server on \'127.0.0.1\' (115)" when trying to connect\n'
+      failed = 2
+frappe.exceptions.CommandFailedError: Command failed
+File ./abc.localhost/private/backups/20250118_173004-abc_localhost-site_config_backup.json is recent
+File ./abc.localhost/private/backups/20250118_173004-abc_localhost-database.sql.gz is recent
+set -o pipefail; /usr/bin/mariadb-dump --user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399 | /usr/bin/gzip >> ./abc.localhost/private/backups/20250119_010004-abc_localhost-database.sql.gz
+
+b'mariadb-dump: Got error: 2002: "Can\'t connect to server on \'127.0.0.1\' (115)" when trying to connect\n'
+Backup failed for Site aria.localhost. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 848, in backup
+    odb = scheduled_backup(
+      context = {'sites': ['abc.localhost', 'aria.localhost'], 'force': False, 'verbose': True, 'profile': False}
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0xffff8ec13880>
+      exit_code = 1
+      rollback_callback = None
+      site = 'aria.localhost'
+  File "apps/frappe/frappe/utils/backups.py", line 568, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0xffff8e1e2200>
+  File "apps/frappe/frappe/utils/backups.py", line 626, in new_backup
+    odb.get_backup(older_than, ignore_files, force=force)
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0xffff8e1e2200>
+      odb = <frappe.utils.backups.BackupGenerator object at 0xffff8e1e3760>
+  File "apps/frappe/frappe/utils/backups.py", line 195, in get_backup
+    self.delete_if_step_fails(self.take_dump, self.backup_path_db)
+      self = <frappe.utils.backups.BackupGenerator object at 0xffff8e1e3760>
+      older_than = 6
+      ignore_files = True
+      force = True
+      last_db = False
+      last_file = False
+      last_private_file = False
+      site_config_backup_path = False
+  File "apps/frappe/frappe/utils/backups.py", line 520, in delete_if_step_fails
+    raise e
+      self = <frappe.utils.backups.BackupGenerator object at 0xffff8e1e3760>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0xffff8e1e3760>>
+      paths = ('./abc.localhost/private/backups/20250119_010004-abc_localhost-database.sql.gz',)
+      path = './abc.localhost/private/backups/20250119_010004-abc_localhost-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 515, in delete_if_step_fails
+    step()
+      self = <frappe.utils.backups.BackupGenerator object at 0xffff8e1e3760>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0xffff8e1e3760>>
+      paths = ('./abc.localhost/private/backups/20250119_010004-abc_localhost-database.sql.gz',)
+      path = './abc.localhost/private/backups/20250119_010004-abc_localhost-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 468, in take_dump
+    frappe.utils.execute_in_shell(command, low_priority=True, check_exit_code=True)
+      shlex = <module 'shlex' from '/usr/lib/python3.10/shlex.py'>
+      frappe = <module 'frappe' from 'apps/frappe/frappe/__init__.py'>
+      get_app_branch = <function get_app_branch at 0xffff8ebf77f0>
+      gzip_exc = '/usr/bin/gzip'
+      database_header_content = ['begin frappe metadata', '[frappe]', 'version = 15.50.0', 'branch = version-15', 'end frappe metadata', '']
+      generated_header = '-- begin frappe metadata\n-- [frappe]\n-- version = 15.50.0\n-- branch = version-15\n-- end frappe metadata\n-- \n'
+      f = <_io.TextIOWrapper name='./abc.localhost/private/backups/20250119_010004-abc_localhost-database.sql.gz' encoding='UTF-8'>
+      cmd = ['/usr/bin/mariadb-dump', '--user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=Gmg46SF4xwnWqGxJ --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399']
+      extra = []
+      get_command = <function get_command at 0xffff8ebef010>
+      bin = '/usr/bin/mariadb-dump'
+      args = ['--user=_32a6c6f08bcb8399', '--host=127.0.0.1', '--port=3306', '--password=Gmg46SF4xwnWqGxJ', '--single-transaction', '--quick', '--lock-tables=false', '_32a6c6f08bcb8399']
+      bin_name = 'mariadb-dump'
+      command = 'set -o pipefail; /usr/bin/mariadb-dump --user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=Gmg46SF4xwnWqGxJ --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399 | /usr/bin/gzip >> ./abc.localhost/private/backups/20250119_010004-abc_localhost-database.sql.gz'
+      self = <frappe.utils.backups.BackupGenerator object at 0xffff8e1e3760>
+  File "apps/frappe/frappe/utils/__init__.py", line 484, in execute_in_shell
+    raise frappe.CommandFailedError(
+      cmd = 'set -o pipefail; /usr/bin/mariadb-dump --user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=Gmg46SF4xwnWqGxJ --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399 | /usr/bin/gzip >> ./abc.localhost/private/backups/20250119_010004-abc_localhost-database.sql.gz'
+      verbose = False
+      low_priority = True
+      check_exit_code = True
+      shlex = <module 'shlex' from '/usr/lib/python3.10/shlex.py'>
+      tempfile = <module 'tempfile' from '/usr/lib/python3.10/tempfile.py'>
+      Popen = <class 'subprocess.Popen'>
+      stdout = <_io.BufferedRandom name=6>
+      stderr = <_io.BufferedRandom name=7>
+      kwargs = <exception while printing> Traceback (most recent call last):
+          File "env/lib/python3.10/site-packages/traceback_with_variables/core.py", line 222, in _to_cropped_str
+            raw = print_(obj)
+          File "apps/frappe/frappe/utils/__init__.py", line 326, in dict_printer
+            v = deepcopy(v)
+          File "/usr/lib/python3.10/copy.py", line 146, in deepcopy
+            y = copier(x, memo)
+          File "/usr/lib/python3.10/copy.py", line 231, in _deepcopy_dict
+            y[deepcopy(key, memo)] = deepcopy(value, memo)
+          File "/usr/lib/python3.10/copy.py", line 161, in deepcopy
+            rv = reductor(4)
+        TypeError: cannot pickle '_io.BufferedRandom' object
+        
+      p = <Popen: returncode: 2 args: 'set -o pipefail; /usr/bin/mariadb-dump --user=_...>
+      exit_code = 2
+      out = b''
+      err = b'mariadb-dump: Got error: 2002: "Can\'t connect to server on \'127.0.0.1\' (115)" when trying to connect\n'
+      failed = 2
+frappe.exceptions.CommandFailedError: Command failed
+set -o pipefail; /usr/bin/mariadb-dump --user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399 | /usr/bin/gzip >> ./abc.localhost/private/backups/20250119_070004-abc_localhost-database.sql.gz
+
+b'mariadb-dump: Got error: 2002: "Can\'t connect to server on \'127.0.0.1\' (115)" when trying to connect\n'
+Backup failed for Site abc.localhost. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 848, in backup
+    odb = scheduled_backup(
+      context = {'sites': ['abc.localhost', 'aria.localhost'], 'force': False, 'verbose': True, 'profile': False}
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0xffffb5fa3880>
+      exit_code = 0
+      rollback_callback = None
+      site = 'abc.localhost'
+  File "apps/frappe/frappe/utils/backups.py", line 568, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0xffffb55737f0>
+  File "apps/frappe/frappe/utils/backups.py", line 626, in new_backup
+    odb.get_backup(older_than, ignore_files, force=force)
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0xffffb55737f0>
+      odb = <frappe.utils.backups.BackupGenerator object at 0xffffb5573880>
+  File "apps/frappe/frappe/utils/backups.py", line 195, in get_backup
+    self.delete_if_step_fails(self.take_dump, self.backup_path_db)
+      self = <frappe.utils.backups.BackupGenerator object at 0xffffb5573880>
+      older_than = 6
+      ignore_files = True
+      force = True
+      last_db = False
+      last_file = False
+      last_private_file = False
+      site_config_backup_path = False
+  File "apps/frappe/frappe/utils/backups.py", line 520, in delete_if_step_fails
+    raise e
+      self = <frappe.utils.backups.BackupGenerator object at 0xffffb5573880>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0xffffb5573880>>
+      paths = ('./abc.localhost/private/backups/20250119_070004-abc_localhost-database.sql.gz',)
+      path = './abc.localhost/private/backups/20250119_070004-abc_localhost-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 515, in delete_if_step_fails
+    step()
+      self = <frappe.utils.backups.BackupGenerator object at 0xffffb5573880>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0xffffb5573880>>
+      paths = ('./abc.localhost/private/backups/20250119_070004-abc_localhost-database.sql.gz',)
+      path = './abc.localhost/private/backups/20250119_070004-abc_localhost-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 468, in take_dump
+    frappe.utils.execute_in_shell(command, low_priority=True, check_exit_code=True)
+      shlex = <module 'shlex' from '/usr/lib/python3.10/shlex.py'>
+      frappe = <module 'frappe' from 'apps/frappe/frappe/__init__.py'>
+      get_app_branch = <function get_app_branch at 0xffffb5f877f0>
+      gzip_exc = '/usr/bin/gzip'
+      database_header_content = ['begin frappe metadata', '[frappe]', 'version = 15.50.0', 'branch = version-15', 'end frappe metadata', '']
+      generated_header = '-- begin frappe metadata\n-- [frappe]\n-- version = 15.50.0\n-- branch = version-15\n-- end frappe metadata\n-- \n'
+      f = <_io.TextIOWrapper name='./abc.localhost/private/backups/20250119_070004-abc_localhost-database.sql.gz' encoding='UTF-8'>
+      cmd = ['/usr/bin/mariadb-dump', '--user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=Gmg46SF4xwnWqGxJ --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399']
+      extra = []
+      get_command = <function get_command at 0xffffb5f7f010>
+      bin = '/usr/bin/mariadb-dump'
+      args = ['--user=_32a6c6f08bcb8399', '--host=127.0.0.1', '--port=3306', '--password=Gmg46SF4xwnWqGxJ', '--single-transaction', '--quick', '--lock-tables=false', '_32a6c6f08bcb8399']
+      bin_name = 'mariadb-dump'
+      command = 'set -o pipefail; /usr/bin/mariadb-dump --user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=Gmg46SF4xwnWqGxJ --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399 | /usr/bin/gzip >> ./abc.localhost/private/backups/20250119_070004-abc_localhost-database.sql.gz'
+      self = <frappe.utils.backups.BackupGenerator object at 0xffffb5573880>
+  File "apps/frappe/frappe/utils/__init__.py", line 484, in execute_in_shell
+    raise frappe.CommandFailedError(
+      cmd = 'set -o pipefail; /usr/bin/mariadb-dump --user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=Gmg46SF4xwnWqGxJ --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399 | /usr/bin/gzip >> ./abc.localhost/private/backups/20250119_070004-abc_localhost-database.sql.gz'
+      verbose = False
+      low_priority = True
+      check_exit_code = True
+      shlex = <module 'shlex' from '/usr/lib/python3.10/shlex.py'>
+      tempfile = <module 'tempfile' from '/usr/lib/python3.10/tempfile.py'>
+      Popen = <class 'subprocess.Popen'>
+      stdout = <_io.BufferedRandom name=6>
+      stderr = <_io.BufferedRandom name=7>
+      kwargs = <exception while printing> Traceback (most recent call last):
+          File "env/lib/python3.10/site-packages/traceback_with_variables/core.py", line 222, in _to_cropped_str
+            raw = print_(obj)
+          File "apps/frappe/frappe/utils/__init__.py", line 326, in dict_printer
+            v = deepcopy(v)
+          File "/usr/lib/python3.10/copy.py", line 146, in deepcopy
+            y = copier(x, memo)
+          File "/usr/lib/python3.10/copy.py", line 231, in _deepcopy_dict
+            y[deepcopy(key, memo)] = deepcopy(value, memo)
+          File "/usr/lib/python3.10/copy.py", line 161, in deepcopy
+            rv = reductor(4)
+        TypeError: cannot pickle '_io.BufferedRandom' object
+        
+      p = <Popen: returncode: 2 args: 'set -o pipefail; /usr/bin/mariadb-dump --user=_...>
+      exit_code = 2
+      out = b''
+      err = b'mariadb-dump: Got error: 2002: "Can\'t connect to server on \'127.0.0.1\' (115)" when trying to connect\n'
+      failed = 2
+frappe.exceptions.CommandFailedError: Command failed
+File ./abc.localhost/private/backups/20250118_173004-abc_localhost-site_config_backup.json is recent
+File ./abc.localhost/private/backups/20250118_173004-abc_localhost-database.sql.gz is recent
+set -o pipefail; /usr/bin/mariadb-dump --user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399 | /usr/bin/gzip >> ./abc.localhost/private/backups/20250119_070004-abc_localhost-database.sql.gz
+
+b'mariadb-dump: Got error: 2002: "Can\'t connect to server on \'127.0.0.1\' (115)" when trying to connect\n'
+Backup failed for Site aria.localhost. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 848, in backup
+    odb = scheduled_backup(
+      context = {'sites': ['abc.localhost', 'aria.localhost'], 'force': False, 'verbose': True, 'profile': False}
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0xffffb5fa3880>
+      exit_code = 1
+      rollback_callback = None
+      site = 'aria.localhost'
+  File "apps/frappe/frappe/utils/backups.py", line 568, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0xffffb5572200>
+  File "apps/frappe/frappe/utils/backups.py", line 626, in new_backup
+    odb.get_backup(older_than, ignore_files, force=force)
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0xffffb5572200>
+      odb = <frappe.utils.backups.BackupGenerator object at 0xffffb5573760>
+  File "apps/frappe/frappe/utils/backups.py", line 195, in get_backup
+    self.delete_if_step_fails(self.take_dump, self.backup_path_db)
+      self = <frappe.utils.backups.BackupGenerator object at 0xffffb5573760>
+      older_than = 6
+      ignore_files = True
+      force = True
+      last_db = False
+      last_file = False
+      last_private_file = False
+      site_config_backup_path = False
+  File "apps/frappe/frappe/utils/backups.py", line 520, in delete_if_step_fails
+    raise e
+      self = <frappe.utils.backups.BackupGenerator object at 0xffffb5573760>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0xffffb5573760>>
+      paths = ('./abc.localhost/private/backups/20250119_070004-abc_localhost-database.sql.gz',)
+      path = './abc.localhost/private/backups/20250119_070004-abc_localhost-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 515, in delete_if_step_fails
+    step()
+      self = <frappe.utils.backups.BackupGenerator object at 0xffffb5573760>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0xffffb5573760>>
+      paths = ('./abc.localhost/private/backups/20250119_070004-abc_localhost-database.sql.gz',)
+      path = './abc.localhost/private/backups/20250119_070004-abc_localhost-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 468, in take_dump
+    frappe.utils.execute_in_shell(command, low_priority=True, check_exit_code=True)
+      shlex = <module 'shlex' from '/usr/lib/python3.10/shlex.py'>
+      frappe = <module 'frappe' from 'apps/frappe/frappe/__init__.py'>
+      get_app_branch = <function get_app_branch at 0xffffb5f877f0>
+      gzip_exc = '/usr/bin/gzip'
+      database_header_content = ['begin frappe metadata', '[frappe]', 'version = 15.50.0', 'branch = version-15', 'end frappe metadata', '']
+      generated_header = '-- begin frappe metadata\n-- [frappe]\n-- version = 15.50.0\n-- branch = version-15\n-- end frappe metadata\n-- \n'
+      f = <_io.TextIOWrapper name='./abc.localhost/private/backups/20250119_070004-abc_localhost-database.sql.gz' encoding='UTF-8'>
+      cmd = ['/usr/bin/mariadb-dump', '--user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=Gmg46SF4xwnWqGxJ --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399']
+      extra = []
+      get_command = <function get_command at 0xffffb5f7f010>
+      bin = '/usr/bin/mariadb-dump'
+      args = ['--user=_32a6c6f08bcb8399', '--host=127.0.0.1', '--port=3306', '--password=Gmg46SF4xwnWqGxJ', '--single-transaction', '--quick', '--lock-tables=false', '_32a6c6f08bcb8399']
+      bin_name = 'mariadb-dump'
+      command = 'set -o pipefail; /usr/bin/mariadb-dump --user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=Gmg46SF4xwnWqGxJ --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399 | /usr/bin/gzip >> ./abc.localhost/private/backups/20250119_070004-abc_localhost-database.sql.gz'
+      self = <frappe.utils.backups.BackupGenerator object at 0xffffb5573760>
+  File "apps/frappe/frappe/utils/__init__.py", line 484, in execute_in_shell
+    raise frappe.CommandFailedError(
+      cmd = 'set -o pipefail; /usr/bin/mariadb-dump --user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=Gmg46SF4xwnWqGxJ --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399 | /usr/bin/gzip >> ./abc.localhost/private/backups/20250119_070004-abc_localhost-database.sql.gz'
+      verbose = False
+      low_priority = True
+      check_exit_code = True
+      shlex = <module 'shlex' from '/usr/lib/python3.10/shlex.py'>
+      tempfile = <module 'tempfile' from '/usr/lib/python3.10/tempfile.py'>
+      Popen = <class 'subprocess.Popen'>
+      stdout = <_io.BufferedRandom name=6>
+      stderr = <_io.BufferedRandom name=7>
+      kwargs = <exception while printing> Traceback (most recent call last):
+          File "env/lib/python3.10/site-packages/traceback_with_variables/core.py", line 222, in _to_cropped_str
+            raw = print_(obj)
+          File "apps/frappe/frappe/utils/__init__.py", line 326, in dict_printer
+            v = deepcopy(v)
+          File "/usr/lib/python3.10/copy.py", line 146, in deepcopy
+            y = copier(x, memo)
+          File "/usr/lib/python3.10/copy.py", line 231, in _deepcopy_dict
+            y[deepcopy(key, memo)] = deepcopy(value, memo)
+          File "/usr/lib/python3.10/copy.py", line 161, in deepcopy
+            rv = reductor(4)
+        TypeError: cannot pickle '_io.BufferedRandom' object
+        
+      p = <Popen: returncode: 2 args: 'set -o pipefail; /usr/bin/mariadb-dump --user=_...>
+      exit_code = 2
+      out = b''
+      err = b'mariadb-dump: Got error: 2002: "Can\'t connect to server on \'127.0.0.1\' (115)" when trying to connect\n'
+      failed = 2
+frappe.exceptions.CommandFailedError: Command failed
+set -o pipefail; /usr/bin/mariadb-dump --user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399 | /usr/bin/gzip >> ./abc.localhost/private/backups/20250119_130004-abc_localhost-database.sql.gz
+
+b'mariadb-dump: Got error: 2002: "Can\'t connect to server on \'127.0.0.1\' (115)" when trying to connect\n'
+Backup failed for Site abc.localhost. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 848, in backup
+    odb = scheduled_backup(
+      context = {'sites': ['abc.localhost', 'aria.localhost'], 'force': False, 'verbose': True, 'profile': False}
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0xffff951f3880>
+      exit_code = 0
+      rollback_callback = None
+      site = 'abc.localhost'
+  File "apps/frappe/frappe/utils/backups.py", line 568, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0xffff947c37f0>
+  File "apps/frappe/frappe/utils/backups.py", line 626, in new_backup
+    odb.get_backup(older_than, ignore_files, force=force)
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0xffff947c37f0>
+      odb = <frappe.utils.backups.BackupGenerator object at 0xffff947c3880>
+  File "apps/frappe/frappe/utils/backups.py", line 195, in get_backup
+    self.delete_if_step_fails(self.take_dump, self.backup_path_db)
+      self = <frappe.utils.backups.BackupGenerator object at 0xffff947c3880>
+      older_than = 6
+      ignore_files = True
+      force = True
+      last_db = False
+      last_file = False
+      last_private_file = False
+      site_config_backup_path = False
+  File "apps/frappe/frappe/utils/backups.py", line 520, in delete_if_step_fails
+    raise e
+      self = <frappe.utils.backups.BackupGenerator object at 0xffff947c3880>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0xffff947c3880>>
+      paths = ('./abc.localhost/private/backups/20250119_130004-abc_localhost-database.sql.gz',)
+      path = './abc.localhost/private/backups/20250119_130004-abc_localhost-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 515, in delete_if_step_fails
+    step()
+      self = <frappe.utils.backups.BackupGenerator object at 0xffff947c3880>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0xffff947c3880>>
+      paths = ('./abc.localhost/private/backups/20250119_130004-abc_localhost-database.sql.gz',)
+      path = './abc.localhost/private/backups/20250119_130004-abc_localhost-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 468, in take_dump
+    frappe.utils.execute_in_shell(command, low_priority=True, check_exit_code=True)
+      shlex = <module 'shlex' from '/usr/lib/python3.10/shlex.py'>
+      frappe = <module 'frappe' from 'apps/frappe/frappe/__init__.py'>
+      get_app_branch = <function get_app_branch at 0xffff951d77f0>
+      gzip_exc = '/usr/bin/gzip'
+      database_header_content = ['begin frappe metadata', '[frappe]', 'version = 15.50.0', 'branch = version-15', 'end frappe metadata', '']
+      generated_header = '-- begin frappe metadata\n-- [frappe]\n-- version = 15.50.0\n-- branch = version-15\n-- end frappe metadata\n-- \n'
+      f = <_io.TextIOWrapper name='./abc.localhost/private/backups/20250119_130004-abc_localhost-database.sql.gz' encoding='UTF-8'>
+      cmd = ['/usr/bin/mariadb-dump', '--user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=Gmg46SF4xwnWqGxJ --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399']
+      extra = []
+      get_command = <function get_command at 0xffff951cf010>
+      bin = '/usr/bin/mariadb-dump'
+      args = ['--user=_32a6c6f08bcb8399', '--host=127.0.0.1', '--port=3306', '--password=Gmg46SF4xwnWqGxJ', '--single-transaction', '--quick', '--lock-tables=false', '_32a6c6f08bcb8399']
+      bin_name = 'mariadb-dump'
+      command = 'set -o pipefail; /usr/bin/mariadb-dump --user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=Gmg46SF4xwnWqGxJ --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399 | /usr/bin/gzip >> ./abc.localhost/private/backups/20250119_130004-abc_localhost-database.sql.gz'
+      self = <frappe.utils.backups.BackupGenerator object at 0xffff947c3880>
+  File "apps/frappe/frappe/utils/__init__.py", line 484, in execute_in_shell
+    raise frappe.CommandFailedError(
+      cmd = 'set -o pipefail; /usr/bin/mariadb-dump --user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=Gmg46SF4xwnWqGxJ --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399 | /usr/bin/gzip >> ./abc.localhost/private/backups/20250119_130004-abc_localhost-database.sql.gz'
+      verbose = False
+      low_priority = True
+      check_exit_code = True
+      shlex = <module 'shlex' from '/usr/lib/python3.10/shlex.py'>
+      tempfile = <module 'tempfile' from '/usr/lib/python3.10/tempfile.py'>
+      Popen = <class 'subprocess.Popen'>
+      stdout = <_io.BufferedRandom name=6>
+      stderr = <_io.BufferedRandom name=7>
+      kwargs = <exception while printing> Traceback (most recent call last):
+          File "env/lib/python3.10/site-packages/traceback_with_variables/core.py", line 222, in _to_cropped_str
+            raw = print_(obj)
+          File "apps/frappe/frappe/utils/__init__.py", line 326, in dict_printer
+            v = deepcopy(v)
+          File "/usr/lib/python3.10/copy.py", line 146, in deepcopy
+            y = copier(x, memo)
+          File "/usr/lib/python3.10/copy.py", line 231, in _deepcopy_dict
+            y[deepcopy(key, memo)] = deepcopy(value, memo)
+          File "/usr/lib/python3.10/copy.py", line 161, in deepcopy
+            rv = reductor(4)
+        TypeError: cannot pickle '_io.BufferedRandom' object
+        
+      p = <Popen: returncode: 2 args: 'set -o pipefail; /usr/bin/mariadb-dump --user=_...>
+      exit_code = 2
+      out = b''
+      err = b'mariadb-dump: Got error: 2002: "Can\'t connect to server on \'127.0.0.1\' (115)" when trying to connect\n'
+      failed = 2
+frappe.exceptions.CommandFailedError: Command failed
+File ./abc.localhost/private/backups/20250118_173004-abc_localhost-site_config_backup.json is recent
+File ./abc.localhost/private/backups/20250118_173004-abc_localhost-database.sql.gz is recent
+set -o pipefail; /usr/bin/mariadb-dump --user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399 | /usr/bin/gzip >> ./abc.localhost/private/backups/20250119_130004-abc_localhost-database.sql.gz
+
+b'mariadb-dump: Got error: 2002: "Can\'t connect to server on \'127.0.0.1\' (115)" when trying to connect\n'
+Backup failed for Site aria.localhost. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 848, in backup
+    odb = scheduled_backup(
+      context = {'sites': ['abc.localhost', 'aria.localhost'], 'force': False, 'verbose': True, 'profile': False}
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0xffff951f3880>
+      exit_code = 1
+      rollback_callback = None
+      site = 'aria.localhost'
+  File "apps/frappe/frappe/utils/backups.py", line 568, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0xffff947c2200>
+  File "apps/frappe/frappe/utils/backups.py", line 626, in new_backup
+    odb.get_backup(older_than, ignore_files, force=force)
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0xffff947c2200>
+      odb = <frappe.utils.backups.BackupGenerator object at 0xffff947c3760>
+  File "apps/frappe/frappe/utils/backups.py", line 195, in get_backup
+    self.delete_if_step_fails(self.take_dump, self.backup_path_db)
+      self = <frappe.utils.backups.BackupGenerator object at 0xffff947c3760>
+      older_than = 6
+      ignore_files = True
+      force = True
+      last_db = False
+      last_file = False
+      last_private_file = False
+      site_config_backup_path = False
+  File "apps/frappe/frappe/utils/backups.py", line 520, in delete_if_step_fails
+    raise e
+      self = <frappe.utils.backups.BackupGenerator object at 0xffff947c3760>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0xffff947c3760>>
+      paths = ('./abc.localhost/private/backups/20250119_130004-abc_localhost-database.sql.gz',)
+      path = './abc.localhost/private/backups/20250119_130004-abc_localhost-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 515, in delete_if_step_fails
+    step()
+      self = <frappe.utils.backups.BackupGenerator object at 0xffff947c3760>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0xffff947c3760>>
+      paths = ('./abc.localhost/private/backups/20250119_130004-abc_localhost-database.sql.gz',)
+      path = './abc.localhost/private/backups/20250119_130004-abc_localhost-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 468, in take_dump
+    frappe.utils.execute_in_shell(command, low_priority=True, check_exit_code=True)
+      shlex = <module 'shlex' from '/usr/lib/python3.10/shlex.py'>
+      frappe = <module 'frappe' from 'apps/frappe/frappe/__init__.py'>
+      get_app_branch = <function get_app_branch at 0xffff951d77f0>
+      gzip_exc = '/usr/bin/gzip'
+      database_header_content = ['begin frappe metadata', '[frappe]', 'version = 15.50.0', 'branch = version-15', 'end frappe metadata', '']
+      generated_header = '-- begin frappe metadata\n-- [frappe]\n-- version = 15.50.0\n-- branch = version-15\n-- end frappe metadata\n-- \n'
+      f = <_io.TextIOWrapper name='./abc.localhost/private/backups/20250119_130004-abc_localhost-database.sql.gz' encoding='UTF-8'>
+      cmd = ['/usr/bin/mariadb-dump', '--user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=Gmg46SF4xwnWqGxJ --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399']
+      extra = []
+      get_command = <function get_command at 0xffff951cf010>
+      bin = '/usr/bin/mariadb-dump'
+      args = ['--user=_32a6c6f08bcb8399', '--host=127.0.0.1', '--port=3306', '--password=Gmg46SF4xwnWqGxJ', '--single-transaction', '--quick', '--lock-tables=false', '_32a6c6f08bcb8399']
+      bin_name = 'mariadb-dump'
+      command = 'set -o pipefail; /usr/bin/mariadb-dump --user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=Gmg46SF4xwnWqGxJ --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399 | /usr/bin/gzip >> ./abc.localhost/private/backups/20250119_130004-abc_localhost-database.sql.gz'
+      self = <frappe.utils.backups.BackupGenerator object at 0xffff947c3760>
+  File "apps/frappe/frappe/utils/__init__.py", line 484, in execute_in_shell
+    raise frappe.CommandFailedError(
+      cmd = 'set -o pipefail; /usr/bin/mariadb-dump --user=_32a6c6f08bcb8399 --host=127.0.0.1 --port=3306 --password=Gmg46SF4xwnWqGxJ --single-transaction --quick --lock-tables=false _32a6c6f08bcb8399 | /usr/bin/gzip >> ./abc.localhost/private/backups/20250119_130004-abc_localhost-database.sql.gz'
+      verbose = False
+      low_priority = True
+      check_exit_code = True
+      shlex = <module 'shlex' from '/usr/lib/python3.10/shlex.py'>
+      tempfile = <module 'tempfile' from '/usr/lib/python3.10/tempfile.py'>
+      Popen = <class 'subprocess.Popen'>
+      stdout = <_io.BufferedRandom name=6>
+      stderr = <_io.BufferedRandom name=7>
+      kwargs = <exception while printing> Traceback (most recent call last):
+          File "env/lib/python3.10/site-packages/traceback_with_variables/core.py", line 222, in _to_cropped_str
+            raw = print_(obj)
+          File "apps/frappe/frappe/utils/__init__.py", line 326, in dict_printer
+            v = deepcopy(v)
+          File "/usr/lib/python3.10/copy.py", line 146, in deepcopy
+            y = copier(x, memo)
+          File "/usr/lib/python3.10/copy.py", line 231, in _deepcopy_dict
+            y[deepcopy(key, memo)] = deepcopy(value, memo)
+          File "/usr/lib/python3.10/copy.py", line 161, in deepcopy
+            rv = reductor(4)
+        TypeError: cannot pickle '_io.BufferedRandom' object
+        
+      p = <Popen: returncode: 2 args: 'set -o pipefail; /usr/bin/mariadb-dump --user=_...>
+      exit_code = 2
+      out = b''
+      err = b'mariadb-dump: Got error: 2002: "Can\'t connect to server on \'127.0.0.1\' (115)" when trying to connect\n'
+      failed = 2
+frappe.exceptions.CommandFailedError: Command failed

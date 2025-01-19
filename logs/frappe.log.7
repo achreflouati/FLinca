@@ -1,4 +1,4 @@
-2024-12-27 08:45:30,311 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2025-01-14 12:05:25,904 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
 Site: aria.localhost
 Form Dict: {}
 Traceback (most recent call last):
@@ -156,12 +156,9 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-12-29 10:30:56,253 ERROR frappe New Exception collected in error log
+2025-01-14 12:05:25,924 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
 Site: aria.localhost
 Form Dict: {}
-2024-12-30 14:36:06,422 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-Site: aria.localhost
-Form Dict: {'doctype': 'Number Card', 'fields': '["`tabNumber Card`.`name`","`tabNumber Card`.`label`","`tabNumber Card`.`custom_backrougnd`","`tabNumber Card`.`document_type`"]', 'filters': '[]', 'order_by': '`tabNumber Card`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'Report', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -174,26 +171,80 @@ ConnectionRefusedError: [Errno 111] Connection refused
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 114, in application
-    response = frappe.api.handle(request)
-  File "/home/plm/ariasousse/apps/frappe/frappe/api/__init__.py", line 49, in handle
-    data = endpoint(**arguments)
-  File "/home/plm/ariasousse/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
-    return frappe.handler.handle()
-  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 49, in handle
-    data = execute_cmd(cmd)
-  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 85, in execute_cmd
-    return frappe.call(method, **frappe.form_dict)
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1725, in call
-    return fn(*args, **newargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 118, in resolve_redirect
+    redirects += frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 123, in application
+    response = get_response()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 28, in get_response
+    response = ErrorPage(exception=e).render()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 530, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
+    context.boot = get_boot_data()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 169, in get_boot_data
+    apps = get_apps() or []
   File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
     return func(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 878, in wrapper_fn
-    retval = fn(*args, **get_newargs(fn, kwargs))
-  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 32, in get
-    data = compress(execute(**args), args=args)
-  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 78, in execute
-    return DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/apps.py", line 15, in get_apps
+    allowed_workspaces = get_workspace_sidebar_items().get("pages")
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/desktop.py", line 447, in get_workspace_sidebar_items
+    all_pages = frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
   File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
     result = self.build_and_run()
   File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
@@ -263,9 +314,9 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-12-30 14:41:06,285 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2025-01-14 12:06:05,729 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
 Site: aria.localhost
-Form Dict: {'doctype': 'Number Card', 'fields': '["`tabNumber Card`.`name`","`tabNumber Card`.`label`","`tabNumber Card`.`custom_backrougnd`","`tabNumber Card`.`document_type`"]', 'filters': '[]', 'order_by': '`tabNumber Card`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'Report', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+Form Dict: {'doc': '{"name":"avis en cours","owner":"linca@linca.com","creation":"2024-12-27 09:27:33.064869","modified":"2025-01-08 17:16:49.622221","modified_by":"Administrator","docstatus":0,"idx":7,"is_standard":1,"module":"LINCA","label":"avis en cours ","custom_backrougnd":"#761ACB","type":"Document Type","function":"Count","aggregate_function_based_on":"","document_type":"Patient et demande","parent_document_type":"","report_function":"Sum","is_public":1,"show_percentage_stats":1,"stats_time_interval":"Daily","filters_json":"[[\\"Patient et demande\\",\\"status\\",\\"=\\",\\"Avis en cours\\",false]]","dynamic_filters_json":"[]","color":"#ECAD4B","doctype":"Number Card"}', 'filters': '[["Patient et demande","status","=","Avis en cours",false]]', 'cmd': 'frappe.desk.doctype.number_card.number_card.get_result'}
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -292,12 +343,26 @@ Traceback (most recent call last):
     return fn(*args, **newargs)
   File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
     return func(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 878, in wrapper_fn
-    retval = fn(*args, **get_newargs(fn, kwargs))
-  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 32, in get
-    data = compress(execute(**args), args=args)
-  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 78, in execute
-    return DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/doctype/number_card/number_card.py", line 154, in get_result
+    res = frappe.get_list(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 206, in build_and_run
+    args = self.prepare_args()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 246, in prepare_args
+    self.build_conditions()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 585, in build_conditions
+    match_conditions = self.build_match_conditions()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 961, in build_match_conditions
+    self.shared = frappe.share.get_shared(self.doctype, self.user)
+  File "/home/plm/ariasousse/apps/frappe/frappe/share.py", line 177, in get_shared
+    shared_docs = frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
   File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
     result = self.build_and_run()
   File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
@@ -367,9 +432,9 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-12-30 14:46:06,157 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2025-01-14 12:06:05,739 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
 Site: aria.localhost
-Form Dict: {'doctype': 'Number Card', 'fields': '["`tabNumber Card`.`name`","`tabNumber Card`.`label`","`tabNumber Card`.`custom_backrougnd`","`tabNumber Card`.`document_type`"]', 'filters': '[]', 'order_by': '`tabNumber Card`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'Report', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+Form Dict: {'doc': '{"name":"Avis prêts","owner":"linca@linca.com","creation":"2024-12-27 09:25:43.490114","modified":"2025-01-08 17:17:08.110292","modified_by":"Administrator","docstatus":0,"idx":9,"is_standard":1,"module":"LINCA","label":"Avis prêts ","custom_backrougnd":"#29CD42","type":"Document Type","function":"Count","aggregate_function_based_on":"","document_type":"Patient et demande","parent_document_type":"","report_function":"Sum","is_public":1,"show_percentage_stats":1,"stats_time_interval":"Daily","filters_json":"[[\\"Patient et demande\\",\\"status\\",\\"=\\",\\"Avis préts\\",false]]","dynamic_filters_json":"[]","color":"#29CD42","doctype":"Number Card"}', 'filters': '[["Patient et demande","status","=","Avis préts",false]]', 'cmd': 'frappe.desk.doctype.number_card.number_card.get_result'}
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -396,12 +461,26 @@ Traceback (most recent call last):
     return fn(*args, **newargs)
   File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
     return func(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 878, in wrapper_fn
-    retval = fn(*args, **get_newargs(fn, kwargs))
-  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 32, in get
-    data = compress(execute(**args), args=args)
-  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 78, in execute
-    return DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/doctype/number_card/number_card.py", line 154, in get_result
+    res = frappe.get_list(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 206, in build_and_run
+    args = self.prepare_args()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 246, in prepare_args
+    self.build_conditions()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 585, in build_conditions
+    match_conditions = self.build_match_conditions()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 961, in build_match_conditions
+    self.shared = frappe.share.get_shared(self.doctype, self.user)
+  File "/home/plm/ariasousse/apps/frappe/frappe/share.py", line 177, in get_shared
+    shared_docs = frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
   File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
     result = self.build_and_run()
   File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
@@ -471,9 +550,9 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-12-30 14:51:06,154 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2025-01-14 12:06:05,778 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
 Site: aria.localhost
-Form Dict: {'doctype': 'Number Card', 'fields': '["`tabNumber Card`.`name`","`tabNumber Card`.`label`","`tabNumber Card`.`custom_backrougnd`","`tabNumber Card`.`document_type`"]', 'filters': '[]', 'order_by': '`tabNumber Card`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'Report', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+Form Dict: {'doc': '{"name":"Avis prêts","owner":"linca@linca.com","creation":"2024-12-27 09:25:43.490114","modified":"2025-01-08 17:17:08.110292","modified_by":"Administrator","docstatus":0,"idx":9,"is_standard":1,"module":"LINCA","label":"Avis prêts ","custom_backrougnd":"#29CD42","type":"Document Type","function":"Count","aggregate_function_based_on":"","document_type":"Patient et demande","parent_document_type":"","report_function":"Sum","is_public":1,"show_percentage_stats":1,"stats_time_interval":"Daily","filters_json":"[[\\"Patient et demande\\",\\"status\\",\\"=\\",\\"Avis préts\\",false]]","dynamic_filters_json":"[]","color":"#29CD42","doctype":"Number Card"}', 'filters': '[["Patient et demande","status","=","Avis préts",false]]', 'cmd': 'frappe.desk.doctype.number_card.number_card.get_result'}
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -500,12 +579,26 @@ Traceback (most recent call last):
     return fn(*args, **newargs)
   File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
     return func(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 878, in wrapper_fn
-    retval = fn(*args, **get_newargs(fn, kwargs))
-  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 32, in get
-    data = compress(execute(**args), args=args)
-  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 78, in execute
-    return DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/doctype/number_card/number_card.py", line 154, in get_result
+    res = frappe.get_list(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 206, in build_and_run
+    args = self.prepare_args()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 246, in prepare_args
+    self.build_conditions()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 585, in build_conditions
+    match_conditions = self.build_match_conditions()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 961, in build_match_conditions
+    self.shared = frappe.share.get_shared(self.doctype, self.user)
+  File "/home/plm/ariasousse/apps/frappe/frappe/share.py", line 177, in get_shared
+    shared_docs = frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
   File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
     result = self.build_and_run()
   File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
@@ -575,9 +668,9 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-12-30 14:56:06,157 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2025-01-14 12:06:05,783 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
 Site: aria.localhost
-Form Dict: {'doctype': 'Number Card', 'fields': '["`tabNumber Card`.`name`","`tabNumber Card`.`label`","`tabNumber Card`.`custom_backrougnd`","`tabNumber Card`.`document_type`"]', 'filters': '[]', 'order_by': '`tabNumber Card`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'Report', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+Form Dict: {'doc': '{"name":"Avis a modfier","owner":"linca@linca.com","creation":"2024-12-27 09:26:46.221590","modified":"2025-01-08 17:16:58.796643","modified_by":"Administrator","docstatus":0,"idx":7,"is_standard":1,"module":"LINCA","label":"Avis a modfier ","custom_backrougnd":"#EC864B","type":"Document Type","function":"Count","aggregate_function_based_on":"","document_type":"Patient et demande","parent_document_type":"","report_function":"Sum","is_public":1,"show_percentage_stats":1,"stats_time_interval":"Daily","filters_json":"[[\\"Patient et demande\\",\\"status\\",\\"=\\",\\"Avis à modifier\\",false]]","dynamic_filters_json":"[]","color":"#f01d1d","doctype":"Number Card"}', 'filters': '[["Patient et demande","status","=","Avis à modifier",false]]', 'cmd': 'frappe.desk.doctype.number_card.number_card.get_result'}
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -604,12 +697,26 @@ Traceback (most recent call last):
     return fn(*args, **newargs)
   File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
     return func(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 878, in wrapper_fn
-    retval = fn(*args, **get_newargs(fn, kwargs))
-  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 32, in get
-    data = compress(execute(**args), args=args)
-  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 78, in execute
-    return DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/doctype/number_card/number_card.py", line 154, in get_result
+    res = frappe.get_list(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 206, in build_and_run
+    args = self.prepare_args()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 246, in prepare_args
+    self.build_conditions()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 585, in build_conditions
+    match_conditions = self.build_match_conditions()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 961, in build_match_conditions
+    self.shared = frappe.share.get_shared(self.doctype, self.user)
+  File "/home/plm/ariasousse/apps/frappe/frappe/share.py", line 177, in get_shared
+    shared_docs = frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
   File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
     result = self.build_and_run()
   File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
@@ -679,9 +786,9 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-12-30 15:01:06,153 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2025-01-14 12:06:05,794 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
 Site: aria.localhost
-Form Dict: {'doctype': 'Number Card', 'fields': '["`tabNumber Card`.`name`","`tabNumber Card`.`label`","`tabNumber Card`.`custom_backrougnd`","`tabNumber Card`.`document_type`"]', 'filters': '[]', 'order_by': '`tabNumber Card`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'Report', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+Form Dict: {'doc': '{"name":"Avis a modfier","owner":"linca@linca.com","creation":"2024-12-27 09:26:46.221590","modified":"2025-01-08 17:16:58.796643","modified_by":"Administrator","docstatus":0,"idx":7,"is_standard":1,"module":"LINCA","label":"Avis a modfier ","custom_backrougnd":"#EC864B","type":"Document Type","function":"Count","aggregate_function_based_on":"","document_type":"Patient et demande","parent_document_type":"","report_function":"Sum","is_public":1,"show_percentage_stats":1,"stats_time_interval":"Daily","filters_json":"[[\\"Patient et demande\\",\\"status\\",\\"=\\",\\"Avis à modifier\\",false]]","dynamic_filters_json":"[]","color":"#f01d1d","doctype":"Number Card"}', 'filters': '[["Patient et demande","status","=","Avis à modifier",false]]', 'cmd': 'frappe.desk.doctype.number_card.number_card.get_result'}
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -708,12 +815,26 @@ Traceback (most recent call last):
     return fn(*args, **newargs)
   File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
     return func(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 878, in wrapper_fn
-    retval = fn(*args, **get_newargs(fn, kwargs))
-  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 32, in get
-    data = compress(execute(**args), args=args)
-  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 78, in execute
-    return DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/doctype/number_card/number_card.py", line 154, in get_result
+    res = frappe.get_list(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 206, in build_and_run
+    args = self.prepare_args()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 246, in prepare_args
+    self.build_conditions()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 585, in build_conditions
+    match_conditions = self.build_match_conditions()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 961, in build_match_conditions
+    self.shared = frappe.share.get_shared(self.doctype, self.user)
+  File "/home/plm/ariasousse/apps/frappe/frappe/share.py", line 177, in get_shared
+    shared_docs = frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
   File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
     result = self.build_and_run()
   File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
@@ -783,9 +904,9 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-12-30 15:06:06,159 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2025-01-14 12:06:05,872 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
 Site: aria.localhost
-Form Dict: {'doctype': 'Number Card', 'fields': '["`tabNumber Card`.`name`","`tabNumber Card`.`label`","`tabNumber Card`.`custom_backrougnd`","`tabNumber Card`.`document_type`"]', 'filters': '[]', 'order_by': '`tabNumber Card`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'Report', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+Form Dict: {'doc': '{"name":"avis en cours","owner":"linca@linca.com","creation":"2024-12-27 09:27:33.064869","modified":"2025-01-08 17:16:49.622221","modified_by":"Administrator","docstatus":0,"idx":7,"is_standard":1,"module":"LINCA","label":"avis en cours ","custom_backrougnd":"#761ACB","type":"Document Type","function":"Count","aggregate_function_based_on":"","document_type":"Patient et demande","parent_document_type":"","report_function":"Sum","is_public":1,"show_percentage_stats":1,"stats_time_interval":"Daily","filters_json":"[[\\"Patient et demande\\",\\"status\\",\\"=\\",\\"Avis en cours\\",false]]","dynamic_filters_json":"[]","color":"#ECAD4B","doctype":"Number Card"}', 'filters': '[["Patient et demande","status","=","Avis en cours",false]]', 'cmd': 'frappe.desk.doctype.number_card.number_card.get_result'}
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -812,12 +933,26 @@ Traceback (most recent call last):
     return fn(*args, **newargs)
   File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
     return func(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 878, in wrapper_fn
-    retval = fn(*args, **get_newargs(fn, kwargs))
-  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 32, in get
-    data = compress(execute(**args), args=args)
-  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 78, in execute
-    return DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/doctype/number_card/number_card.py", line 154, in get_result
+    res = frappe.get_list(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 206, in build_and_run
+    args = self.prepare_args()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 246, in prepare_args
+    self.build_conditions()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 585, in build_conditions
+    match_conditions = self.build_match_conditions()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 961, in build_match_conditions
+    self.shared = frappe.share.get_shared(self.doctype, self.user)
+  File "/home/plm/ariasousse/apps/frappe/frappe/share.py", line 177, in get_shared
+    shared_docs = frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
   File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
     result = self.build_and_run()
   File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
@@ -887,9 +1022,9 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-12-30 15:11:06,163 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2025-01-14 12:08:40,036 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
 Site: aria.localhost
-Form Dict: {'doctype': 'Number Card', 'fields': '["`tabNumber Card`.`name`","`tabNumber Card`.`label`","`tabNumber Card`.`custom_backrougnd`","`tabNumber Card`.`document_type`"]', 'filters': '[]', 'order_by': '`tabNumber Card`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'Report', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+Form Dict: {'cmd': 'logout'}
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -916,12 +1051,184 @@ Traceback (most recent call last):
     return fn(*args, **newargs)
   File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
     return func(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 878, in wrapper_fn
-    retval = fn(*args, **get_newargs(fn, kwargs))
-  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 32, in get
-    data = compress(execute(**args), args=args)
-  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 78, in execute
-    return DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 114, in logout
+    frappe.local.login_manager.logout()
+  File "/home/plm/ariasousse/apps/frappe/frappe/auth.py", line 349, in logout
+    self.run_trigger("on_logout")
+  File "/home/plm/ariasousse/apps/frappe/frappe/auth.py", line 312, in run_trigger
+    frappe.call(frappe.get_attr(method), login_manager=self)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1725, in call
+    return fn(*args, **newargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/core/doctype/session_default_settings/session_default_settings.py", line 57, in clear_session_defaults
+    settings = frappe.get_single("Session Default Settings").session_defaults
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1310, in get_single
+    return get_doc(doctype, doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1290, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/document.py", line 85, in get_doc
+    return controller(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/document.py", line 126, in __init__
+    self.load_from_db()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/document.py", line 152, in load_from_db
+    single_doc = frappe.db.get_singles_dict(self.doctype, for_update=self.flags.for_update)
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 729, in get_singles_dict
+    queried_result = frappe.qb.get_query(
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1290, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
+    result = self.get_values(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2025-01-14 12:09:06,762 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+Site: aria.localhost
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 118, in resolve_redirect
+    redirects += frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 123, in application
+    response = get_response()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 28, in get_response
+    response = ErrorPage(exception=e).render()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 530, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
+    context.boot = get_boot_data()
+  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 169, in get_boot_data
+    apps = get_apps() or []
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/apps.py", line 15, in get_apps
+    allowed_workspaces = get_workspace_sidebar_items().get("pages")
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/desktop.py", line 447, in get_workspace_sidebar_items
+    all_pages = frappe.get_all(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
   File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
     result = self.build_and_run()
   File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
@@ -991,319 +1298,10 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-12-30 15:16:06,152 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2025-01-14 15:20:39,260 ERROR frappe New Exception collected in error log
 Site: aria.localhost
-Form Dict: {'doctype': 'Number Card', 'fields': '["`tabNumber Card`.`name`","`tabNumber Card`.`label`","`tabNumber Card`.`custom_backrougnd`","`tabNumber Card`.`document_type`"]', 'filters': '[]', 'order_by': '`tabNumber Card`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'Report', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
-Traceback (most recent call last):
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 114, in application
-    response = frappe.api.handle(request)
-  File "/home/plm/ariasousse/apps/frappe/frappe/api/__init__.py", line 49, in handle
-    data = endpoint(**arguments)
-  File "/home/plm/ariasousse/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
-    return frappe.handler.handle()
-  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 49, in handle
-    data = execute_cmd(cmd)
-  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 85, in execute_cmd
-    return frappe.call(method, **frappe.form_dict)
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1725, in call
-    return fn(*args, **newargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 878, in wrapper_fn
-    retval = fn(*args, **get_newargs(fn, kwargs))
-  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 32, in get
-    data = compress(execute(**args), args=args)
-  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 78, in execute
-    return DatabaseQuery(doctype).execute(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
-    result = self.build_and_run()
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
-    return frappe.db.sql(
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
-    log_error(title=str(exception), defer_insert=True)
-  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1290, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
-    result = self.get_values(
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
-    out = self._get_values_from_table(
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-12-30 15:21:06,109 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-Site: aria.localhost
-Form Dict: {'doctype': 'Number Card', 'fields': '["`tabNumber Card`.`name`","`tabNumber Card`.`label`","`tabNumber Card`.`custom_backrougnd`","`tabNumber Card`.`document_type`"]', 'filters': '[]', 'order_by': '`tabNumber Card`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'Report', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
-Traceback (most recent call last):
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 114, in application
-    response = frappe.api.handle(request)
-  File "/home/plm/ariasousse/apps/frappe/frappe/api/__init__.py", line 49, in handle
-    data = endpoint(**arguments)
-  File "/home/plm/ariasousse/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
-    return frappe.handler.handle()
-  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 49, in handle
-    data = execute_cmd(cmd)
-  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 85, in execute_cmd
-    return frappe.call(method, **frappe.form_dict)
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1725, in call
-    return fn(*args, **newargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 878, in wrapper_fn
-    retval = fn(*args, **get_newargs(fn, kwargs))
-  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 32, in get
-    data = compress(execute(**args), args=args)
-  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 78, in execute
-    return DatabaseQuery(doctype).execute(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
-    result = self.build_and_run()
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
-    return frappe.db.sql(
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
-    log_error(title=str(exception), defer_insert=True)
-  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1290, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
-    result = self.get_values(
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
-    out = self._get_values_from_table(
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-12-30 15:26:06,107 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-Site: aria.localhost
-Form Dict: {'doctype': 'Number Card', 'fields': '["`tabNumber Card`.`name`","`tabNumber Card`.`label`","`tabNumber Card`.`custom_backrougnd`","`tabNumber Card`.`document_type`"]', 'filters': '[]', 'order_by': '`tabNumber Card`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'Report', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
-Traceback (most recent call last):
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 114, in application
-    response = frappe.api.handle(request)
-  File "/home/plm/ariasousse/apps/frappe/frappe/api/__init__.py", line 49, in handle
-    data = endpoint(**arguments)
-  File "/home/plm/ariasousse/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
-    return frappe.handler.handle()
-  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 49, in handle
-    data = execute_cmd(cmd)
-  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 85, in execute_cmd
-    return frappe.call(method, **frappe.form_dict)
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1725, in call
-    return fn(*args, **newargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 878, in wrapper_fn
-    retval = fn(*args, **get_newargs(fn, kwargs))
-  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 32, in get
-    data = compress(execute(**args), args=args)
-  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 78, in execute
-    return DatabaseQuery(doctype).execute(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
-    result = self.build_and_run()
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
-    return frappe.db.sql(
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
-    log_error(title=str(exception), defer_insert=True)
-  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1290, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
-    result = self.get_values(
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
-    out = self._get_values_from_table(
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-12-30 15:29:03,597 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+Form Dict: {'recipients': 'lsi.louati@gmail.com, ', 'subject': 'Patient et demande: Tiba', 'content': '<div class="ql-editor read-mode"><p><br></p></div>', 'doctype': 'Patient et demande', 'name': 'Tiba', 'send_email': '1', 'print_html': '', 'send_me_a_copy': '0', 'print_format': 'Standard', 'attachments': '[]', 'read_receipt': '0', 'print_letterhead': '1', 'send_after': '', 'print_language': 'fr', 'cmd': 'frappe.core.doctype.communication.email.make'}
+2025-01-17 18:35:35,560 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
 Site: aria.localhost
 Form Dict: {}
 Traceback (most recent call last):

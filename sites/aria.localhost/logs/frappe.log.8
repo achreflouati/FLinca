@@ -1,6 +1,6 @@
-2024-12-19 08:54:28,304 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2024-12-30 19:00:44,854 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
 Site: aria.localhost
-Form Dict: {'cmd': 'frappe.sessions.clear'}
+Form Dict: {'doctype': 'Number Card', 'fields': '["`tabNumber Card`.`name`","`tabNumber Card`.`label`","`tabNumber Card`.`custom_backrougnd`","`tabNumber Card`.`document_type`"]', 'filters': '[]', 'order_by': '`tabNumber Card`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'Report', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -27,166 +27,12 @@ Traceback (most recent call last):
     return fn(*args, **newargs)
   File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
     return func(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/sessions.py", line 30, in clear
-    frappe.local.session_obj.update(force=True)
-  File "/home/plm/ariasousse/apps/frappe/frappe/sessions.py", line 400, in update
-    ).run()
-  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
-    log_error(title=str(exception), defer_insert=True)
-  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1290, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
-    result = self.get_values(
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
-    out = self._get_values_from_table(
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-12-19 08:54:30,786 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-Site: aria.localhost
-Form Dict: {'EIO': '4', 'transport': 'polling', 't': 'PFU832g'}
-Traceback (most recent call last):
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 19, in get_response
-    endpoint, renderer_instance = path_resolver.resolve()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
-    resolve_redirect(self.path, request.query_string)
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 118, in resolve_redirect
-    redirects += frappe.get_all(
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
-    return get_list(doctype, *args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
-    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
-    result = self.build_and_run()
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
-    return frappe.db.sql(
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 123, in application
-    response = get_response()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 28, in get_response
-    response = ErrorPage(exception=e).render()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
-    html = self.get_html()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 530, in cache_html_decorator
-    html = func(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
-    self.init_context()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
-    super().init_context()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
-    self.context.update(get_website_settings())
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
-    context.boot = get_boot_data()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 169, in get_boot_data
-    apps = get_apps() or []
-  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/apps.py", line 15, in get_apps
-    allowed_workspaces = get_workspace_sidebar_items().get("pages")
-  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/desk/desktop.py", line 447, in get_workspace_sidebar_items
-    all_pages = frappe.get_all(
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
-    return get_list(doctype, *args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
-    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 878, in wrapper_fn
+    retval = fn(*args, **get_newargs(fn, kwargs))
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 32, in get
+    data = compress(execute(**args), args=args)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 78, in execute
+    return DatabaseQuery(doctype).execute(*args, **kwargs)
   File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
     result = self.build_and_run()
   File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
@@ -256,55 +102,735 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-12-19 10:34:40,055 ERROR frappe Error while inserting deferred Route History record: 
+2024-12-30 19:05:44,838 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
 Site: aria.localhost
-Form Dict: {'routes': '[{"creation":"2024-12-19 11:34:23","route":"Workspaces/Users"},{"creation":"2024-12-19 11:34:30","route":"List/User/List"}]', 'cmd': 'frappe.desk.doctype.route_history.route_history.deferred_insert'}
-2024-12-19 10:34:40,057 ERROR frappe Error while inserting deferred Route History record: 
+Form Dict: {'doctype': 'Number Card', 'fields': '["`tabNumber Card`.`name`","`tabNumber Card`.`label`","`tabNumber Card`.`custom_backrougnd`","`tabNumber Card`.`document_type`"]', 'filters': '[]', 'order_by': '`tabNumber Card`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'Report', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 114, in application
+    response = frappe.api.handle(request)
+  File "/home/plm/ariasousse/apps/frappe/frappe/api/__init__.py", line 49, in handle
+    data = endpoint(**arguments)
+  File "/home/plm/ariasousse/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
+    return frappe.handler.handle()
+  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 49, in handle
+    data = execute_cmd(cmd)
+  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 85, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1725, in call
+    return fn(*args, **newargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 878, in wrapper_fn
+    retval = fn(*args, **get_newargs(fn, kwargs))
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 32, in get
+    data = compress(execute(**args), args=args)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 78, in execute
+    return DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1290, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
+    result = self.get_values(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2024-12-30 19:10:44,835 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
 Site: aria.localhost
-Form Dict: {'routes': '[{"creation":"2024-12-19 11:34:23","route":"Workspaces/Users"},{"creation":"2024-12-19 11:34:30","route":"List/User/List"}]', 'cmd': 'frappe.desk.doctype.route_history.route_history.deferred_insert'}
-2024-12-19 10:34:53,766 ERROR frappe Error while inserting deferred Route History record: 
+Form Dict: {'doctype': 'Number Card', 'fields': '["`tabNumber Card`.`name`","`tabNumber Card`.`label`","`tabNumber Card`.`custom_backrougnd`","`tabNumber Card`.`document_type`"]', 'filters': '[]', 'order_by': '`tabNumber Card`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'Report', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 114, in application
+    response = frappe.api.handle(request)
+  File "/home/plm/ariasousse/apps/frappe/frappe/api/__init__.py", line 49, in handle
+    data = endpoint(**arguments)
+  File "/home/plm/ariasousse/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
+    return frappe.handler.handle()
+  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 49, in handle
+    data = execute_cmd(cmd)
+  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 85, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1725, in call
+    return fn(*args, **newargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 878, in wrapper_fn
+    retval = fn(*args, **get_newargs(fn, kwargs))
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 32, in get
+    data = compress(execute(**args), args=args)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 78, in execute
+    return DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1290, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
+    result = self.get_values(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2024-12-30 19:15:44,922 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
 Site: aria.localhost
-Form Dict: {'routes': '[{"creation":"2024-12-19 11:34:44","route":"Workspaces/Users"}]', 'cmd': 'frappe.desk.doctype.route_history.route_history.deferred_insert'}
-2024-12-19 10:35:10,265 ERROR frappe Error while inserting deferred Route History record: 
+Form Dict: {'doctype': 'Number Card', 'fields': '["`tabNumber Card`.`name`","`tabNumber Card`.`label`","`tabNumber Card`.`custom_backrougnd`","`tabNumber Card`.`document_type`"]', 'filters': '[]', 'order_by': '`tabNumber Card`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'Report', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 114, in application
+    response = frappe.api.handle(request)
+  File "/home/plm/ariasousse/apps/frappe/frappe/api/__init__.py", line 49, in handle
+    data = endpoint(**arguments)
+  File "/home/plm/ariasousse/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
+    return frappe.handler.handle()
+  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 49, in handle
+    data = execute_cmd(cmd)
+  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 85, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1725, in call
+    return fn(*args, **newargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 878, in wrapper_fn
+    retval = fn(*args, **get_newargs(fn, kwargs))
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 32, in get
+    data = compress(execute(**args), args=args)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 78, in execute
+    return DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1290, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
+    result = self.get_values(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2024-12-30 19:20:44,830 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
 Site: aria.localhost
-Form Dict: {'routes': '[{"creation":"2024-12-19 11:34:58","route":"Workspaces/Tableau de bord"}]', 'cmd': 'frappe.desk.doctype.route_history.route_history.deferred_insert'}
-2024-12-19 10:35:22,668 ERROR frappe Error while inserting deferred Route History record: 
+Form Dict: {'doctype': 'Number Card', 'fields': '["`tabNumber Card`.`name`","`tabNumber Card`.`label`","`tabNumber Card`.`custom_backrougnd`","`tabNumber Card`.`document_type`"]', 'filters': '[]', 'order_by': '`tabNumber Card`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'Report', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 114, in application
+    response = frappe.api.handle(request)
+  File "/home/plm/ariasousse/apps/frappe/frappe/api/__init__.py", line 49, in handle
+    data = endpoint(**arguments)
+  File "/home/plm/ariasousse/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
+    return frappe.handler.handle()
+  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 49, in handle
+    data = execute_cmd(cmd)
+  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 85, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1725, in call
+    return fn(*args, **newargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 878, in wrapper_fn
+    retval = fn(*args, **get_newargs(fn, kwargs))
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 32, in get
+    data = compress(execute(**args), args=args)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 78, in execute
+    return DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1290, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
+    result = self.get_values(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2024-12-30 19:25:44,843 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
 Site: aria.localhost
-Form Dict: {'routes': '[{"creation":"2024-12-19 11:35:13","route":"List/Patient/List"}]', 'cmd': 'frappe.desk.doctype.route_history.route_history.deferred_insert'}
-2024-12-19 10:37:48,821 ERROR frappe Error while inserting deferred Route History record: 
+Form Dict: {'doctype': 'Number Card', 'fields': '["`tabNumber Card`.`name`","`tabNumber Card`.`label`","`tabNumber Card`.`custom_backrougnd`","`tabNumber Card`.`document_type`"]', 'filters': '[]', 'order_by': '`tabNumber Card`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'Report', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 114, in application
+    response = frappe.api.handle(request)
+  File "/home/plm/ariasousse/apps/frappe/frappe/api/__init__.py", line 49, in handle
+    data = endpoint(**arguments)
+  File "/home/plm/ariasousse/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
+    return frappe.handler.handle()
+  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 49, in handle
+    data = execute_cmd(cmd)
+  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 85, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1725, in call
+    return fn(*args, **newargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 878, in wrapper_fn
+    retval = fn(*args, **get_newargs(fn, kwargs))
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 32, in get
+    data = compress(execute(**args), args=args)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 78, in execute
+    return DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1290, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
+    result = self.get_values(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2024-12-30 19:30:44,831 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
 Site: aria.localhost
-Form Dict: {'routes': '[{"creation":"2024-12-19 11:37:39","route":"Workspaces/Tableau de bord"}]', 'cmd': 'frappe.desk.doctype.route_history.route_history.deferred_insert'}
-2024-12-19 10:39:38,692 ERROR frappe Error while inserting deferred Route History record: 
+Form Dict: {'doctype': 'Number Card', 'fields': '["`tabNumber Card`.`name`","`tabNumber Card`.`label`","`tabNumber Card`.`custom_backrougnd`","`tabNumber Card`.`document_type`"]', 'filters': '[]', 'order_by': '`tabNumber Card`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'Report', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 114, in application
+    response = frappe.api.handle(request)
+  File "/home/plm/ariasousse/apps/frappe/frappe/api/__init__.py", line 49, in handle
+    data = endpoint(**arguments)
+  File "/home/plm/ariasousse/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
+    return frappe.handler.handle()
+  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 49, in handle
+    data = execute_cmd(cmd)
+  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 85, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1725, in call
+    return fn(*args, **newargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 878, in wrapper_fn
+    retval = fn(*args, **get_newargs(fn, kwargs))
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 32, in get
+    data = compress(execute(**args), args=args)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 78, in execute
+    return DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1290, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
+    result = self.get_values(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2024-12-30 19:35:44,863 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
 Site: aria.localhost
-Form Dict: {'routes': '[{"creation":"2024-12-19 11:39:29","route":"Workspaces/Tableau de bord"}]', 'cmd': 'frappe.desk.doctype.route_history.route_history.deferred_insert'}
-2024-12-19 10:48:32,715 ERROR frappe Error while inserting deferred Route History record: 
-Site: aria.localhost
-Form Dict: {'routes': '[{"creation":"2024-12-19 11:48:23","route":"print/Patient/gaessbp66p"}]', 'cmd': 'frappe.desk.doctype.route_history.route_history.deferred_insert'}
-2024-12-19 11:03:46,587 ERROR frappe Error while inserting deferred Route History record: 
-Site: aria.localhost
-Form Dict: {'routes': '[{"creation":"2024-12-19 12:03:37","route":"Workspaces/Users"}]', 'cmd': 'frappe.desk.doctype.route_history.route_history.deferred_insert'}
-2024-12-19 11:04:16,809 ERROR frappe Error while inserting deferred Route History record: 
-Site: aria.localhost
-Form Dict: {'routes': '[{"creation":"2024-12-19 12:03:59","route":"List/User/List"},{"creation":"2024-12-19 12:04:07","route":"Workspaces/Users"}]', 'cmd': 'frappe.desk.doctype.route_history.route_history.deferred_insert'}
-2024-12-19 11:04:16,810 ERROR frappe Error while inserting deferred Route History record: 
-Site: aria.localhost
-Form Dict: {'routes': '[{"creation":"2024-12-19 12:03:59","route":"List/User/List"},{"creation":"2024-12-19 12:04:07","route":"Workspaces/Users"}]', 'cmd': 'frappe.desk.doctype.route_history.route_history.deferred_insert'}
-2024-12-19 11:04:33,507 ERROR frappe Error while inserting deferred Route History record: 
-Site: aria.localhost
-Form Dict: {'routes': '[{"creation":"2024-12-19 12:04:24","route":"Workspaces/Tableau de bord"}]', 'cmd': 'frappe.desk.doctype.route_history.route_history.deferred_insert'}
-2024-12-19 11:07:00,615 ERROR frappe Error while inserting deferred Route History record: 
-Site: aria.localhost
-Form Dict: {'routes': '[{"creation":"2024-12-19 12:06:51","route":"List/Patient/List"}]', 'cmd': 'frappe.desk.doctype.route_history.route_history.deferred_insert'}
-2024-12-19 11:07:40,234 ERROR frappe Error while inserting deferred Route History record: 
-Site: aria.localhost
-Form Dict: {'routes': '[{"creation":"2024-12-19 12:07:30","route":"print/Patient/gaessbp66p"}]', 'cmd': 'frappe.desk.doctype.route_history.route_history.deferred_insert'}
-2024-12-19 11:08:12,050 ERROR frappe Error while inserting deferred Route History record: 
-Site: aria.localhost
-Form Dict: {'routes': '[{"creation":"2024-12-19 12:08:02","route":"List/Patient/List"}]', 'cmd': 'frappe.desk.doctype.route_history.route_history.deferred_insert'}
-2024-12-19 11:10:00,785 ERROR frappe Error while inserting deferred Route History record: 
-Site: aria.localhost
-Form Dict: {'routes': '[{"creation":"2024-12-19 12:06:51","route":"List/Patient/List"}]', 'cmd': 'frappe.desk.doctype.route_history.route_history.deferred_insert'}
-2024-12-26 13:33:43,984 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+Form Dict: {'doctype': 'Number Card', 'fields': '["`tabNumber Card`.`name`","`tabNumber Card`.`label`","`tabNumber Card`.`custom_backrougnd`","`tabNumber Card`.`document_type`"]', 'filters': '[]', 'order_by': '`tabNumber Card`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'Report', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 114, in application
+    response = frappe.api.handle(request)
+  File "/home/plm/ariasousse/apps/frappe/frappe/api/__init__.py", line 49, in handle
+    data = endpoint(**arguments)
+  File "/home/plm/ariasousse/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
+    return frappe.handler.handle()
+  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 49, in handle
+    data = execute_cmd(cmd)
+  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 85, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1725, in call
+    return fn(*args, **newargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 878, in wrapper_fn
+    retval = fn(*args, **get_newargs(fn, kwargs))
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 32, in get
+    data = compress(execute(**args), args=args)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 78, in execute
+    return DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1290, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
+    result = self.get_values(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2025-01-07 03:09:15,070 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
 Site: aria.localhost
 Form Dict: {}
 Traceback (most recent call last):
@@ -462,152 +988,32 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-12-26 13:55:23,917 ERROR frappe Error while inserting deferred Route History record: 
+2025-01-08 11:11:19,558 ERROR frappe Could not take error snapshot: No module named 'linca'
 Site: aria.localhost
-Form Dict: {'routes': '[{"creation":"2024-12-26 14:55:16","route":"Workspaces/Tableau de bord"}]', 'cmd': 'frappe.desk.doctype.route_history.route_history.deferred_insert'}
-2024-12-26 14:10:49,205 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
-Site: aria.localhost
-Form Dict: {'data': '{"d1":"test","d1_copy":"test","d1_copy_copy":"tetest","doctype":"Patient","web_form_name":"formulaire-doctor"}', 'web_form': 'formulaire-doctor', 'for_payment': 'false', 'cmd': 'frappe.website.doctype.web_form.web_form.accept'}
-2024-12-26 14:10:49,206 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
-Site: aria.localhost
-Form Dict: {'data': '{"d1":"test","d1_copy":"test","d1_copy_copy":"tetest","doctype":"Patient","web_form_name":"formulaire-doctor"}', 'web_form': 'formulaire-doctor', 'for_payment': 'false', 'cmd': 'frappe.website.doctype.web_form.web_form.accept'}
-2024-12-26 14:10:49,207 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
-Site: aria.localhost
-Form Dict: {'data': '{"d1":"test","d1_copy":"test","d1_copy_copy":"tetest","doctype":"Patient","web_form_name":"formulaire-doctor"}', 'web_form': 'formulaire-doctor', 'for_payment': 'false', 'cmd': 'frappe.website.doctype.web_form.web_form.accept'}
-2024-12-26 14:10:49,207 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
-Site: aria.localhost
-Form Dict: {'data': '{"d1":"test","d1_copy":"test","d1_copy_copy":"tetest","doctype":"Patient","web_form_name":"formulaire-doctor"}', 'web_form': 'formulaire-doctor', 'for_payment': 'false', 'cmd': 'frappe.website.doctype.web_form.web_form.accept'}
-2024-12-26 14:10:49,207 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
-Site: aria.localhost
-Form Dict: {'data': '{"d1":"test","d1_copy":"test","d1_copy_copy":"tetest","doctype":"Patient","web_form_name":"formulaire-doctor"}', 'web_form': 'formulaire-doctor', 'for_payment': 'false', 'cmd': 'frappe.website.doctype.web_form.web_form.accept'}
-2024-12-26 14:10:49,207 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
-Site: aria.localhost
-Form Dict: {'data': '{"d1":"test","d1_copy":"test","d1_copy_copy":"tetest","doctype":"Patient","web_form_name":"formulaire-doctor"}', 'web_form': 'formulaire-doctor', 'for_payment': 'false', 'cmd': 'frappe.website.doctype.web_form.web_form.accept'}
-2024-12-26 14:10:49,207 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
-Site: aria.localhost
-Form Dict: {'data': '{"d1":"test","d1_copy":"test","d1_copy_copy":"tetest","doctype":"Patient","web_form_name":"formulaire-doctor"}', 'web_form': 'formulaire-doctor', 'for_payment': 'false', 'cmd': 'frappe.website.doctype.web_form.web_form.accept'}
-2024-12-26 14:10:49,207 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
-Site: aria.localhost
-Form Dict: {'data': '{"d1":"test","d1_copy":"test","d1_copy_copy":"tetest","doctype":"Patient","web_form_name":"formulaire-doctor"}', 'web_form': 'formulaire-doctor', 'for_payment': 'false', 'cmd': 'frappe.website.doctype.web_form.web_form.accept'}
-2024-12-26 14:10:49,208 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
-Site: aria.localhost
-Form Dict: {'data': '{"d1":"test","d1_copy":"test","d1_copy_copy":"tetest","doctype":"Patient","web_form_name":"formulaire-doctor"}', 'web_form': 'formulaire-doctor', 'for_payment': 'false', 'cmd': 'frappe.website.doctype.web_form.web_form.accept'}
-2024-12-26 14:10:49,208 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
-Site: aria.localhost
-Form Dict: {'data': '{"d1":"test","d1_copy":"test","d1_copy_copy":"tetest","doctype":"Patient","web_form_name":"formulaire-doctor"}', 'web_form': 'formulaire-doctor', 'for_payment': 'false', 'cmd': 'frappe.website.doctype.web_form.web_form.accept'}
-2024-12-26 14:10:49,208 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
-Site: aria.localhost
-Form Dict: {'data': '{"d1":"test","d1_copy":"test","d1_copy_copy":"tetest","doctype":"Patient","web_form_name":"formulaire-doctor"}', 'web_form': 'formulaire-doctor', 'for_payment': 'false', 'cmd': 'frappe.website.doctype.web_form.web_form.accept'}
-2024-12-26 14:10:49,208 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
-Site: aria.localhost
-Form Dict: {'data': '{"d1":"test","d1_copy":"test","d1_copy_copy":"tetest","doctype":"Patient","web_form_name":"formulaire-doctor"}', 'web_form': 'formulaire-doctor', 'for_payment': 'false', 'cmd': 'frappe.website.doctype.web_form.web_form.accept'}
-2024-12-26 14:10:49,208 ERROR frappe Error while inserting deferred Error Log record: 'str' object has no attribute 'update'
-Site: aria.localhost
-Form Dict: {'data': '{"d1":"test","d1_copy":"test","d1_copy_copy":"tetest","doctype":"Patient","web_form_name":"formulaire-doctor"}', 'web_form': 'formulaire-doctor', 'for_payment': 'false', 'cmd': 'frappe.website.doctype.web_form.web_form.accept'}
-2024-12-26 14:10:49,208 ERROR frappe New Exception collected in error log
-Site: aria.localhost
-Form Dict: {'data': '{"d1":"test","d1_copy":"test","d1_copy_copy":"tetest","doctype":"Patient","web_form_name":"formulaire-doctor"}', 'web_form': 'formulaire-doctor', 'for_payment': 'false', 'cmd': 'frappe.website.doctype.web_form.web_form.accept'}
-2024-12-26 14:47:15,354 ERROR frappe Could not take error snapshot: (0, '')
-Site: aria.localhost
-Form Dict: {'app_path': 'tableau-de-bord'}
+Form Dict: {}
 Traceback (most recent call last):
-  File "/home/plm/ariasousse/apps/frappe/frappe/www/app.py", line 30, in get_context
-    boot = frappe.sessions.get()
-  File "/home/plm/ariasousse/apps/frappe/frappe/sessions.py", line 142, in get
-    bootinfo = get_bootinfo()
-  File "/home/plm/ariasousse/apps/frappe/frappe/boot.py", line 67, in get_bootinfo
-    bootinfo.page_info = get_allowed_pages()
-  File "/home/plm/ariasousse/apps/frappe/frappe/boot.py", line 153, in get_allowed_pages
-    return get_user_pages_or_reports("Page", cache=cache)
-  File "/home/plm/ariasousse/apps/frappe/frappe/boot.py", line 188, in get_user_pages_or_reports
-    pages_with_custom_roles = (
-  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 230, in sql
-    self._cursor.execute(query, values)
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
-    result = self._query(query)
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
-    conn.query(q)
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 563, in query
-    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 825, in _read_query_result
-    result.read()
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 1199, in read
-    first_packet = self.connection._read_packet()
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 744, in _read_packet
-    packet_header = self._read_bytes(4)
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 798, in _read_bytes
-    raise err.OperationalError(
-pymysql.err.OperationalError: (2013, 'Lost connection to MySQL server during query')
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 20, in get_response
-    response = renderer_instance.render()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
-    html = self.get_html()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 530, in cache_html_decorator
-    html = func(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 95, in get_html
-    self.update_context()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 163, in update_context
-    data = self.run_pymodule_method("get_context")
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 223, in run_pymodule_method
-    return method(self.context)
-  File "/home/plm/ariasousse/apps/frappe/frappe/www/app.py", line 32, in get_context
-    raise frappe.SessionBootFailed from e
-frappe.exceptions.SessionBootFailed
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 123, in application
-    response = get_response()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 28, in get_response
-    response = ErrorPage(exception=e).render()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
-    html = self.get_html()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 530, in cache_html_decorator
-    html = func(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
-    self.init_context()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
-    super().init_context()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
-    self.context.update(get_website_settings())
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
-    context.boot = get_boot_data()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 169, in get_boot_data
-    apps = get_apps() or []
-  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/apps.py", line 15, in get_apps
-    allowed_workspaces = get_workspace_sidebar_items().get("pages")
-  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/desk/desktop.py", line 447, in get_workspace_sidebar_items
-    all_pages = frappe.get_all(
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
-    return get_list(doctype, *args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
-    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
-    result = self.build_and_run()
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
-    return frappe.db.sql(
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 230, in sql
-    self._cursor.execute(query, values)
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
-    result = self._query(query)
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
-    conn.query(q)
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 562, in query
-    self._execute_command(COMMAND.COM_QUERY, sql)
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 843, in _execute_command
-    raise err.InterfaceError(0, "")
-pymysql.err.InterfaceError: (0, '')
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 99, in application
+    init_request(request)
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 172, in init_request
+    frappe.init(site=site, sites_path=_sites_path, force=True)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 257, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1649, in setup_module_map
+    for module in get_module_list(app):
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1497, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1462, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1492, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1433, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'linca'
 
 During handling of the above exception, another exception occurred:
 
@@ -618,52 +1024,447 @@ Traceback (most recent call last):
     error_log = frappe.get_doc(
   File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1290, in get_doc
     doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/document.py", line 85, in get_doc
-    return controller(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/document.py", line 135, in __init__
-    super().__init__(kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 133, in __init__
-    self._table_fieldnames = {df.fieldname for df in self._get_table_fields()}
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 345, in _get_table_fields
-    return self.meta.get_table_fields()
-  File "/usr/lib/python3.10/functools.py", line 981, in __get__
-    val = self.func(instance)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 142, in meta
-    return frappe.get_meta(self.doctype)
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1317, in get_meta
-    return frappe.model.meta.get_meta(doctype, cached=cached)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/meta.py", line 63, in get_meta
-    meta = Meta(doctype)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/meta.py", line 117, in __init__
-    super().__init__("DocType", doctype)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/document.py", line 126, in __init__
-    self.load_from_db()
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/meta.py", line 123, in load_from_db
-    super().load_from_db()
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/document.py", line 167, in load_from_db
-    d = frappe.db.get_value(
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
-    result = self.get_values(
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
-    out = self._get_values_from_table(
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 230, in sql
-    self._cursor.execute(query, values)
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
-    result = self._query(query)
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
-    conn.query(q)
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 562, in query
-    self._execute_command(COMMAND.COM_QUERY, sql)
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 843, in _execute_command
-    raise err.InterfaceError(0, "")
-pymysql.err.InterfaceError: (0, '')
-2024-12-26 18:42:45,522 ERROR frappe New Exception collected in error log
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1598, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/caching.py", line 47, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1567, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1433, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'linca'
+2025-01-08 11:11:26,292 ERROR frappe Could not take error snapshot: No module named 'linca'
 Site: aria.localhost
-Form Dict: {'doc': '{"doctype":"DocType","name":"Patient","creation":"2024-12-19 10:22:34.906677","modified":"2024-12-26 19:42:28.484643","modified_by":"linca@linca.com","owner":"linca@linca.com","docstatus":0,"idx":0,"issingle":0,"is_virtual":0,"is_tree":0,"istable":0,"editable_grid":0,"track_changes":0,"module":"Desk","naming_rule":"By fieldname","sort_field":"modified","sort_order":"DESC","read_only":0,"in_create":0,"allow_copy":0,"allow_rename":1,"allow_import":0,"hide_toolbar":0,"track_seen":0,"max_attachments":0,"document_type":"","engine":"InnoDB","is_submittable":0,"show_name_in_global_search":0,"custom":1,"beta":0,"has_web_view":0,"allow_guest_to_view":0,"email_append_to":0,"show_title_field_in_link":0,"translated_doctype":0,"is_calendar_and_gantt":0,"quick_entry":1,"track_views":0,"queue_in_background":0,"allow_events_in_timeline":0,"allow_auto_repeat":0,"make_attachments_public":0,"force_re_route_to_default_view":0,"show_preview_popup":0,"index_web_pages_for_search":1,"fields":[{"docstatus":0,"doctype":"DocField","name":"new-docfield-vvjdnulgny","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Datetime","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":1,"__run_link_triggers":1,"fieldname":"date","label":"Date ","columns":0,"length":0,"default":"date.now"},{"docstatus":0,"doctype":"DocField","name":"new-docfield-whrdfpiggy","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Data","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":1,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":2,"fieldname":"dr","label":"DR.","show_preview_popup":0,"columns":0,"length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-mygrclquun","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Data","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":1,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":3,"fieldname":"grade","label":"GRADE","options":"\\nInterne\\nRésident\\nHospitalo-universitaire\\nMedcin de santé public ","show_preview_popup":0,"columns":0,"length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-ajujbdjrpo","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Data","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":4,"fieldname":"service_dexercice_actuel","label":"Service d\'exercice actuel ","show_preview_popup":0,"columns":0,"length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-brmlsbhbvl","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Phone","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":5,"fieldname":"numéro_de_téléphone","label":"Numéro de téléphone ","show_preview_popup":0,"columns":0,"length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-grlixqiola","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Column Break","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":6,"fieldname":"column_break_gmnd","label":"","show_preview_popup":0,"columns":0,"length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-mjbwkbrcrc","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Data","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":1,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":7,"fieldname":"institution","label":"Institution","show_preview_popup":0,"columns":0,"length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-hgamedhxuw","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Section Break","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":8,"fieldname":"choisisser_le_degre_durgence_adequat_a_votre_demande_section","label":"Choisisser le degre durgence adequat a votre demande ","show_preview_popup":0,"columns":0,"length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-skxvinbvrg","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Check","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":9,"fieldname":"non_urgent","label":"NON urgent ","show_preview_popup":0,"columns":0,"default":"0","length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-bdhybzkzbb","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Column Break","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":10,"fieldname":"column_break_zldh","label":"","show_preview_popup":0,"columns":0,"length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-ebeuqtcpkp","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Check","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":11,"fieldname":"urgent","label":"URGENT ","show_preview_popup":0,"columns":0,"default":"0","length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-uyuhstlqno","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Column Break","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":12,"fieldname":"column_break_xzja","label":"","show_preview_popup":0,"columns":0,"length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-zfoinzdylo","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Check","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":13,"fieldname":"extreme_urgence","label":"Extreme Urgence ","show_preview_popup":0,"columns":0,"default":"0","length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-zablomhhmd","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Section Break","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":14,"fieldname":"information_generales_section","label":"Information generales ","show_preview_popup":0,"columns":0,"length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-zrhlagbrte","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Data","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":15,"fieldname":"prenom_du_patient","label":"Prenom du patient ","show_preview_popup":0,"columns":0,"length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-iastwbixeq","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Column Break","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":16,"fieldname":"column_break_tlwk","label":"","show_preview_popup":0,"columns":0,"length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-djfmnjkdxp","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Data","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":1,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":1,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":17,"fieldname":"nom_du_patient","label":"Nom du patient ","show_preview_popup":0,"columns":0,"length":0}],"permissions":[{"doctype":"DocPerm","name":"tuo97d9thg","creation":"2024-12-19 10:22:34.906677","modified":"2024-12-26 19:42:28.484643","modified_by":"linca@linca.com","owner":"linca@linca.com","docstatus":0,"parent":"Patient","parentfield":"permissions","parenttype":"DocType","idx":1,"permlevel":0,"role":"System Manager","read":1,"write":1,"create":1,"submit":0,"cancel":0,"delete":1,"amend":0,"report":1,"export":1,"import":0,"share":1,"print":1,"email":1,"if_owner":0,"select":0}],"actions":[],"links":[],"states":[],"autoname":"field:nom_du_patient","__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
-2024-12-26 18:59:36,264 ERROR frappe New Exception collected in error log
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 99, in application
+    init_request(request)
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 172, in init_request
+    frappe.init(site=site, sites_path=_sites_path, force=True)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 257, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1649, in setup_module_map
+    for module in get_module_list(app):
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1497, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1462, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1492, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1433, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'linca'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1290, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1598, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/caching.py", line 47, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1567, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1433, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'linca'
+2025-01-08 11:11:50,318 ERROR frappe Could not take error snapshot: No module named 'linca'
 Site: aria.localhost
-Form Dict: {'doc': '{"name":"Patient","creation":"2024-12-19 10:22:34.906677","modified":"2024-12-26 19:42:45.209519","modified_by":"linca@linca.com","owner":"linca@linca.com","docstatus":0,"idx":0,"issingle":0,"is_virtual":0,"is_tree":0,"istable":0,"editable_grid":0,"track_changes":0,"module":"Desk","autoname":"field:nom_du_patient","naming_rule":"By fieldname","sort_field":"modified","sort_order":"DESC","read_only":0,"in_create":0,"allow_copy":0,"allow_rename":1,"allow_import":0,"hide_toolbar":0,"track_seen":0,"max_attachments":0,"document_type":"","engine":"InnoDB","is_submittable":0,"show_name_in_global_search":0,"custom":1,"beta":0,"has_web_view":0,"allow_guest_to_view":0,"email_append_to":0,"show_title_field_in_link":0,"translated_doctype":0,"is_calendar_and_gantt":0,"quick_entry":1,"track_views":0,"queue_in_background":0,"allow_events_in_timeline":0,"allow_auto_repeat":0,"make_attachments_public":0,"force_re_route_to_default_view":0,"show_preview_popup":0,"index_web_pages_for_search":1,"doctype":"DocType","fields":[{"docstatus":0,"doctype":"DocField","name":"new-docfield-bbsoscnbjh","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Datetime","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":1,"fieldname":"date","label":"Date ","show_preview_popup":0,"columns":0,"default":"frappe.utils.nowdate()","length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-bhcrfbnmzw","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Data","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":1,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":2,"fieldname":"dr","label":"DR.","show_preview_popup":0,"columns":0,"length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-qnhanzalqz","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Data","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":1,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":3,"fieldname":"grade","label":"GRADE","options":"\\nInterne\\nRésident\\nHospitalo-universitaire\\nMedcin de santé public ","show_preview_popup":0,"columns":0,"length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-nlbamnxbsi","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Data","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":4,"fieldname":"service_dexercice_actuel","label":"Service d\'exercice actuel ","show_preview_popup":0,"columns":0,"length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-tmiumzedii","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Phone","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":5,"fieldname":"numéro_de_téléphone","label":"Numéro de téléphone ","show_preview_popup":0,"columns":0,"length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-nonbhkxaqt","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Column Break","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":6,"fieldname":"column_break_gmnd","label":"","show_preview_popup":0,"columns":0,"length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-utaadpqiwg","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Data","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":1,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":7,"fieldname":"institution","label":"Institution","show_preview_popup":0,"columns":0,"length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-oowxcoxafe","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Section Break","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":8,"fieldname":"choisisser_le_degre_durgence_adequat_a_votre_demande_section","label":"Choisisser le degre durgence adequat a votre demande ","show_preview_popup":0,"columns":0,"length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-tsdxdtumfb","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Check","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":9,"fieldname":"non_urgent","label":"NON urgent ","show_preview_popup":0,"columns":0,"default":"0","length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-rkjbedenuo","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Column Break","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":10,"fieldname":"column_break_zldh","label":"","show_preview_popup":0,"columns":0,"length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-ctsqhojzgr","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Check","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":11,"fieldname":"urgent","label":"URGENT ","show_preview_popup":0,"columns":0,"default":"0","length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-pjfkkrysve","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Column Break","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":12,"fieldname":"column_break_xzja","label":"","show_preview_popup":0,"columns":0,"length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-frrkaawyaa","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Check","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":13,"fieldname":"extreme_urgence","label":"Extreme Urgence ","show_preview_popup":0,"columns":0,"default":"0","length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-ztwfbnppxm","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Section Break","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":14,"fieldname":"information_generales_section","label":"Information generales ","show_preview_popup":0,"columns":0,"length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-tqqiqfxfoz","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Data","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":15,"fieldname":"prenom_du_patient","label":"Prenom du patient ","show_preview_popup":0,"columns":0,"length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-wqhzyfoumd","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Column Break","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":16,"fieldname":"column_break_tlwk","label":"","show_preview_popup":0,"columns":0,"length":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-szhubxqdzp","__islocal":1,"__unsaved":1,"owner":"linca@linca.com","fieldtype":"Data","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":1,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":1,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Patient","parentfield":"fields","parenttype":"DocType","idx":17,"fieldname":"nom_du_patient","label":"Nom du patient ","show_preview_popup":0,"columns":0,"length":0}],"links":[],"states":[],"permissions":[{"name":"tuo97d9thg","creation":"2024-12-19 10:22:34.906677","modified":"2024-12-26 19:42:45.209519","modified_by":"linca@linca.com","owner":"linca@linca.com","docstatus":0,"parent":"Patient","parentfield":"permissions","parenttype":"DocType","idx":1,"permlevel":0,"role":"System Manager","read":1,"write":1,"create":1,"submit":0,"cancel":0,"delete":1,"amend":0,"report":1,"export":1,"import":0,"share":1,"print":1,"email":1,"if_owner":0,"select":0,"doctype":"DocPerm"}],"actions":[],"__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 99, in application
+    init_request(request)
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 172, in init_request
+    frappe.init(site=site, sites_path=_sites_path, force=True)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 257, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1649, in setup_module_map
+    for module in get_module_list(app):
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1497, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1462, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1492, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1433, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'linca'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1290, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1598, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/caching.py", line 47, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1567, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1433, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'linca'
+2025-01-08 11:12:07,564 ERROR frappe Could not take error snapshot: No module named 'linca'
+Site: aria.localhost
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 99, in application
+    init_request(request)
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 172, in init_request
+    frappe.init(site=site, sites_path=_sites_path, force=True)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 257, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1649, in setup_module_map
+    for module in get_module_list(app):
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1497, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1462, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1492, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1433, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'linca'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1290, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1598, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/caching.py", line 47, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1567, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1433, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'linca'
+2025-01-08 11:12:15,728 ERROR frappe Could not take error snapshot: No module named 'linca'
+Site: aria.localhost
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 99, in application
+    init_request(request)
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 172, in init_request
+    frappe.init(site=site, sites_path=_sites_path, force=True)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 257, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1649, in setup_module_map
+    for module in get_module_list(app):
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1497, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1462, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1492, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1433, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'linca'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1290, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1598, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/caching.py", line 47, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1567, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1433, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'linca'
+2025-01-08 11:12:36,416 ERROR frappe Could not take error snapshot: No module named 'linca'
+Site: aria.localhost
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 99, in application
+    init_request(request)
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 172, in init_request
+    frappe.init(site=site, sites_path=_sites_path, force=True)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 257, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1649, in setup_module_map
+    for module in get_module_list(app):
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1497, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1462, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1492, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1433, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'linca'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1290, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1598, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/caching.py", line 47, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1567, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1433, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'linca'
+2025-01-08 11:12:53,495 ERROR frappe Could not take error snapshot: No module named 'linca'
+Site: aria.localhost
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 99, in application
+    init_request(request)
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 172, in init_request
+    frappe.init(site=site, sites_path=_sites_path, force=True)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 257, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1649, in setup_module_map
+    for module in get_module_list(app):
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1497, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1462, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1492, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1433, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'linca'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1290, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1598, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/caching.py", line 47, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1567, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1433, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'linca'
+2025-01-08 11:13:08,038 ERROR frappe Could not take error snapshot: No module named 'linca'
+Site: aria.localhost
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 99, in application
+    init_request(request)
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 172, in init_request
+    frappe.init(site=site, sites_path=_sites_path, force=True)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 257, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1649, in setup_module_map
+    for module in get_module_list(app):
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1497, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1462, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1492, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1433, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'linca'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1290, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1598, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/caching.py", line 47, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1567, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1433, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'linca'
