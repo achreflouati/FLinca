@@ -1,0 +1,14 @@
+# Fichiers de logs
+logs/
+*.log
+
+# Fichiers de configuration de processus
+config/pids/
+*.pid
+
+# Backups
+sites/*/private/backups/
+
+# Fichiers spécifiques à ERPNext et Frappe
+sites/assets/
+sites/*/logs/
