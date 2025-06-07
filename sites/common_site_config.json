@@ -2,6 +2,7 @@
  "background_workers": 1,
  "default_site": "aria.localhost",
  "developer_mode": 1,
+ "dns_multitenant": true,
  "file_watcher_port": 6795,
  "frappe_user": "plm",
  "gunicorn_workers": 5,

@@ -1,6 +1,6 @@
-2025-01-18 23:33:35,410 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2025-04-29 07:49:43,634 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
 Site: aria.localhost
-Form Dict: {}
+Form Dict: {'doctype': 'User', 'fields': '["`tabUser`.`name`","`tabUser`.`owner`","`tabUser`.`creation`","`tabUser`.`modified`","`tabUser`.`modified_by`","`tabUser`.`_user_tags`","`tabUser`.`_comments`","`tabUser`.`_assign`","`tabUser`.`_liked_by`","`tabUser`.`docstatus`","`tabUser`.`idx`","`tabUser`.`user_type`","`tabUser`.`full_name`","`tabUser`.`user_image`","`tabUser`.`enabled`"]', 'filters': '[]', 'order_by': '`tabUser`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'List', 'group_by': '', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -13,80 +13,26 @@ ConnectionRefusedError: [Errno 111] Connection refused
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 19, in get_response
-    endpoint, renderer_instance = path_resolver.resolve()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
-    resolve_redirect(self.path, request.query_string)
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 118, in resolve_redirect
-    redirects += frappe.get_all(
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
-    return get_list(doctype, *args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
-    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
-    result = self.build_and_run()
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
-    return frappe.db.sql(
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 123, in application
-    response = get_response()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 28, in get_response
-    response = ErrorPage(exception=e).render()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
-    html = self.get_html()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 530, in cache_html_decorator
-    html = func(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
-    self.init_context()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
-    super().init_context()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
-    self.context.update(get_website_settings())
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
-    context.boot = get_boot_data()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 169, in get_boot_data
-    apps = get_apps() or []
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 114, in application
+    response = frappe.api.handle(request)
+  File "/home/plm/ariasousse/apps/frappe/frappe/api/__init__.py", line 49, in handle
+    data = endpoint(**arguments)
+  File "/home/plm/ariasousse/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
+    return frappe.handler.handle()
+  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 49, in handle
+    data = execute_cmd(cmd)
+  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 85, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1725, in call
+    return fn(*args, **newargs)
   File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
     return func(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/apps.py", line 15, in get_apps
-    allowed_workspaces = get_workspace_sidebar_items().get("pages")
-  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/desk/desktop.py", line 447, in get_workspace_sidebar_items
-    all_pages = frappe.get_all(
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
-    return get_list(doctype, *args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
-    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 878, in wrapper_fn
+    retval = fn(*args, **get_newargs(fn, kwargs))
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 32, in get
+    data = compress(execute(**args), args=args)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 78, in execute
+    return DatabaseQuery(doctype).execute(*args, **kwargs)
   File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
     result = self.build_and_run()
   File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
@@ -156,9 +102,9 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-19 06:10:56,256 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2025-04-29 08:44:59,744 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
 Site: aria.localhost
-Form Dict: {}
+Form Dict: {'doctype': 'User', 'fields': '["`tabUser`.`name`","`tabUser`.`owner`","`tabUser`.`creation`","`tabUser`.`modified`","`tabUser`.`modified_by`","`tabUser`.`_user_tags`","`tabUser`.`_comments`","`tabUser`.`_assign`","`tabUser`.`_liked_by`","`tabUser`.`docstatus`","`tabUser`.`idx`","`tabUser`.`user_type`","`tabUser`.`full_name`","`tabUser`.`user_image`","`tabUser`.`enabled`"]', 'filters': '[]', 'order_by': '`tabUser`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'List', 'group_by': '', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
 Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
     sock = socket.create_connection(
@@ -171,80 +117,26 @@ ConnectionRefusedError: [Errno 111] Connection refused
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 19, in get_response
-    endpoint, renderer_instance = path_resolver.resolve()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
-    resolve_redirect(self.path, request.query_string)
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 118, in resolve_redirect
-    redirects += frappe.get_all(
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
-    return get_list(doctype, *args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
-    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
-    result = self.build_and_run()
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
-    return frappe.db.sql(
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 123, in application
-    response = get_response()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 28, in get_response
-    response = ErrorPage(exception=e).render()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
-    html = self.get_html()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 530, in cache_html_decorator
-    html = func(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
-    self.init_context()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
-    super().init_context()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
-    self.context.update(get_website_settings())
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
-    context.boot = get_boot_data()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 169, in get_boot_data
-    apps = get_apps() or []
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 114, in application
+    response = frappe.api.handle(request)
+  File "/home/plm/ariasousse/apps/frappe/frappe/api/__init__.py", line 49, in handle
+    data = endpoint(**arguments)
+  File "/home/plm/ariasousse/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
+    return frappe.handler.handle()
+  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 49, in handle
+    data = execute_cmd(cmd)
+  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 85, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1725, in call
+    return fn(*args, **newargs)
   File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
     return func(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/apps.py", line 15, in get_apps
-    allowed_workspaces = get_workspace_sidebar_items().get("pages")
-  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/desk/desktop.py", line 447, in get_workspace_sidebar_items
-    all_pages = frappe.get_all(
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
-    return get_list(doctype, *args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
-    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 878, in wrapper_fn
+    retval = fn(*args, **get_newargs(fn, kwargs))
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 32, in get
+    data = compress(execute(**args), args=args)
+  File "/home/plm/ariasousse/apps/frappe/frappe/desk/reportview.py", line 78, in execute
+    return DatabaseQuery(doctype).execute(*args, **kwargs)
   File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
     result = self.build_and_run()
   File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
@@ -314,161 +206,135 @@ Traceback (most recent call last):
   File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2025-01-19 11:38:50,174 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2025-04-30 12:29:35,120 ERROR frappe New Exception collected in error log
 Site: aria.localhost
-Form Dict: {}
+Form Dict: {'doc_data': '{"docstatus":0,"doctype":"Patient et demande","name":"new-patient-et-demande-ehsmhmwjdn","__islocal":1,"__unsaved":1,"owner":"expert@linca.com","custom_modification_count":0,"status":"Draft","on_demande_un_aide_au_diag":0,"on_demande_une_aide_thérapeutique":0,"on_demande_un_transfer_a_votre_service":0,"on_demande_un_conseil_de_preventionvaccination":0,"autre_apréciser":0,"votre_patient__a_été":0,"votre_patient":0,"votre_patient_2":0,"oui":0,"non":0,"allergie_aux_bétalacamines__penicillines":0,"autre_type_allergie":0,"custom_bladder_catheter":0,"custom_presence_dun_matrielle_etranger":[],"custom_notice_anti_infective_item":[],"custom_blood_analysis":[],"custom_renal_function_analysis":[],"custom_liver_function_analysis":[],"custom_inflammatory_assessment_analysis":[],"custom_other_biology_list":[],"custom_blood_cultures":[],"custom_ecbus":[],"custom_lumbar_punctures":[],"custom_stool_cultures":[],"custom_ecbcs":[],"custom_bal_bronchoalveolar_fluid":[],"custom_ptp_protected_tracheal_sampling":[],"custom_rbks":[],"custom_eps":[],"custom_superficial_puses":[],"custom_deep_puses":[],"custom_prosthesis_list":[],"custom_devices_kt_probe_":[],"custom_serologies":[],"custom_pcrs":[],"custom_note":[],"dr":"expert","custom_doctor_grade":"Hospitalo-universitaire","custom_doctor_phone_number":"+216-71870031","custom_doctor_institution":"Hôpital Farhat Hached","service":"Chirurgie générale"}', 'cmd': 'linca.utils.data.get_test_template'}
+2025-04-30 12:49:19,563 ERROR frappe Could not take error snapshot: min() arg is an empty sequence
+Site: aria.localhost
+Form Dict: {'doc_data': '{"docstatus":0,"doctype":"Patient et demande","name":"new-patient-et-demande-myohsiekkc","__islocal":1,"__unsaved":1,"owner":"expert@linca.com","custom_modification_count":0,"status":"Draft","on_demande_un_aide_au_diag":0,"on_demande_une_aide_thérapeutique":0,"on_demande_un_transfer_a_votre_service":0,"on_demande_un_conseil_de_preventionvaccination":0,"autre_apréciser":0,"votre_patient__a_été":0,"votre_patient":0,"votre_patient_2":0,"oui":0,"non":0,"allergie_aux_bétalacamines__penicillines":0,"autre_type_allergie":0,"custom_bladder_catheter":0,"custom_presence_dun_matrielle_etranger":[],"custom_notice_anti_infective_item":[],"custom_blood_analysis":[],"custom_renal_function_analysis":[],"custom_liver_function_analysis":[],"custom_inflammatory_assessment_analysis":[],"custom_other_biology_list":[],"custom_blood_cultures":[],"custom_ecbus":[],"custom_lumbar_punctures":[],"custom_stool_cultures":[],"custom_ecbcs":[],"custom_bal_bronchoalveolar_fluid":[],"custom_ptp_protected_tracheal_sampling":[],"custom_rbks":[],"custom_eps":[],"custom_superficial_puses":[],"custom_deep_puses":[],"custom_prosthesis_list":[],"custom_devices_kt_probe_":[],"custom_serologies":[],"custom_pcrs":[],"custom_note":[],"dr":"expert","custom_doctor_grade":"Hospitalo-universitaire","custom_doctor_phone_number":"+216-71870031","custom_doctor_institution":"Hôpital Farhat Hached","service":"Chirurgie générale"}', 'cmd': 'linca.utils.data.get_test_template'}
 Traceback (most recent call last):
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 19, in get_response
-    endpoint, renderer_instance = path_resolver.resolve()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
-    resolve_redirect(self.path, request.query_string)
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/path_resolver.py", line 118, in resolve_redirect
-    redirects += frappe.get_all(
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
-    return get_list(doctype, *args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
-    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
-    result = self.build_and_run()
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
-    return frappe.db.sql(
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 123, in application
-    response = get_response()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/serve.py", line 28, in get_response
-    response = ErrorPage(exception=e).render()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
-    html = self.get_html()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 530, in cache_html_decorator
-    html = func(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
-    self.init_context()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
-    super().init_context()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
-    self.context.update(get_website_settings())
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
-    context.boot = get_boot_data()
-  File "/home/plm/ariasousse/apps/frappe/frappe/website/utils.py", line 169, in get_boot_data
-    apps = get_apps() or []
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 114, in application
+    response = frappe.api.handle(request)
+  File "/home/plm/ariasousse/apps/frappe/frappe/api/__init__.py", line 49, in handle
+    data = endpoint(**arguments)
+  File "/home/plm/ariasousse/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
+    return frappe.handler.handle()
+  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 49, in handle
+    data = execute_cmd(cmd)
+  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 85, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1725, in call
+    return fn(*args, **newargs)
   File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
     return func(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/apps.py", line 15, in get_apps
-    allowed_workspaces = get_workspace_sidebar_items().get("pages")
-  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/desk/desktop.py", line 447, in get_workspace_sidebar_items
-    all_pages = frappe.get_all(
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 2014, in get_all
-    return get_list(doctype, *args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1989, in get_list
-    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 191, in execute
-    result = self.build_and_run()
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
-    return frappe.db.sql(
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
+  File "/home/plm/ariasousse/apps/linca/linca/utils/data.py", line 19, in get_test_template
+TypeError: save_file() missing 2 required positional arguments: 'dt' and 'dn'
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
   File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
     log_error(title=str(exception), defer_insert=True)
-  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
-  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1290, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/plm/ariasousse/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 515, in get_value
-    result = self.get_values(
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 619, in get_values
-    out = self._get_values_from_table(
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/plm/ariasousse/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/plm/ariasousse/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 54, in log_error
+    traceback = frappe.as_unicode(traceback or frappe.get_traceback(with_context=True))
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 441, in get_traceback
+    return get_traceback(with_context=with_context)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/__init__.py", line 299, in get_traceback
+    tb = "\n".join(trace_list)
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/traceback_with_variables/core.py", line 170, in _iter_lines
+    min_indent = min(len(line) - len(line.lstrip(' ')) for line in code_lines)
+ValueError: min() arg is an empty sequence
+2025-04-30 13:18:30,039 ERROR frappe Could not take error snapshot: min() arg is an empty sequence
+Site: aria.localhost
+Form Dict: {'doc_data': '{"docstatus":0,"doctype":"Patient et demande","name":"new-patient-et-demande-spqglnblwp","__islocal":1,"__unsaved":1,"owner":"expert@linca.com","custom_modification_count":0,"status":"Draft","on_demande_un_aide_au_diag":0,"on_demande_une_aide_thérapeutique":0,"on_demande_un_transfer_a_votre_service":0,"on_demande_un_conseil_de_preventionvaccination":0,"autre_apréciser":0,"votre_patient__a_été":0,"votre_patient":0,"votre_patient_2":0,"oui":0,"non":0,"allergie_aux_bétalacamines__penicillines":0,"autre_type_allergie":0,"custom_bladder_catheter":0,"custom_presence_dun_matrielle_etranger":[],"custom_notice_anti_infective_item":[],"custom_blood_analysis":[],"custom_renal_function_analysis":[],"custom_liver_function_analysis":[],"custom_inflammatory_assessment_analysis":[],"custom_other_biology_list":[],"custom_blood_cultures":[],"custom_ecbus":[],"custom_lumbar_punctures":[],"custom_stool_cultures":[],"custom_ecbcs":[],"custom_bal_bronchoalveolar_fluid":[],"custom_ptp_protected_tracheal_sampling":[],"custom_rbks":[],"custom_eps":[],"custom_superficial_puses":[],"custom_deep_puses":[],"custom_prosthesis_list":[],"custom_devices_kt_probe_":[],"custom_serologies":[],"custom_pcrs":[],"custom_note":[],"dr":"expert","custom_doctor_grade":"Hospitalo-universitaire","custom_doctor_phone_number":"+216-71870031","service":"Chirurgie générale","custom_doctor_institution":"Hôpital Farhat Hached"}', 'dt': 'Patient et demande', 'dn': 'new-patient-et-demande-kgxtfabbho', 'cmd': 'linca.utils.data.get_test_template'}
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 114, in application
+    response = frappe.api.handle(request)
+  File "/home/plm/ariasousse/apps/frappe/frappe/api/__init__.py", line 49, in handle
+    data = endpoint(**arguments)
+  File "/home/plm/ariasousse/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
+    return frappe.handler.handle()
+  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 49, in handle
+    data = execute_cmd(cmd)
+  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 85, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1725, in call
+    return fn(*args, **newargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/linca/linca/utils/data.py", line 19, in get_test_template
+TypeError: save_file() missing 2 required positional arguments: 'dt' and 'dn'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 54, in log_error
+    traceback = frappe.as_unicode(traceback or frappe.get_traceback(with_context=True))
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 441, in get_traceback
+    return get_traceback(with_context=with_context)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/__init__.py", line 299, in get_traceback
+    tb = "\n".join(trace_list)
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/traceback_with_variables/core.py", line 170, in _iter_lines
+    min_indent = min(len(line) - len(line.lstrip(' ')) for line in code_lines)
+ValueError: min() arg is an empty sequence
+2025-04-30 13:48:27,991 ERROR frappe Could not take error snapshot: min() arg is an empty sequence
+Site: aria.localhost
+Form Dict: {'doc_data': '{"docstatus":0,"doctype":"Patient et demande","name":"new-patient-et-demande-mtrvqnxghd","__islocal":1,"__unsaved":1,"owner":"expert@linca.com","custom_modification_count":0,"status":"Draft","on_demande_un_aide_au_diag":0,"on_demande_une_aide_thérapeutique":0,"on_demande_un_transfer_a_votre_service":0,"on_demande_un_conseil_de_preventionvaccination":0,"autre_apréciser":0,"votre_patient__a_été":0,"votre_patient":0,"votre_patient_2":0,"oui":0,"non":0,"allergie_aux_bétalacamines__penicillines":0,"autre_type_allergie":0,"custom_bladder_catheter":0,"custom_presence_dun_matrielle_etranger":[],"custom_notice_anti_infective_item":[],"custom_blood_analysis":[],"custom_renal_function_analysis":[],"custom_liver_function_analysis":[],"custom_inflammatory_assessment_analysis":[],"custom_other_biology_list":[],"custom_blood_cultures":[],"custom_ecbus":[],"custom_lumbar_punctures":[],"custom_stool_cultures":[],"custom_ecbcs":[],"custom_bal_bronchoalveolar_fluid":[],"custom_ptp_protected_tracheal_sampling":[],"custom_rbks":[],"custom_eps":[],"custom_superficial_puses":[],"custom_deep_puses":[],"custom_prosthesis_list":[],"custom_devices_kt_probe_":[],"custom_serologies":[],"custom_pcrs":[],"custom_note":[],"dr":"expert","custom_doctor_grade":"Hospitalo-universitaire","custom_doctor_phone_number":"+216-71870031","custom_doctor_institution":"Hôpital Farhat Hached","service":"Chirurgie générale"}', 'dt': 'Patient et demande', 'dn': 'new-patient-et-demande-mtrvqnxghd', 'preview_mode': 'true', 'cmd': 'linca.utils.data.get_test_template'}
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/app.py", line 114, in application
+    response = frappe.api.handle(request)
+  File "/home/plm/ariasousse/apps/frappe/frappe/api/__init__.py", line 49, in handle
+    data = endpoint(**arguments)
+  File "/home/plm/ariasousse/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
+    return frappe.handler.handle()
+  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 49, in handle
+    data = execute_cmd(cmd)
+  File "/home/plm/ariasousse/apps/frappe/frappe/handler.py", line 85, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 1725, in call
+    return fn(*args, **newargs)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/plm/ariasousse/apps/linca/linca/utils/data.py", line 19, in get_test_template
+TypeError: save_file() missing 2 required positional arguments: 'dt' and 'dn'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/error.py", line 54, in log_error
+    traceback = frappe.as_unicode(traceback or frappe.get_traceback(with_context=True))
+  File "/home/plm/ariasousse/apps/frappe/frappe/__init__.py", line 441, in get_traceback
+    return get_traceback(with_context=with_context)
+  File "/home/plm/ariasousse/apps/frappe/frappe/utils/__init__.py", line 299, in get_traceback
+    tb = "\n".join(trace_list)
+  File "/home/plm/ariasousse/env/lib/python3.10/site-packages/traceback_with_variables/core.py", line 170, in _iter_lines
+    min_indent = min(len(line) - len(line.lstrip(' ')) for line in code_lines)
+ValueError: min() arg is an empty sequence
+2025-04-30 14:20:14,962 ERROR frappe New Exception collected in error log
+Site: aria.localhost
+Form Dict: {'doc_data': {'docstatus': 0, 'doctype': 'Patient et demande', 'name': 'new-patient-et-demande-gtgumijixg', '__islocal': 1, '__unsaved': 1, 'owner': 'expert@linca.com', 'custom_modification_count': 0, 'status': 'Draft', 'on_demande_un_aide_au_diag': 0, 'on_demande_une_aide_thérapeutique': 0, 'on_demande_un_transfer_a_votre_service': 0, 'on_demande_un_conseil_de_preventionvaccination': 0, 'autre_apréciser': 0, 'votre_patient__a_été': 0, 'votre_patient': 0, 'votre_patient_2': 0, 'oui': 0, 'non': 0, 'allergie_aux_bétalacamines__penicillines': 0, 'autre_type_allergie': 0, 'custom_bladder_catheter': 0, 'custom_presence_dun_matrielle_etranger': [], 'custom_notice_anti_infective_item': [], 'custom_blood_analysis': [], 'custom_renal_function_analysis': [], 'custom_liver_function_analysis': [], 'custom_inflammatory_assessment_analysis': [], 'custom_other_biology_list': [], 'custom_blood_cultures': [], 'custom_ecbus': [], 'custom_lumbar_punctures': [], 'custom_stool_cultures': [], 'custom_ecbcs': [], 'custom_bal_bronchoalveolar_fluid': [], 'custom_ptp_protected_tracheal_sampling': [], 'custom_rbks': [], 'custom_eps': [], 'custom_superficial_puses': [], 'custom_deep_puses': [], 'custom_prosthesis_list': [], 'custom_devices_kt_probe_': [], 'custom_serologies': [], 'custom_pcrs': [], 'custom_note': [], 'dr': 'expert', 'custom_doctor_grade': 'Hospitalo-universitaire', 'custom_doctor_phone_number': '+216-71870031', 'service': 'Chirurgie générale', 'custom_doctor_institution': 'Hôpital Farhat Hached'}, 'dt': 'Patient et demande', 'dn': 'new-patient-et-demande-gtgumijixg', 'preview_mode': True, 'cmd': 'linca.utils.data.get_test_template'}
+2025-04-30 14:20:24,113 ERROR frappe New Exception collected in error log
+Site: aria.localhost
+Form Dict: {'doc_data': {'docstatus': 0, 'doctype': 'Patient et demande', 'name': 'new-patient-et-demande-gtgumijixg', '__islocal': 1, '__unsaved': 1, 'owner': 'expert@linca.com', 'custom_modification_count': 0, 'status': 'Draft', 'on_demande_un_aide_au_diag': 0, 'on_demande_une_aide_thérapeutique': 0, 'on_demande_un_transfer_a_votre_service': 0, 'on_demande_un_conseil_de_preventionvaccination': 0, 'autre_apréciser': 0, 'votre_patient__a_été': 0, 'votre_patient': 0, 'votre_patient_2': 0, 'oui': 0, 'non': 0, 'allergie_aux_bétalacamines__penicillines': 0, 'autre_type_allergie': 0, 'custom_bladder_catheter': 0, 'custom_presence_dun_matrielle_etranger': [], 'custom_notice_anti_infective_item': [], 'custom_blood_analysis': [], 'custom_renal_function_analysis': [], 'custom_liver_function_analysis': [], 'custom_inflammatory_assessment_analysis': [], 'custom_other_biology_list': [], 'custom_blood_cultures': [], 'custom_ecbus': [], 'custom_lumbar_punctures': [], 'custom_stool_cultures': [], 'custom_ecbcs': [], 'custom_bal_bronchoalveolar_fluid': [], 'custom_ptp_protected_tracheal_sampling': [], 'custom_rbks': [], 'custom_eps': [], 'custom_superficial_puses': [], 'custom_deep_puses': [], 'custom_prosthesis_list': [], 'custom_devices_kt_probe_': [], 'custom_serologies': [], 'custom_pcrs': [], 'custom_note': [], 'dr': 'expert', 'custom_doctor_grade': 'Hospitalo-universitaire', 'custom_doctor_phone_number': '+216-71870031', 'service': 'Chirurgie générale', 'custom_doctor_institution': 'Hôpital Farhat Hached'}, 'dt': 'Patient et demande', 'dn': 'new-patient-et-demande-gtgumijixg', 'preview_mode': True, 'cmd': 'linca.utils.data.get_test_template'}
+2025-04-30 14:22:07,357 ERROR frappe New Exception collected in error log
+Site: aria.localhost
+Form Dict: {'doc_data': {'docstatus': 0, 'doctype': 'Patient et demande', 'name': 'new-patient-et-demande-nsupntowhd', '__islocal': 1, '__unsaved': 1, 'owner': 'expert@linca.com', 'custom_modification_count': 0, 'status': 'Draft', 'on_demande_un_aide_au_diag': 0, 'on_demande_une_aide_thérapeutique': 0, 'on_demande_un_transfer_a_votre_service': 0, 'on_demande_un_conseil_de_preventionvaccination': 0, 'autre_apréciser': 0, 'votre_patient__a_été': 0, 'votre_patient': 0, 'votre_patient_2': 0, 'oui': 0, 'non': 0, 'allergie_aux_bétalacamines__penicillines': 0, 'autre_type_allergie': 0, 'custom_bladder_catheter': 0, 'custom_presence_dun_matrielle_etranger': [], 'custom_notice_anti_infective_item': [], 'custom_blood_analysis': [], 'custom_renal_function_analysis': [], 'custom_liver_function_analysis': [], 'custom_inflammatory_assessment_analysis': [], 'custom_other_biology_list': [], 'custom_blood_cultures': [], 'custom_ecbus': [], 'custom_lumbar_punctures': [], 'custom_stool_cultures': [], 'custom_ecbcs': [], 'custom_bal_bronchoalveolar_fluid': [], 'custom_ptp_protected_tracheal_sampling': [], 'custom_rbks': [], 'custom_eps': [], 'custom_superficial_puses': [], 'custom_deep_puses': [], 'custom_prosthesis_list': [], 'custom_devices_kt_probe_': [], 'custom_serologies': [], 'custom_pcrs': [], 'custom_note': [], 'dr': 'expert', 'custom_doctor_grade': 'Hospitalo-universitaire', 'custom_doctor_phone_number': '+216-71870031', 'custom_doctor_institution': 'Hôpital Farhat Hached', 'service': 'Chirurgie générale'}, 'dt': 'Patient et demande', 'dn': 'new-patient-et-demande-nsupntowhd', 'preview_mode': True, 'cmd': 'linca.utils.data.get_test_template'}
+2025-04-30 14:24:01,435 ERROR frappe New Exception collected in error log
+Site: aria.localhost
+Form Dict: {'doc_data': {'docstatus': 0, 'doctype': 'Patient et demande', 'name': 'new-patient-et-demande-uyqnniwwnr', '__islocal': 1, '__unsaved': 1, 'owner': 'expert@linca.com', 'custom_modification_count': 0, 'status': 'Draft', 'on_demande_un_aide_au_diag': 0, 'on_demande_une_aide_thérapeutique': 0, 'on_demande_un_transfer_a_votre_service': 0, 'on_demande_un_conseil_de_preventionvaccination': 0, 'autre_apréciser': 0, 'votre_patient__a_été': 0, 'votre_patient': 0, 'votre_patient_2': 0, 'oui': 0, 'non': 0, 'allergie_aux_bétalacamines__penicillines': 0, 'autre_type_allergie': 0, 'custom_bladder_catheter': 0, 'custom_presence_dun_matrielle_etranger': [], 'custom_notice_anti_infective_item': [], 'custom_blood_analysis': [], 'custom_renal_function_analysis': [], 'custom_liver_function_analysis': [], 'custom_inflammatory_assessment_analysis': [], 'custom_other_biology_list': [], 'custom_blood_cultures': [], 'custom_ecbus': [], 'custom_lumbar_punctures': [], 'custom_stool_cultures': [], 'custom_ecbcs': [], 'custom_bal_bronchoalveolar_fluid': [], 'custom_ptp_protected_tracheal_sampling': [], 'custom_rbks': [], 'custom_eps': [], 'custom_superficial_puses': [], 'custom_deep_puses': [], 'custom_prosthesis_list': [], 'custom_devices_kt_probe_': [], 'custom_serologies': [], 'custom_pcrs': [], 'custom_note': [], 'dr': 'expert', 'custom_doctor_grade': 'Hospitalo-universitaire', 'custom_doctor_phone_number': '+216-71870031', 'custom_doctor_institution': 'Hôpital Farhat Hached', 'service': 'Chirurgie générale'}, 'dt': 'Patient et demande', 'dn': 'new-patient-et-demande-uyqnniwwnr', 'preview_mode': True, 'cmd': 'linca.utils.data.get_test_template'}
+2025-04-30 14:28:49,578 ERROR frappe New Exception collected in error log
+Site: aria.localhost
+Form Dict: {'doc_data': {'docstatus': 0, 'doctype': 'Patient et demande', 'name': 'new-patient-et-demande-kxfrzdofcg', '__islocal': 1, '__unsaved': 1, 'owner': 'expert@linca.com', 'custom_modification_count': 0, 'status': 'Draft', 'on_demande_un_aide_au_diag': 0, 'on_demande_une_aide_thérapeutique': 0, 'on_demande_un_transfer_a_votre_service': 0, 'on_demande_un_conseil_de_preventionvaccination': 0, 'autre_apréciser': 0, 'votre_patient__a_été': 0, 'votre_patient': 0, 'votre_patient_2': 0, 'oui': 0, 'non': 0, 'allergie_aux_bétalacamines__penicillines': 0, 'autre_type_allergie': 0, 'custom_bladder_catheter': 0, 'custom_presence_dun_matrielle_etranger': [], 'custom_notice_anti_infective_item': [], 'custom_blood_analysis': [], 'custom_renal_function_analysis': [], 'custom_liver_function_analysis': [], 'custom_inflammatory_assessment_analysis': [], 'custom_other_biology_list': [], 'custom_blood_cultures': [], 'custom_ecbus': [], 'custom_lumbar_punctures': [], 'custom_stool_cultures': [], 'custom_ecbcs': [], 'custom_bal_bronchoalveolar_fluid': [], 'custom_ptp_protected_tracheal_sampling': [], 'custom_rbks': [], 'custom_eps': [], 'custom_superficial_puses': [], 'custom_deep_puses': [], 'custom_prosthesis_list': [], 'custom_devices_kt_probe_': [], 'custom_serologies': [], 'custom_pcrs': [], 'custom_note': [], 'dr': 'expert', 'custom_doctor_grade': 'Hospitalo-universitaire', 'custom_doctor_phone_number': '+216-71870031', 'custom_doctor_institution': 'Hôpital Farhat Hached', 'service': 'Chirurgie générale'}, 'dt': 'Patient et demande', 'dn': 'new-patient-et-demande-kxfrzdofcg', 'preview_mode': True, 'cmd': 'linca.utils.data.get_test_template'}
+2025-04-30 14:31:44,509 ERROR frappe New Exception collected in error log
+Site: aria.localhost
+Form Dict: {'doc_data': {'docstatus': 0, 'doctype': 'Patient et demande', 'name': 'new-patient-et-demande-sjnffpukow', '__islocal': 1, '__unsaved': 1, 'owner': 'expert@linca.com', 'custom_modification_count': 0, 'status': 'Draft', 'on_demande_un_aide_au_diag': 0, 'on_demande_une_aide_thérapeutique': 0, 'on_demande_un_transfer_a_votre_service': 0, 'on_demande_un_conseil_de_preventionvaccination': 0, 'autre_apréciser': 0, 'votre_patient__a_été': 0, 'votre_patient': 0, 'votre_patient_2': 0, 'oui': 0, 'non': 0, 'allergie_aux_bétalacamines__penicillines': 0, 'autre_type_allergie': 0, 'custom_bladder_catheter': 0, 'custom_presence_dun_matrielle_etranger': [], 'custom_notice_anti_infective_item': [], 'custom_blood_analysis': [], 'custom_renal_function_analysis': [], 'custom_liver_function_analysis': [], 'custom_inflammatory_assessment_analysis': [], 'custom_other_biology_list': [], 'custom_blood_cultures': [], 'custom_ecbus': [], 'custom_lumbar_punctures': [], 'custom_stool_cultures': [], 'custom_ecbcs': [], 'custom_bal_bronchoalveolar_fluid': [], 'custom_ptp_protected_tracheal_sampling': [], 'custom_rbks': [], 'custom_eps': [], 'custom_superficial_puses': [], 'custom_deep_puses': [], 'custom_prosthesis_list': [], 'custom_devices_kt_probe_': [], 'custom_serologies': [], 'custom_pcrs': [], 'custom_note': [], 'dr': 'expert', 'custom_doctor_grade': 'Hospitalo-universitaire', 'custom_doctor_phone_number': '+216-71870031', 'service': 'Chirurgie générale', 'custom_doctor_institution': 'Hôpital Farhat Hached'}, 'dt': 'Patient et demande', 'dn': 'new-patient-et-demande-sjnffpukow', 'preview_mode': True, 'cmd': 'linca.utils.data.get_test_template'}
+2025-04-30 14:32:09,069 ERROR frappe New Exception collected in error log
+Site: aria.localhost
+Form Dict: {'doc_data': {'docstatus': 0, 'doctype': 'Patient et demande', 'name': 'new-patient-et-demande-sjnffpukow', '__islocal': 1, '__unsaved': 1, 'owner': 'expert@linca.com', 'custom_modification_count': 0, 'status': 'Draft', 'on_demande_un_aide_au_diag': 0, 'on_demande_une_aide_thérapeutique': 0, 'on_demande_un_transfer_a_votre_service': 0, 'on_demande_un_conseil_de_preventionvaccination': 0, 'autre_apréciser': 0, 'votre_patient__a_été': 0, 'votre_patient': 0, 'votre_patient_2': 0, 'oui': 0, 'non': 0, 'allergie_aux_bétalacamines__penicillines': 0, 'autre_type_allergie': 0, 'custom_bladder_catheter': 0, 'custom_presence_dun_matrielle_etranger': [], 'custom_notice_anti_infective_item': [], 'custom_blood_analysis': [], 'custom_renal_function_analysis': [], 'custom_liver_function_analysis': [], 'custom_inflammatory_assessment_analysis': [], 'custom_other_biology_list': [], 'custom_blood_cultures': [], 'custom_ecbus': [], 'custom_lumbar_punctures': [], 'custom_stool_cultures': [], 'custom_ecbcs': [], 'custom_bal_bronchoalveolar_fluid': [], 'custom_ptp_protected_tracheal_sampling': [], 'custom_rbks': [], 'custom_eps': [], 'custom_superficial_puses': [], 'custom_deep_puses': [], 'custom_prosthesis_list': [], 'custom_devices_kt_probe_': [], 'custom_serologies': [], 'custom_pcrs': [], 'custom_note': [], 'dr': 'expert', 'custom_doctor_grade': 'Hospitalo-universitaire', 'custom_doctor_phone_number': '+216-71870031', 'service': 'Chirurgie générale', 'custom_doctor_institution': 'Hôpital Farhat Hached'}, 'dt': 'Patient et demande', 'dn': 'new-patient-et-demande-sjnffpukow', 'preview_mode': True, 'cmd': 'linca.utils.data.get_test_template'}
+2025-04-30 14:33:33,119 ERROR frappe New Exception collected in error log
+Site: aria.localhost
+Form Dict: {'doc_data': {'docstatus': 0, 'doctype': 'Patient et demande', 'name': 'new-patient-et-demande-ftqvbsdqux', '__islocal': 1, '__unsaved': 1, 'owner': 'expert@linca.com', 'custom_modification_count': 0, 'status': 'Draft', 'on_demande_un_aide_au_diag': 0, 'on_demande_une_aide_thérapeutique': 0, 'on_demande_un_transfer_a_votre_service': 0, 'on_demande_un_conseil_de_preventionvaccination': 0, 'autre_apréciser': 0, 'votre_patient__a_été': 0, 'votre_patient': 0, 'votre_patient_2': 0, 'oui': 0, 'non': 0, 'allergie_aux_bétalacamines__penicillines': 0, 'autre_type_allergie': 0, 'custom_bladder_catheter': 0, 'custom_presence_dun_matrielle_etranger': [], 'custom_notice_anti_infective_item': [], 'custom_blood_analysis': [], 'custom_renal_function_analysis': [], 'custom_liver_function_analysis': [], 'custom_inflammatory_assessment_analysis': [], 'custom_other_biology_list': [], 'custom_blood_cultures': [], 'custom_ecbus': [], 'custom_lumbar_punctures': [], 'custom_stool_cultures': [], 'custom_ecbcs': [], 'custom_bal_bronchoalveolar_fluid': [], 'custom_ptp_protected_tracheal_sampling': [], 'custom_rbks': [], 'custom_eps': [], 'custom_superficial_puses': [], 'custom_deep_puses': [], 'custom_prosthesis_list': [], 'custom_devices_kt_probe_': [], 'custom_serologies': [], 'custom_pcrs': [], 'custom_note': [], 'dr': 'expert', 'custom_doctor_grade': 'Hospitalo-universitaire', 'custom_doctor_phone_number': '+216-71870031', 'custom_doctor_institution': 'Hôpital Farhat Hached', 'service': 'Chirurgie générale'}, 'dt': 'Patient et demande', 'dn': 'new-patient-et-demande-ftqvbsdqux', 'preview_mode': True, 'cmd': 'linca.utils.data.get_test_template'}

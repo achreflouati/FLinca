@@ -1,0 +1,1059 @@
+2025-04-23 08:52:51,889 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parent varchar(140)
+2025-04-23 08:52:51,892 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parenttype varchar(140)
+2025-04-23 08:52:51,893 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parentfield varchar(140)
+2025-04-23 08:53:57,020 WARNING database DDL Query made to DB:
+alter table `tabNotice Coproculture Item` add column if not exists parent varchar(140)
+2025-04-23 08:53:57,021 WARNING database DDL Query made to DB:
+alter table `tabNotice Coproculture Item` add column if not exists parenttype varchar(140)
+2025-04-23 08:53:57,021 WARNING database DDL Query made to DB:
+alter table `tabNotice Coproculture Item` add column if not exists parentfield varchar(140)
+2025-04-23 08:57:42,772 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 12:20:59,525 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parent varchar(140)
+2025-04-23 12:20:59,527 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parenttype varchar(140)
+2025-04-23 12:20:59,528 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parentfield varchar(140)
+2025-04-23 12:21:13,088 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-23 12:21:13,088 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-23 12:21:13,089 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-23 12:47:50,027 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 12:48:11,938 WARNING database DDL Query made to DB:
+alter table `tabNotice Coproculture Item` add column if not exists parent varchar(140)
+2025-04-23 12:48:11,943 WARNING database DDL Query made to DB:
+alter table `tabNotice Coproculture Item` add column if not exists parenttype varchar(140)
+2025-04-23 12:48:11,944 WARNING database DDL Query made to DB:
+alter table `tabNotice Coproculture Item` add column if not exists parentfield varchar(140)
+2025-04-23 13:15:27,407 WARNING database DDL Query made to DB:
+create table `tabNotice PCR Item` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`analysis_date` date,
+`direct_examination_result` varchar(140),
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2025-04-23 13:16:46,169 WARNING database DDL Query made to DB:
+alter table `tabNotice PCR Item` add column if not exists parent varchar(140)
+2025-04-23 13:16:46,172 WARNING database DDL Query made to DB:
+alter table `tabNotice PCR Item` add column if not exists parenttype varchar(140)
+2025-04-23 13:16:46,172 WARNING database DDL Query made to DB:
+alter table `tabNotice PCR Item` add column if not exists parentfield varchar(140)
+2025-04-23 13:19:09,515 WARNING database DDL Query made to DB:
+alter table `tabNotice PCR Item` add column if not exists parent varchar(140)
+2025-04-23 13:19:09,516 WARNING database DDL Query made to DB:
+alter table `tabNotice PCR Item` add column if not exists parenttype varchar(140)
+2025-04-23 13:19:09,517 WARNING database DDL Query made to DB:
+alter table `tabNotice PCR Item` add column if not exists parentfield varchar(140)
+2025-04-23 13:19:09,614 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice PCR Item` ADD COLUMN `analyzed_liquid` varchar(140)
+2025-04-23 13:19:18,592 WARNING database DDL Query made to DB:
+alter table `tabNotice PCR Item` add column if not exists parent varchar(140)
+2025-04-23 13:19:18,594 WARNING database DDL Query made to DB:
+alter table `tabNotice PCR Item` add column if not exists parenttype varchar(140)
+2025-04-23 13:19:18,595 WARNING database DDL Query made to DB:
+alter table `tabNotice PCR Item` add column if not exists parentfield varchar(140)
+2025-04-23 13:21:10,633 WARNING database DDL Query made to DB:
+alter table `tabNotice PCR Item` add column if not exists parent varchar(140)
+2025-04-23 13:21:10,636 WARNING database DDL Query made to DB:
+alter table `tabNotice PCR Item` add column if not exists parenttype varchar(140)
+2025-04-23 13:21:10,636 WARNING database DDL Query made to DB:
+alter table `tabNotice PCR Item` add column if not exists parentfield varchar(140)
+2025-04-23 13:21:10,708 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice PCR Item` ADD COLUMN `microorganism_targeted_by_pcr` varchar(140)
+2025-04-23 13:21:16,753 WARNING database DDL Query made to DB:
+alter table `tabNotice PCR Item` add column if not exists parent varchar(140)
+2025-04-23 13:21:16,754 WARNING database DDL Query made to DB:
+alter table `tabNotice PCR Item` add column if not exists parenttype varchar(140)
+2025-04-23 13:21:16,754 WARNING database DDL Query made to DB:
+alter table `tabNotice PCR Item` add column if not exists parentfield varchar(140)
+2025-04-23 13:22:16,260 WARNING database DDL Query made to DB:
+alter table `tabNotice PCR Item` add column if not exists parent varchar(140)
+2025-04-23 13:22:16,261 WARNING database DDL Query made to DB:
+alter table `tabNotice PCR Item` add column if not exists parenttype varchar(140)
+2025-04-23 13:22:16,262 WARNING database DDL Query made to DB:
+alter table `tabNotice PCR Item` add column if not exists parentfield varchar(140)
+2025-04-23 13:22:16,342 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice PCR Item` ADD COLUMN `other` text
+2025-04-23 13:22:54,605 WARNING database DDL Query made to DB:
+alter table `tabNotice PCR Item` add column if not exists parent varchar(140)
+2025-04-23 13:22:54,606 WARNING database DDL Query made to DB:
+alter table `tabNotice PCR Item` add column if not exists parenttype varchar(140)
+2025-04-23 13:22:54,607 WARNING database DDL Query made to DB:
+alter table `tabNotice PCR Item` add column if not exists parentfield varchar(140)
+2025-04-23 13:22:54,686 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice PCR Item` ADD COLUMN `result` varchar(140)
+2025-04-23 13:23:34,257 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:23:34,596 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_number_of_pcr` int(11) not null default 0
+2025-04-23 13:23:34,604 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 13:23:34,907 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 13:24:12,227 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 13:24:12,556 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:24:12,888 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 13:24:13,220 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:24:13,571 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:24:13,895 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:25:00,914 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:27:00,768 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:34:21,679 WARNING database DDL Query made to DB:
+create table `tabNotice ECBC Item` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`analysis_date` date,
+`state_culture` varchar(140),
+`antibiogram` text,
+`antibiogram_preview` varchar(140),
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2025-04-23 13:35:26,746 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:35:27,102 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_number_of_ecbc` int(11) not null default 0
+2025-04-23 13:35:27,110 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 13:35:27,629 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 13:36:11,216 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 13:36:11,698 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 13:36:12,227 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:36:12,869 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 13:36:13,432 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:36:14,229 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 13:36:52,617 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 13:37:10,379 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:41:19,780 WARNING database DDL Query made to DB:
+create table `tabNotice BAL Item` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`analysis_date` date,
+`state_culture` varchar(140),
+`antibiogram` text,
+`antibiogram_preview` varchar(140),
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2025-04-23 13:42:12,487 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 13:42:12,787 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_number_of_bal` int(11) not null default 0
+2025-04-23 13:42:12,792 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 13:42:13,220 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 13:42:29,413 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 13:42:29,752 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:42:30,122 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 13:42:30,627 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:43:10,724 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:43:11,064 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:43:11,568 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:43:49,480 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 13:44:15,790 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 13:45:01,483 WARNING database DDL Query made to DB:
+create table `tabNotice PTP Item` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`analysis_date` date,
+`state_culture` varchar(140),
+`antibiogram` text,
+`antibiogram_preview` varchar(140),
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2025-04-23 13:45:48,411 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 13:45:48,736 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_number_of_ptps` int(11) not null default 0
+2025-04-23 13:45:48,743 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:45:49,205 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:46:31,788 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 13:46:32,129 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 13:46:32,462 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:46:32,811 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 13:46:33,151 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 13:46:33,656 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:47:12,518 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 13:47:39,860 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 13:48:34,258 WARNING database DDL Query made to DB:
+create table `tabNotcie Superficial Pus Item` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`analysis_date` date,
+`state_culture` varchar(140),
+`antibiogram` text,
+`antibiogram_preview` varchar(140),
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2025-04-23 13:50:59,280 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:50:59,622 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_number_of_superficial_pus` int(11) not null default 0
+2025-04-23 13:50:59,629 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 13:50:59,963 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 13:51:26,042 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 13:52:32,716 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 13:52:33,048 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 13:52:33,388 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:52:33,736 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:52:34,091 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:52:35,163 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 13:52:47,399 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 13:53:18,639 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:53:34,528 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 13:54:11,569 WARNING database DDL Query made to DB:
+create table `tabNotcie Deep Pus Item` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`analysis_date` date,
+`state_culture` varchar(140),
+`antibiogram` text,
+`antibiogram_preview` varchar(140),
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2025-04-23 13:54:19,283 WARNING database DDL Query made to DB:
+RENAME TABLE `tabNotcie Deep Pus Item` TO `tabNotice Deep Pus Item`
+2025-04-23 13:55:08,948 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:55:09,320 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_number_of_deep_pus` int(11) not null default 0
+2025-04-23 13:55:09,331 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 13:55:09,755 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:56:13,123 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 13:56:13,488 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:56:13,853 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:56:14,204 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 13:56:14,582 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:56:15,056 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:56:27,169 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:56:59,201 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 13:57:18,944 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 13:57:59,537 WARNING database DDL Query made to DB:
+create table `tabNotice Prosthesis Item` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`analysis_date` date,
+`state_culture` varchar(140),
+`antibiogram` text,
+`antibiogram_preview` varchar(140),
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2025-04-23 13:58:46,453 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 13:58:46,816 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_number_of_prosthesis` int(11) not null default 0
+2025-04-23 13:58:46,825 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 13:58:47,255 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:59:49,392 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 13:59:49,754 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 13:59:50,158 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 13:59:50,543 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 13:59:50,937 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 13:59:51,440 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 14:00:26,238 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 14:01:05,345 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 14:01:26,893 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 14:02:39,093 WARNING database DDL Query made to DB:
+create table `tabNotice Device Item` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`analysis_date` date,
+`state_culture` varchar(140),
+`antibiogram` text,
+`antibiogram_preview` varchar(140),
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2025-04-23 14:04:29,999 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 14:04:30,376 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_number_of_devices` int(11) not null default 0
+2025-04-23 14:04:30,386 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 14:04:30,860 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 14:06:08,819 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 14:06:09,186 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 14:06:09,587 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 14:06:09,990 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 14:06:10,398 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 14:06:10,883 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 14:06:52,080 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 14:07:46,877 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 14:19:14,782 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 14:20:02,952 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 14:20:27,228 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 14:21:21,866 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 14:21:56,022 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 14:23:07,250 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 14:29:31,560 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 14:29:31,933 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 14:29:32,310 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 14:31:18,350 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 14:31:18,730 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 14:31:19,078 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 14:34:27,673 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_patient_history` longtext
+2025-04-23 14:34:27,682 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 14:34:28,060 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 14:38:30,774 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 14:38:31,155 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_radiological_examination_done_yes` int(1) not null default 0
+2025-04-23 14:38:31,167 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 14:38:31,557 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 14:39:27,986 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 14:39:28,391 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_radiological_examination_done_no` int(1) not null default 0
+2025-04-23 14:39:28,401 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 14:39:28,769 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 14:39:29,138 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 14:39:29,499 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 14:40:08,009 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 14:40:40,604 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 14:41:19,095 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 21:35:04,166 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 21:35:53,098 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 21:36:33,098 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 21:46:40,873 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 21:48:22,250 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 21:50:27,317 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 21:51:32,647 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 21:54:40,419 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 21:56:16,793 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 21:56:17,182 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 21:56:17,660 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 21:56:18,379 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 21:56:19,162 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 21:56:19,745 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 21:56:21,618 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 21:57:23,008 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 22:10:08,395 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 22:11:16,746 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 22:12:35,725 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 22:16:04,912 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 22:20:02,849 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 22:25:49,925 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 22:29:04,916 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 22:30:51,131 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 22:31:45,562 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 22:31:45,921 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 22:31:46,274 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 22:31:46,648 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 22:31:47,001 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 22:31:47,521 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 22:35:48,304 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 22:46:06,613 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 22:47:45,813 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 22:49:12,067 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 23:02:33,760 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 23:02:34,157 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_other_biology_yes` int(1) not null default 0
+2025-04-23 23:02:34,165 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 23:02:34,529 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 23:02:34,910 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_other_biology_no` int(1) not null default 0
+2025-04-23 23:02:34,917 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 23:02:35,305 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 23:02:35,687 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 23:02:36,951 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 23:18:31,475 WARNING database DDL Query made to DB:
+create table `tabNotice Other Biology Item` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`analysis_date` date,
+`crp` int(11) not null default 0,
+`procalcitonin` int(11) not null default 0,
+`ferritinemia` int(11) not null default 0,
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2025-04-23 23:18:52,920 WARNING database DDL Query made to DB:
+alter table `tabNotice Other Biology Item` add column if not exists parent varchar(140)
+2025-04-23 23:18:52,922 WARNING database DDL Query made to DB:
+alter table `tabNotice Other Biology Item` add column if not exists parenttype varchar(140)
+2025-04-23 23:18:52,923 WARNING database DDL Query made to DB:
+alter table `tabNotice Other Biology Item` add column if not exists parentfield varchar(140)
+2025-04-23 23:19:07,542 WARNING database DDL Query made to DB:
+alter table `tabNotice Other Biology Item` add column if not exists parent varchar(140)
+2025-04-23 23:19:07,543 WARNING database DDL Query made to DB:
+alter table `tabNotice Other Biology Item` add column if not exists parenttype varchar(140)
+2025-04-23 23:19:07,544 WARNING database DDL Query made to DB:
+alter table `tabNotice Other Biology Item` add column if not exists parentfield varchar(140)
+2025-04-23 23:19:07,626 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Other Biology Item` ADD COLUMN `key` varchar(140)
+2025-04-23 23:19:16,242 WARNING database DDL Query made to DB:
+alter table `tabNotice Other Biology Item` add column if not exists parent varchar(140)
+2025-04-23 23:19:16,243 WARNING database DDL Query made to DB:
+alter table `tabNotice Other Biology Item` add column if not exists parenttype varchar(140)
+2025-04-23 23:19:16,243 WARNING database DDL Query made to DB:
+alter table `tabNotice Other Biology Item` add column if not exists parentfield varchar(140)
+2025-04-23 23:20:41,030 WARNING database DDL Query made to DB:
+alter table `tabNotice Other Biology Item` add column if not exists parent varchar(140)
+2025-04-23 23:20:41,031 WARNING database DDL Query made to DB:
+alter table `tabNotice Other Biology Item` add column if not exists parenttype varchar(140)
+2025-04-23 23:20:41,032 WARNING database DDL Query made to DB:
+alter table `tabNotice Other Biology Item` add column if not exists parentfield varchar(140)
+2025-04-23 23:20:41,114 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Other Biology Item` ADD COLUMN `value` varchar(140)
+2025-04-23 23:22:30,128 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 23:23:16,230 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 23:23:44,395 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 23:23:44,797 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 23:23:46,628 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 23:25:22,223 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 23:26:02,223 WARNING database DDL Query made to DB:
+alter table `tabNotice Other Biology Item` add column if not exists parent varchar(140)
+2025-04-23 23:26:02,224 WARNING database DDL Query made to DB:
+alter table `tabNotice Other Biology Item` add column if not exists parenttype varchar(140)
+2025-04-23 23:26:02,225 WARNING database DDL Query made to DB:
+alter table `tabNotice Other Biology Item` add column if not exists parentfield varchar(140)
+2025-04-23 23:26:26,146 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 23:31:28,670 WARNING database DDL Query made to DB:
+create table `tabNotice Bladder Catheter Item` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`analysis_date` date,
+`key` varchar(140),
+`value` varchar(140),
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2025-04-23 23:32:53,340 WARNING database DDL Query made to DB:
+alter table `tabNotice Bladder Catheter Item` add column if not exists parent varchar(140)
+2025-04-23 23:32:53,341 WARNING database DDL Query made to DB:
+alter table `tabNotice Bladder Catheter Item` add column if not exists parenttype varchar(140)
+2025-04-23 23:32:53,342 WARNING database DDL Query made to DB:
+alter table `tabNotice Bladder Catheter Item` add column if not exists parentfield varchar(140)
+2025-04-23 23:32:53,419 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Bladder Catheter Item` ADD COLUMN `installation_date` date
+2025-04-23 23:33:58,309 WARNING database DDL Query made to DB:
+alter table `tabNotice Bladder Catheter Item` add column if not exists parent varchar(140)
+2025-04-23 23:33:58,310 WARNING database DDL Query made to DB:
+alter table `tabNotice Bladder Catheter Item` add column if not exists parenttype varchar(140)
+2025-04-23 23:33:58,311 WARNING database DDL Query made to DB:
+alter table `tabNotice Bladder Catheter Item` add column if not exists parentfield varchar(140)
+2025-04-23 23:33:58,381 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Bladder Catheter Item` ADD COLUMN `ablation_date` date
+2025-04-23 23:40:31,465 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 23:40:31,854 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_material_inflammatory_signs_yes` int(1) not null default 0
+2025-04-23 23:40:31,863 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 23:40:33,558 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 23:42:18,983 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 23:43:54,871 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 23:43:55,265 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_material_inflammatory_signs_no` int(1) not null default 0
+2025-04-23 23:43:55,276 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 23:43:55,659 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 23:43:56,046 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 23:43:57,727 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 23:44:35,355 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 23:46:54,144 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 23:51:13,781 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_bladder_catheter_inflammatory_signs_presence` date
+2025-04-23 23:51:13,788 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 23:51:15,455 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 23:53:06,114 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_bladder_catheter_inflammatory_signs_presence_yes` int(1) not null default 0
+2025-04-23 23:53:06,124 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 23:53:08,254 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 23:54:17,484 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-23 23:55:53,905 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_bladder_catheter_inflammatory_signs_presence_no` int(1) not null default 0
+2025-04-23 23:55:53,913 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 23:55:55,745 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-23 23:57:01,907 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-23 23:59:53,198 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 00:05:50,025 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 00:05:50,455 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 00:05:52,255 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 00:08:43,793 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 00:10:16,778 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 00:10:17,169 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_bladder_catheter_in_place` int(1) not null default 0
+2025-04-24 00:10:17,178 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 00:10:18,869 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 00:10:52,547 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_bladder_catheter_removed` int(1) not null default 0
+2025-04-24 00:10:52,554 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 00:10:54,295 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 00:12:06,303 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 00:12:22,079 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 00:12:47,471 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 00:12:47,947 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 00:12:48,339 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 00:12:50,118 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 00:16:31,617 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 00:17:46,640 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 00:19:38,641 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_installation_date` date
+2025-04-24 00:19:38,650 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 00:19:39,167 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_blation_date` date
+2025-04-24 00:19:39,177 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 00:19:41,004 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 00:20:36,612 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_bladder_catheter_blation_date` date
+2025-04-24 00:20:36,620 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 00:20:38,424 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 00:21:01,516 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 00:22:15,865 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_bladder_catheter_installation_date` date
+2025-04-24 00:22:15,873 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 00:22:17,801 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 00:23:07,842 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 00:24:44,150 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 00:25:32,903 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 00:26:10,195 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 00:26:44,085 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 00:27:22,826 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 00:28:30,710 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 00:29:55,159 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 00:30:54,320 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_bladder_catheter_ablation_date` date
+2025-04-24 00:30:54,329 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 00:30:56,633 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 00:31:19,305 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 00:31:51,607 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 00:32:24,188 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 00:35:31,346 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 01:00:17,017 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 01:00:17,489 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_vesicostomy_tube_in_place` int(1) not null default 0
+2025-04-24 01:00:17,496 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 01:00:19,302 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 01:01:19,444 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_vesicostomy_tube_removed` int(1) not null default 0
+2025-04-24 01:01:19,453 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 01:01:21,148 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 01:02:03,103 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 01:03:42,358 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_vesicostomy_tube_installation_date` date
+2025-04-24 01:03:42,366 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 01:03:42,791 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 01:03:43,329 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 01:03:43,745 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 01:03:45,618 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 01:05:24,042 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_vesicostomy_tube_ablation_date` date
+2025-04-24 01:05:24,052 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 01:05:25,814 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 01:07:19,409 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 01:11:49,308 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 01:11:49,710 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_vesicostomy_tube_inflammatory_signs_presence_yes` int(1) not null default 0
+2025-04-24 01:11:49,717 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 01:11:51,174 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 01:12:25,686 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_vesicostomy_tube_inflammatory_signs_presence_no` int(1) not null default 0
+2025-04-24 01:12:25,697 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 01:12:27,536 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 01:13:58,019 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_vesicostomy_tube_inflammatory_signs_observation_date` date
+2025-04-24 01:13:58,028 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 01:13:58,447 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 01:13:58,923 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 01:13:59,335 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 01:14:01,155 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 01:14:32,683 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 01:15:08,590 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 01:15:51,832 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 01:16:41,221 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 01:17:48,213 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 01:18:22,059 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 01:25:13,659 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 01:25:14,079 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_nephrostomy_tube_in_place` int(1) not null default 0
+2025-04-24 01:25:14,088 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 01:25:15,896 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 01:26:27,821 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_nephrostomy_tube_installation_date` date
+2025-04-24 01:26:27,831 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 01:26:29,612 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 01:28:45,951 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 01:28:46,695 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_nephrostomy_tube_removed` int(1) not null default 0
+2025-04-24 01:28:46,705 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 01:28:47,454 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_nephrostomy_tube_ablation_date` date
+2025-04-24 01:28:47,466 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 01:28:48,170 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 01:28:48,810 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 01:28:50,550 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 01:37:36,196 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 01:37:36,611 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_nephrostomy_tube_inflammatory_signs_presence_no` int(1) not null default 0
+2025-04-24 01:37:36,622 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 01:37:37,040 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_nephrostomy_tube_inflammatory_signs_observation_date` date
+2025-04-24 01:37:37,051 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 01:37:37,472 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 01:37:37,902 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_nephrostomy_tube_inflammatory_signs_presence_yes` int(1) not null default 0
+2025-04-24 01:37:37,910 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 01:37:38,360 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 01:37:38,800 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 01:37:40,677 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 01:39:11,018 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 01:40:25,522 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 01:41:30,790 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 01:42:26,097 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 01:43:51,536 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 01:44:57,866 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 01:47:41,914 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 02:03:11,488 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 02:03:11,908 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_peripheral_kt_in_place` int(1) not null default 0
+2025-04-24 02:03:11,916 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 02:03:12,328 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_peripheral_kt_removed` int(1) not null default 0
+2025-04-24 02:03:12,337 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 02:03:14,194 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 02:04:01,803 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_peripheral_kt_installation_date` date
+2025-04-24 02:04:01,815 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 02:04:02,303 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 02:04:02,863 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_peripheral_kt_ablation_date` date
+2025-04-24 02:04:02,877 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 02:04:03,337 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 02:04:03,766 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 02:04:05,740 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 02:05:32,324 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 02:05:54,533 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 02:06:25,633 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 02:08:44,966 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 02:08:45,410 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_peripheral_kt_inflammatory_signs_presence_yes` int(1) not null default 0
+2025-04-24 02:08:45,419 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 02:08:45,862 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 02:08:46,300 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 02:08:46,729 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 02:08:48,530 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 02:10:13,959 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_peripheral_kt_inflammatory_signs_presence_no` int(1) not null default 0
+2025-04-24 02:10:13,968 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 02:10:15,815 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 02:10:59,236 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 02:11:37,414 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 02:12:54,099 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_peripheral_kt_inflammatory_signs_observation_date` date
+2025-04-24 02:12:54,107 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 02:12:55,895 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-24 02:13:21,080 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 02:13:59,447 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 02:16:34,337 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-24 02:17:17,382 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 02:17:47,183 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-24 02:18:54,547 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)

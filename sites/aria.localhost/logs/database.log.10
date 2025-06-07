@@ -1,0 +1,1178 @@
+2025-04-17 15:46:22,698 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-17 15:57:02,145 WARNING database DDL Query made to DB:
+alter table `tabNotice Anti Infective Child` add column if not exists parent varchar(140)
+2025-04-17 15:57:02,147 WARNING database DDL Query made to DB:
+alter table `tabNotice Anti Infective Child` add column if not exists parenttype varchar(140)
+2025-04-17 15:57:02,149 WARNING database DDL Query made to DB:
+alter table `tabNotice Anti Infective Child` add column if not exists parentfield varchar(140)
+2025-04-17 15:57:02,253 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Anti Infective Child` ADD COLUMN `number_of_taken` varchar(140)
+2025-04-17 15:57:34,963 WARNING database DDL Query made to DB:
+alter table `tabNotice Anti Infective Child` add column if not exists parent varchar(140)
+2025-04-17 15:57:34,965 WARNING database DDL Query made to DB:
+alter table `tabNotice Anti Infective Child` add column if not exists parenttype varchar(140)
+2025-04-17 15:57:34,967 WARNING database DDL Query made to DB:
+alter table `tabNotice Anti Infective Child` add column if not exists parentfield varchar(140)
+2025-04-17 15:57:35,072 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Anti Infective Child` ADD COLUMN `introduction_date` date
+2025-04-17 16:02:32,204 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-17 16:10:14,293 WARNING database DDL Query made to DB:
+alter table `tabNotice Anti Infective Child` add column if not exists parent varchar(140)
+2025-04-17 16:10:14,294 WARNING database DDL Query made to DB:
+alter table `tabNotice Anti Infective Child` add column if not exists parenttype varchar(140)
+2025-04-17 16:10:14,295 WARNING database DDL Query made to DB:
+alter table `tabNotice Anti Infective Child` add column if not exists parentfield varchar(140)
+2025-04-17 16:11:25,212 WARNING database DDL Query made to DB:
+alter table `tabNotice Anti Infective Child` add column if not exists parent varchar(140)
+2025-04-17 16:11:25,214 WARNING database DDL Query made to DB:
+alter table `tabNotice Anti Infective Child` add column if not exists parenttype varchar(140)
+2025-04-17 16:11:25,215 WARNING database DDL Query made to DB:
+alter table `tabNotice Anti Infective Child` add column if not exists parentfield varchar(140)
+2025-04-17 16:12:04,514 WARNING database DDL Query made to DB:
+alter table `tabNotice Anti Infective Child` add column if not exists parent varchar(140)
+2025-04-17 16:12:04,515 WARNING database DDL Query made to DB:
+alter table `tabNotice Anti Infective Child` add column if not exists parenttype varchar(140)
+2025-04-17 16:12:04,516 WARNING database DDL Query made to DB:
+alter table `tabNotice Anti Infective Child` add column if not exists parentfield varchar(140)
+2025-04-17 16:15:01,877 WARNING database DDL Query made to DB:
+alter table `tabNotice Anti Infective Child` add column if not exists parent varchar(140)
+2025-04-17 16:15:01,879 WARNING database DDL Query made to DB:
+alter table `tabNotice Anti Infective Child` add column if not exists parenttype varchar(140)
+2025-04-17 16:15:01,880 WARNING database DDL Query made to DB:
+alter table `tabNotice Anti Infective Child` add column if not exists parentfield varchar(140)
+2025-04-18 08:13:50,154 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-18 08:15:03,730 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 08:15:03,996 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-18 08:15:04,530 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 08:40:38,967 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-18 08:42:07,150 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-18 08:42:07,397 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 08:42:08,059 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-18 08:43:57,227 WARNING database DDL Query made to DB:
+alter table `tabChild Anti Infective Notice` add column if not exists parent varchar(140)
+2025-04-18 08:43:57,229 WARNING database DDL Query made to DB:
+alter table `tabChild Anti Infective Notice` add column if not exists parenttype varchar(140)
+2025-04-18 08:43:57,230 WARNING database DDL Query made to DB:
+alter table `tabChild Anti Infective Notice` add column if not exists parentfield varchar(140)
+2025-04-18 09:03:46,986 WARNING database DDL Query made to DB:
+alter table `tabChild Anti Infective Notice` add column if not exists parent varchar(140)
+2025-04-18 09:03:46,987 WARNING database DDL Query made to DB:
+alter table `tabChild Anti Infective Notice` add column if not exists parenttype varchar(140)
+2025-04-18 09:03:46,988 WARNING database DDL Query made to DB:
+alter table `tabChild Anti Infective Notice` add column if not exists parentfield varchar(140)
+2025-04-18 09:16:23,158 WARNING database DDL Query made to DB:
+alter table `tabNotice Anti Infective Item` add column if not exists parent varchar(140)
+2025-04-18 09:16:23,161 WARNING database DDL Query made to DB:
+alter table `tabNotice Anti Infective Item` add column if not exists parenttype varchar(140)
+2025-04-18 09:16:23,162 WARNING database DDL Query made to DB:
+alter table `tabNotice Anti Infective Item` add column if not exists parentfield varchar(140)
+2025-04-18 09:16:23,250 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Anti Infective Item` ADD COLUMN `dose_per_taken` int(11) not null default 0
+2025-04-18 09:17:59,109 WARNING database DDL Query made to DB:
+alter table `tabNotice Anti Infective Item` add column if not exists parent varchar(140)
+2025-04-18 09:17:59,110 WARNING database DDL Query made to DB:
+alter table `tabNotice Anti Infective Item` add column if not exists parenttype varchar(140)
+2025-04-18 09:17:59,111 WARNING database DDL Query made to DB:
+alter table `tabNotice Anti Infective Item` add column if not exists parentfield varchar(140)
+2025-04-18 09:18:32,597 WARNING database DDL Query made to DB:
+alter table `tabNotice Anti Infective Item` add column if not exists parent varchar(140)
+2025-04-18 09:18:32,599 WARNING database DDL Query made to DB:
+alter table `tabNotice Anti Infective Item` add column if not exists parenttype varchar(140)
+2025-04-18 09:18:32,601 WARNING database DDL Query made to DB:
+alter table `tabNotice Anti Infective Item` add column if not exists parentfield varchar(140)
+2025-04-18 09:23:19,948 WARNING database DDL Query made to DB:
+RENAME TABLE `tabNotice Anti Infective Item` TO `tabNotice Anti Infective Child`
+2025-04-18 09:30:37,264 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-18 09:30:52,030 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 09:32:02,276 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-18 09:32:02,512 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-18 09:32:02,720 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 09:52:43,251 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 09:54:04,404 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-18 09:54:04,667 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_blood_count_yes` int(1) not null default 0
+2025-04-18 09:54:04,681 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-18 09:54:04,922 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_blood_count_no` int(1) not null default 0
+2025-04-18 09:54:04,931 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 09:54:05,166 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-18 10:41:52,357 WARNING database DDL Query made to DB:
+alter table `tabNotice Renal Function Item` add column if not exists parent varchar(140)
+2025-04-18 10:41:52,359 WARNING database DDL Query made to DB:
+alter table `tabNotice Renal Function Item` add column if not exists parenttype varchar(140)
+2025-04-18 10:41:52,360 WARNING database DDL Query made to DB:
+alter table `tabNotice Renal Function Item` add column if not exists parentfield varchar(140)
+2025-04-18 10:41:52,446 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Renal Function Item` ADD COLUMN `na_plus` int(11) not null default 0, ADD COLUMN `k_plus` int(11) not null default 0
+2025-04-18 10:46:22,939 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 10:49:38,107 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-18 10:50:51,912 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 10:50:52,124 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-18 10:59:21,006 WARNING database DDL Query made to DB:
+alter table `tabNotice Liver Function Item` add column if not exists parent varchar(140)
+2025-04-18 10:59:21,008 WARNING database DDL Query made to DB:
+alter table `tabNotice Liver Function Item` add column if not exists parenttype varchar(140)
+2025-04-18 10:59:21,010 WARNING database DDL Query made to DB:
+alter table `tabNotice Liver Function Item` add column if not exists parentfield varchar(140)
+2025-04-18 10:59:21,113 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Liver Function Item` ADD COLUMN `analysis_date` date, ADD COLUMN `asat` int(11) not null default 0, ADD COLUMN `alat` int(11) not null default 0, ADD COLUMN `pal` int(11) not null default 0, ADD COLUMN `ggt` int(11) not null default 0, ADD COLUMN `bt` int(11) not null default 0, ADD COLUMN `bd` int(11) not null default 0
+2025-04-18 11:03:56,805 WARNING database DDL Query made to DB:
+alter table `tabNotice Liver Function Item` add column if not exists parent varchar(140)
+2025-04-18 11:03:56,806 WARNING database DDL Query made to DB:
+alter table `tabNotice Liver Function Item` add column if not exists parenttype varchar(140)
+2025-04-18 11:03:56,807 WARNING database DDL Query made to DB:
+alter table `tabNotice Liver Function Item` add column if not exists parentfield varchar(140)
+2025-04-18 11:06:27,232 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 11:14:28,583 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-18 11:14:49,393 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-18 11:16:48,351 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 11:30:51,542 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 11:30:51,803 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-18 11:30:52,055 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 11:31:33,566 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 11:31:33,893 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-18 11:31:34,147 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 13:46:11,129 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-18 13:46:11,430 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_blood_culture` int(1) not null default 0
+2025-04-18 13:46:11,441 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 13:46:11,704 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 13:46:11,986 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-18 13:46:12,257 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 13:46:31,886 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 13:47:44,391 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-18 13:47:44,652 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-18 13:50:20,096 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-18 13:53:10,484 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_lumbar_puncture` int(1) not null default 0
+2025-04-18 13:53:10,499 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-18 13:53:10,761 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_ecbc` int(1) not null default 0
+2025-04-18 13:53:10,769 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-18 13:53:11,021 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_lba` int(1) not null default 0
+2025-04-18 13:53:11,028 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-18 13:53:11,299 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_ptp` int(1) not null default 0
+2025-04-18 13:53:11,307 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-18 13:53:11,615 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_pcr` int(1) not null default 0
+2025-04-18 13:53:11,622 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-18 13:53:11,884 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_rbk` int(1) not null default 0
+2025-04-18 13:53:11,892 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-18 13:53:12,173 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-18 13:56:19,630 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 13:57:23,541 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_serology` int(1) not null default 0
+2025-04-18 13:57:23,549 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-18 13:57:23,818 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 13:58:41,690 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_ecbu` int(1) not null default 0
+2025-04-18 13:58:41,703 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-18 13:58:41,987 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_coproculture` int(1) not null default 0
+2025-04-18 13:58:41,998 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 13:58:42,278 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 14:00:46,074 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_stools_parasitological_examinati` int(1) not null default 0
+2025-04-18 14:00:46,080 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 14:00:46,558 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 14:01:11,289 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 14:02:53,410 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_stools_parasitological_examination` int(1) not null default 0
+2025-04-18 14:02:53,419 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-18 14:02:53,701 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-18 14:03:10,383 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-18 14:04:19,744 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_superficial_pus` int(1) not null default 0
+2025-04-18 14:04:19,752 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-18 14:04:20,032 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 14:05:56,514 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_deep_pus` int(1) not null default 0
+2025-04-18 14:05:56,524 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-18 14:05:56,817 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-18 14:06:06,713 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 14:06:45,013 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_prosthesis_material` int(1) not null default 0
+2025-04-18 14:06:45,024 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 14:06:45,311 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 14:06:57,645 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-18 14:08:47,201 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_device` int(1) not null default 0
+2025-04-18 14:08:47,214 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 14:08:47,483 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-18 14:08:58,793 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-18 14:09:16,000 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 14:15:02,917 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 14:16:06,652 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 14:25:09,599 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-18 14:25:09,902 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_number_of_blood_cultures` int(11) not null default 0
+2025-04-18 14:25:09,914 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-18 14:25:10,206 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 14:25:10,490 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-18 14:26:39,122 WARNING database DDL Query made to DB:
+create table `tabNotice Blood culture Item` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2025-04-18 14:26:56,544 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-18 14:26:56,545 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-18 14:26:56,546 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-18 14:26:56,625 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Blood culture Item` ADD COLUMN `analysis_date` date
+2025-04-18 14:30:36,592 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-18 14:30:36,594 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-18 14:30:36,595 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-18 14:30:36,678 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Blood culture Item` ADD COLUMN `state_culture` varchar(140)
+2025-04-18 14:31:57,356 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-18 14:31:57,357 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-18 14:31:57,358 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-18 14:31:57,445 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Blood culture Item` ADD COLUMN `direct_examination` varchar(140)
+2025-04-18 14:32:18,863 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-18 14:32:18,864 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-18 14:32:18,865 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-18 14:33:39,020 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-18 14:33:39,022 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-18 14:33:39,023 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-18 14:34:32,470 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-18 14:34:32,471 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-18 14:34:32,472 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-18 14:35:22,694 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-18 14:36:32,849 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-18 14:36:33,148 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-18 14:36:33,888 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 14:37:47,818 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-18 14:37:47,821 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-18 14:37:47,823 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-18 14:40:05,519 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-18 14:40:05,520 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-18 14:40:05,521 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-18 14:40:37,460 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-18 14:40:37,462 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-18 14:40:37,462 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-18 14:40:37,549 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Blood culture Item` ADD COLUMN `antibiogram` text
+2025-04-18 14:41:28,376 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-18 14:41:28,378 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-18 14:41:28,379 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-18 14:55:26,579 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-18 14:55:26,582 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-18 14:55:26,583 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-18 14:55:42,698 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-18 14:55:42,699 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-18 14:55:42,700 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-18 14:55:42,815 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Blood culture Item` MODIFY `antibiogram` longtext
+2025-04-18 15:40:04,473 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-18 15:40:04,477 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-18 15:40:04,478 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-18 15:40:12,623 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-18 15:40:12,624 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-18 15:40:12,625 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-18 16:30:56,369 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-18 16:30:56,637 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 16:30:56,904 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 16:34:12,911 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-18 16:34:42,110 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-18 23:54:52,810 WARNING database DDL Query made to DB:
+create table `tabNotice ECBU Item` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2025-04-18 23:56:14,489 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parent varchar(140)
+2025-04-18 23:56:14,491 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parenttype varchar(140)
+2025-04-18 23:56:14,492 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parentfield varchar(140)
+2025-04-18 23:56:14,568 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice ECBU Item` ADD COLUMN `analysis_date` date
+2025-04-18 23:59:43,575 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parent varchar(140)
+2025-04-18 23:59:43,577 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parenttype varchar(140)
+2025-04-18 23:59:43,580 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parentfield varchar(140)
+2025-04-18 23:59:43,671 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice ECBU Item` ADD COLUMN `white_blood_cells` int(11) not null default 0
+2025-04-18 23:59:56,551 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parent varchar(140)
+2025-04-18 23:59:56,552 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parenttype varchar(140)
+2025-04-18 23:59:56,553 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parentfield varchar(140)
+2025-04-21 12:36:39,246 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parent varchar(140)
+2025-04-21 12:36:39,251 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parenttype varchar(140)
+2025-04-21 12:36:39,252 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parentfield varchar(140)
+2025-04-21 12:36:39,362 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice ECBU Item` ADD COLUMN `red_blood_cells` int(11) not null default 0
+2025-04-21 12:38:51,525 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parent varchar(140)
+2025-04-21 12:38:51,527 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parenttype varchar(140)
+2025-04-21 12:38:51,528 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parentfield varchar(140)
+2025-04-21 12:38:51,612 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice ECBU Item` ADD COLUMN `white_blood_cells_unit` varchar(140)
+2025-04-21 12:39:30,508 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parent varchar(140)
+2025-04-21 12:39:30,511 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parenttype varchar(140)
+2025-04-21 12:39:30,512 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parentfield varchar(140)
+2025-04-21 12:39:30,621 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice ECBU Item` ADD COLUMN `red_blood_cells_unit` varchar(140)
+2025-04-21 12:39:39,303 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parent varchar(140)
+2025-04-21 12:39:39,304 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parenttype varchar(140)
+2025-04-21 12:39:39,305 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parentfield varchar(140)
+2025-04-21 12:39:43,744 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parent varchar(140)
+2025-04-21 12:39:43,745 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parenttype varchar(140)
+2025-04-21 12:39:43,747 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parentfield varchar(140)
+2025-04-21 12:43:31,597 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parent varchar(140)
+2025-04-21 12:43:31,601 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parenttype varchar(140)
+2025-04-21 12:43:31,602 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parentfield varchar(140)
+2025-04-21 12:43:31,690 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice ECBU Item` ADD COLUMN `state_culture` varchar(140)
+2025-04-21 12:44:11,083 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parent varchar(140)
+2025-04-21 12:44:11,085 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parenttype varchar(140)
+2025-04-21 12:44:11,086 WARNING database DDL Query made to DB:
+alter table `tabNotice ECBU Item` add column if not exists parentfield varchar(140)
+2025-04-21 12:53:38,033 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-21 12:53:38,331 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_number_of_ecbu` int(11) not null default 0
+2025-04-21 12:53:38,340 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-21 12:53:38,620 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-21 12:54:36,279 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-21 12:54:52,151 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-21 12:54:52,433 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-21 12:54:53,246 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-21 12:55:19,665 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-21 12:55:39,741 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-21 13:09:00,319 WARNING database DDL Query made to DB:
+create table `tabNotice Lumbar Puncture Item` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`analysis_date` date,
+`state_culture` varchar(140),
+`direct_examination` varchar(140),
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2025-04-21 13:11:32,394 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parent varchar(140)
+2025-04-21 13:11:32,398 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parenttype varchar(140)
+2025-04-21 13:11:32,399 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parentfield varchar(140)
+2025-04-21 13:14:53,175 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parent varchar(140)
+2025-04-21 13:14:53,189 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parenttype varchar(140)
+2025-04-21 13:14:53,190 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parentfield varchar(140)
+2025-04-21 13:14:53,299 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Lumbar Puncture Item` ADD COLUMN `appearance_of_csf` varchar(140)
+2025-04-21 13:15:01,590 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parent varchar(140)
+2025-04-21 13:15:01,592 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parenttype varchar(140)
+2025-04-21 13:15:01,593 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parentfield varchar(140)
+2025-04-21 13:15:54,356 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parent varchar(140)
+2025-04-21 13:15:54,357 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parenttype varchar(140)
+2025-04-21 13:15:54,357 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parentfield varchar(140)
+2025-04-21 13:15:54,435 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Lumbar Puncture Item` ADD COLUMN `white_blood_cells_wbc` int(11) not null default 0
+2025-04-21 13:16:24,645 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parent varchar(140)
+2025-04-21 13:16:24,646 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parenttype varchar(140)
+2025-04-21 13:16:24,647 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parentfield varchar(140)
+2025-04-21 13:16:24,742 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Lumbar Puncture Item` ADD COLUMN `pnn` decimal(21,9) not null default 0
+2025-04-21 13:16:57,622 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parent varchar(140)
+2025-04-21 13:16:57,624 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parenttype varchar(140)
+2025-04-21 13:16:57,625 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parentfield varchar(140)
+2025-04-21 13:16:57,717 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Lumbar Puncture Item` ADD COLUMN `lymphocytes_lc` decimal(21,9) not null default 0
+2025-04-21 13:16:57,727 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Lumbar Puncture Item` MODIFY `pnn` decimal(21,9) not null default 0
+2025-04-21 13:17:29,823 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parent varchar(140)
+2025-04-21 13:17:29,824 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parenttype varchar(140)
+2025-04-21 13:17:29,825 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parentfield varchar(140)
+2025-04-21 13:17:29,922 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Lumbar Puncture Item` ADD COLUMN `red_blood_cells` int(11) not null default 0
+2025-04-21 13:17:29,930 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Lumbar Puncture Item` MODIFY `lymphocytes_lc` decimal(21,9) not null default 0, MODIFY `pnn` decimal(21,9) not null default 0
+2025-04-21 13:18:03,268 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parent varchar(140)
+2025-04-21 13:18:03,270 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parenttype varchar(140)
+2025-04-21 13:18:03,271 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parentfield varchar(140)
+2025-04-21 13:18:03,379 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Lumbar Puncture Item` MODIFY `lymphocytes_lc` decimal(21,9) not null default 0, MODIFY `pnn` decimal(21,9) not null default 0
+2025-04-21 13:19:24,735 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parent varchar(140)
+2025-04-21 13:19:24,737 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parenttype varchar(140)
+2025-04-21 13:19:24,738 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parentfield varchar(140)
+2025-04-21 13:19:24,856 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Lumbar Puncture Item` MODIFY `pnn` decimal(21,9) not null default 0, MODIFY `lymphocytes_lc` decimal(21,9) not null default 0
+2025-04-21 13:19:40,581 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parent varchar(140)
+2025-04-21 13:19:40,583 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parenttype varchar(140)
+2025-04-21 13:19:40,584 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parentfield varchar(140)
+2025-04-21 13:19:40,686 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Lumbar Puncture Item` MODIFY `pnn` decimal(21,9) not null default 0, MODIFY `lymphocytes_lc` decimal(21,9) not null default 0
+2025-04-21 13:20:22,329 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-21 13:20:22,623 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_number_of_pl` int(11) not null default 0
+2025-04-21 13:20:22,638 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-21 13:20:22,923 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-21 13:21:45,060 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-21 13:23:00,974 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-21 13:23:01,268 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-21 13:23:01,747 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-21 13:23:35,776 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-21 14:23:08,257 WARNING database DDL Query made to DB:
+create table `tabNotice Coproculture Item` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`analysis_date` date,
+`state_culture` varchar(140),
+`direct_examination` varchar(140),
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2025-04-21 14:35:56,195 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-21 14:35:56,521 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_number_of_stool_cultures` int(11) not null default 0
+2025-04-21 14:35:56,530 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-21 14:35:56,842 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-21 14:50:12,662 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-21 14:50:12,977 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-21 14:50:13,274 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-21 14:50:13,668 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-21 14:50:13,964 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-21 14:50:14,265 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-21 14:50:14,554 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-21 14:50:14,852 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-21 14:50:15,139 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-21 14:50:50,098 WARNING database DDL Query made to DB:
+alter table `tabNotice Coproculture Item` add column if not exists parent varchar(140)
+2025-04-21 14:50:50,099 WARNING database DDL Query made to DB:
+alter table `tabNotice Coproculture Item` add column if not exists parenttype varchar(140)
+2025-04-21 14:50:50,100 WARNING database DDL Query made to DB:
+alter table `tabNotice Coproculture Item` add column if not exists parentfield varchar(140)
+2025-04-21 14:51:20,356 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-21 14:51:40,115 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-21 14:53:43,863 WARNING database DDL Query made to DB:
+create table `tabNotice RBK Item` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`analysis_date` date,
+`state_culture` varchar(140),
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2025-04-21 14:55:38,588 WARNING database DDL Query made to DB:
+alter table `tabNotice RBK Item` add column if not exists parent varchar(140)
+2025-04-21 14:55:38,588 WARNING database DDL Query made to DB:
+alter table `tabNotice RBK Item` add column if not exists parenttype varchar(140)
+2025-04-21 14:55:38,589 WARNING database DDL Query made to DB:
+alter table `tabNotice RBK Item` add column if not exists parentfield varchar(140)
+2025-04-21 14:56:10,374 WARNING database DDL Query made to DB:
+alter table `tabNotice RBK Item` add column if not exists parent varchar(140)
+2025-04-21 14:56:10,375 WARNING database DDL Query made to DB:
+alter table `tabNotice RBK Item` add column if not exists parenttype varchar(140)
+2025-04-21 14:56:10,376 WARNING database DDL Query made to DB:
+alter table `tabNotice RBK Item` add column if not exists parentfield varchar(140)
+2025-04-21 14:56:10,458 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice RBK Item` ADD COLUMN `direct_examination_result` varchar(140)
+2025-04-21 15:07:48,009 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-21 15:10:00,989 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-21 15:10:01,322 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_number_of_rbks` int(11) not null default 0
+2025-04-21 15:10:01,334 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-21 15:10:01,666 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-21 15:10:02,021 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-21 15:10:02,355 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-21 15:10:02,683 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-21 15:10:25,457 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-21 15:12:14,247 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-21 15:12:14,551 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-21 15:12:15,004 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-21 15:13:03,303 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-21 15:13:15,045 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-21 15:13:26,354 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-21 15:14:03,988 WARNING database DDL Query made to DB:
+create table `tabNotice EPS Item` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`analysis_date` date,
+`direct_examination_result` varchar(140),
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2025-04-21 15:14:51,408 WARNING database DDL Query made to DB:
+alter table `tabNotice RBK Item` add column if not exists parent varchar(140)
+2025-04-21 15:14:51,409 WARNING database DDL Query made to DB:
+alter table `tabNotice RBK Item` add column if not exists parenttype varchar(140)
+2025-04-21 15:14:51,410 WARNING database DDL Query made to DB:
+alter table `tabNotice RBK Item` add column if not exists parentfield varchar(140)
+2025-04-21 15:14:56,252 WARNING database DDL Query made to DB:
+alter table `tabNotice EPS Item` add column if not exists parent varchar(140)
+2025-04-21 15:14:56,253 WARNING database DDL Query made to DB:
+alter table `tabNotice EPS Item` add column if not exists parenttype varchar(140)
+2025-04-21 15:14:56,254 WARNING database DDL Query made to DB:
+alter table `tabNotice EPS Item` add column if not exists parentfield varchar(140)
+2025-04-21 15:15:07,193 WARNING database DDL Query made to DB:
+alter table `tabNotice EPS Item` add column if not exists parent varchar(140)
+2025-04-21 15:15:07,194 WARNING database DDL Query made to DB:
+alter table `tabNotice EPS Item` add column if not exists parenttype varchar(140)
+2025-04-21 15:15:07,195 WARNING database DDL Query made to DB:
+alter table `tabNotice EPS Item` add column if not exists parentfield varchar(140)
+2025-04-21 15:15:07,295 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice EPS Item` ADD COLUMN `result` text
+2025-04-21 15:18:01,515 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-21 15:18:01,863 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_number_of_eps` int(11) not null default 0
+2025-04-21 15:18:01,874 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-21 15:18:02,238 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-21 15:18:02,566 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-21 15:18:02,900 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-21 15:18:03,241 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-21 15:18:03,559 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-21 15:18:03,866 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-21 15:18:38,806 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-21 15:19:09,607 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-21 15:19:29,616 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-21 15:20:05,334 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-21 15:21:07,184 WARNING database DDL Query made to DB:
+alter table `tabNotice EPS Item` add column if not exists parent varchar(140)
+2025-04-21 15:21:07,185 WARNING database DDL Query made to DB:
+alter table `tabNotice EPS Item` add column if not exists parenttype varchar(140)
+2025-04-21 15:21:07,186 WARNING database DDL Query made to DB:
+alter table `tabNotice EPS Item` add column if not exists parentfield varchar(140)
+2025-04-21 15:23:21,961 WARNING database DDL Query made to DB:
+create table `tabNotice Serology Item` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`analysis_date` date,
+`direct_examination_result` varchar(140),
+`result` text,
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2025-04-21 15:23:28,118 WARNING database DDL Query made to DB:
+alter table `tabNotice Serology Item` add column if not exists parent varchar(140)
+2025-04-21 15:23:28,119 WARNING database DDL Query made to DB:
+alter table `tabNotice Serology Item` add column if not exists parenttype varchar(140)
+2025-04-21 15:23:28,120 WARNING database DDL Query made to DB:
+alter table `tabNotice Serology Item` add column if not exists parentfield varchar(140)
+2025-04-21 15:24:28,229 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-21 15:24:28,560 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_number_of_serologies` int(11) not null default 0
+2025-04-21 15:24:28,571 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-21 15:24:28,893 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-21 15:24:29,212 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-21 15:24:29,533 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-21 15:24:29,841 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-21 15:25:11,036 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-21 15:25:11,379 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-21 15:25:11,701 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-21 15:37:57,123 WARNING database DDL Query made to DB:
+alter table `tabNotice Serology Item` add column if not exists parent varchar(140)
+2025-04-21 15:37:57,124 WARNING database DDL Query made to DB:
+alter table `tabNotice Serology Item` add column if not exists parenttype varchar(140)
+2025-04-21 15:37:57,125 WARNING database DDL Query made to DB:
+alter table `tabNotice Serology Item` add column if not exists parentfield varchar(140)
+2025-04-21 15:37:57,224 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Serology Item` ADD COLUMN `serology_name` varchar(140)
+2025-04-21 15:38:23,378 WARNING database DDL Query made to DB:
+alter table `tabNotice Serology Item` add column if not exists parent varchar(140)
+2025-04-21 15:38:23,379 WARNING database DDL Query made to DB:
+alter table `tabNotice Serology Item` add column if not exists parenttype varchar(140)
+2025-04-21 15:38:23,380 WARNING database DDL Query made to DB:
+alter table `tabNotice Serology Item` add column if not exists parentfield varchar(140)
+2025-04-21 15:38:23,462 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Serology Item` ADD COLUMN `vih_result` varchar(140)
+2025-04-21 15:38:36,050 WARNING database DDL Query made to DB:
+alter table `tabNotice Serology Item` add column if not exists parent varchar(140)
+2025-04-21 15:38:36,052 WARNING database DDL Query made to DB:
+alter table `tabNotice Serology Item` add column if not exists parenttype varchar(140)
+2025-04-21 15:38:36,053 WARNING database DDL Query made to DB:
+alter table `tabNotice Serology Item` add column if not exists parentfield varchar(140)
+2025-04-21 15:39:16,440 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-21 15:39:31,887 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-21 15:40:07,837 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-21 15:40:23,616 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0
+2025-04-21 15:41:02,161 WARNING database DDL Query made to DB:
+alter table `tabNotice Serology Item` add column if not exists parent varchar(140)
+2025-04-21 15:41:02,161 WARNING database DDL Query made to DB:
+alter table `tabNotice Serology Item` add column if not exists parenttype varchar(140)
+2025-04-21 15:41:02,162 WARNING database DDL Query made to DB:
+alter table `tabNotice Serology Item` add column if not exists parentfield varchar(140)
+2025-04-21 15:41:49,660 WARNING database DDL Query made to DB:
+alter table `tabNotice RBK Item` add column if not exists parent varchar(140)
+2025-04-21 15:41:49,661 WARNING database DDL Query made to DB:
+alter table `tabNotice RBK Item` add column if not exists parenttype varchar(140)
+2025-04-21 15:41:49,663 WARNING database DDL Query made to DB:
+alter table `tabNotice RBK Item` add column if not exists parentfield varchar(140)
+2025-04-21 23:32:34,973 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-21 23:32:34,976 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-21 23:32:34,977 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-21 23:32:45,655 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-21 23:32:45,656 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-21 23:32:45,657 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-21 23:32:45,746 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Blood culture Item` MODIFY `antibiogram` varchar(140)
+2025-04-21 23:32:59,093 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-21 23:32:59,094 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-21 23:32:59,095 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-21 23:33:06,261 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-21 23:33:06,262 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-21 23:33:06,263 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-21 23:33:06,350 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Blood culture Item` MODIFY `antibiogram` text
+2025-04-22 07:40:51,147 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` ADD COLUMN `custom_modification_count` int(11) not null default 0
+2025-04-22 07:40:51,158 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-22 07:40:52,646 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-22 07:41:21,464 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-22 07:41:22,915 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-22 07:51:08,181 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0, MODIFY `date` datetime(6)
+2025-04-22 08:01:35,547 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPatient et demande` MODIFY `date` datetime(6), MODIFY `taille_estimecm` decimal(21,9) not null default 0, MODIFY `poid_estimé_kg` decimal(21,9) not null default 0
+2025-04-22 13:02:07,047 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-22 13:02:07,055 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-22 13:02:07,055 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-22 13:41:56,295 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-22 13:41:56,301 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-22 13:41:56,302 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-22 13:47:33,869 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-22 13:47:33,877 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-22 13:47:33,878 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-22 13:47:39,399 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-22 13:47:39,400 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-22 13:47:39,402 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-22 13:48:03,899 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-22 13:48:03,900 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-22 13:48:03,901 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-22 14:00:49,570 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-22 14:00:49,571 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-22 14:00:49,572 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-22 14:27:38,613 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-22 14:27:38,614 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-22 14:27:38,615 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-22 14:45:17,874 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-22 14:45:17,884 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-22 14:45:17,885 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-22 14:45:59,555 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-22 14:45:59,556 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-22 14:45:59,556 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-22 14:45:59,663 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Blood culture Item` ADD COLUMN `html_editor_ajpk` longtext
+2025-04-22 14:53:01,988 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-22 14:53:01,994 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-22 14:53:01,995 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-22 15:12:34,896 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-22 15:12:34,897 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-22 15:12:34,898 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-22 15:24:52,588 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-22 15:24:52,589 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-22 15:24:52,590 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-22 15:25:05,265 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-22 15:25:05,266 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-22 15:25:05,267 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-22 15:25:05,365 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Blood culture Item` ADD COLUMN `antibiogram_preview` varchar(140)
+2025-04-22 15:41:46,768 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-22 15:41:46,769 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-22 15:41:46,770 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-22 15:42:12,907 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-22 15:42:12,909 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-22 15:42:12,911 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-22 15:58:57,882 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-22 15:58:57,883 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-22 15:58:57,884 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-22 15:59:04,270 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-22 15:59:04,271 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-22 15:59:04,272 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-22 15:59:11,534 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-22 15:59:11,535 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-22 15:59:11,535 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-22 15:59:53,386 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-22 15:59:53,387 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-22 15:59:53,388 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-23 07:53:38,000 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parent varchar(140)
+2025-04-23 07:53:38,003 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parenttype varchar(140)
+2025-04-23 07:53:38,004 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parentfield varchar(140)
+2025-04-23 07:53:38,113 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Lumbar Puncture Item` ADD COLUMN `antibiogram_preview` varchar(140)
+2025-04-23 07:53:38,120 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Lumbar Puncture Item` MODIFY `pnn` decimal(21,9) not null default 0, MODIFY `lymphocytes_lc` decimal(21,9) not null default 0
+2025-04-23 07:53:45,921 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parent varchar(140)
+2025-04-23 07:53:45,921 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parenttype varchar(140)
+2025-04-23 07:53:45,922 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parentfield varchar(140)
+2025-04-23 07:53:46,016 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Lumbar Puncture Item` MODIFY `pnn` decimal(21,9) not null default 0, MODIFY `lymphocytes_lc` decimal(21,9) not null default 0
+2025-04-23 08:01:31,730 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parent varchar(140)
+2025-04-23 08:01:31,731 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parenttype varchar(140)
+2025-04-23 08:01:31,732 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parentfield varchar(140)
+2025-04-23 08:01:31,824 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Lumbar Puncture Item` MODIFY `lymphocytes_lc` decimal(21,9) not null default 0, MODIFY `pnn` decimal(21,9) not null default 0
+2025-04-23 08:01:46,193 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parent varchar(140)
+2025-04-23 08:01:46,194 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parenttype varchar(140)
+2025-04-23 08:01:46,194 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parentfield varchar(140)
+2025-04-23 08:01:46,293 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Lumbar Puncture Item` ADD COLUMN `antibiogram` varchar(140)
+2025-04-23 08:01:46,299 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Lumbar Puncture Item` MODIFY `lymphocytes_lc` decimal(21,9) not null default 0, MODIFY `pnn` decimal(21,9) not null default 0
+2025-04-23 08:01:56,401 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parent varchar(140)
+2025-04-23 08:01:56,402 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parenttype varchar(140)
+2025-04-23 08:01:56,403 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parentfield varchar(140)
+2025-04-23 08:01:56,502 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Lumbar Puncture Item` MODIFY `pnn` decimal(21,9) not null default 0, MODIFY `lymphocytes_lc` decimal(21,9) not null default 0
+2025-04-23 08:04:43,216 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parent varchar(140)
+2025-04-23 08:04:43,216 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parenttype varchar(140)
+2025-04-23 08:04:43,217 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parentfield varchar(140)
+2025-04-23 08:04:43,319 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Lumbar Puncture Item` MODIFY `lymphocytes_lc` decimal(21,9) not null default 0, MODIFY `pnn` decimal(21,9) not null default 0
+2025-04-23 08:05:02,647 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parent varchar(140)
+2025-04-23 08:05:02,648 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parenttype varchar(140)
+2025-04-23 08:05:02,649 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parentfield varchar(140)
+2025-04-23 08:05:02,759 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Lumbar Puncture Item` MODIFY `lymphocytes_lc` decimal(21,9) not null default 0, MODIFY `pnn` decimal(21,9) not null default 0
+2025-04-23 08:05:31,323 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parent varchar(140)
+2025-04-23 08:05:31,324 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parenttype varchar(140)
+2025-04-23 08:05:31,325 WARNING database DDL Query made to DB:
+alter table `tabNotice Blood culture Item` add column if not exists parentfield varchar(140)
+2025-04-23 08:05:55,140 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parent varchar(140)
+2025-04-23 08:05:55,142 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parenttype varchar(140)
+2025-04-23 08:05:55,143 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parentfield varchar(140)
+2025-04-23 08:05:55,239 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Lumbar Puncture Item` MODIFY `pnn` decimal(21,9) not null default 0, MODIFY `lymphocytes_lc` decimal(21,9) not null default 0
+2025-04-23 08:08:42,550 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parent varchar(140)
+2025-04-23 08:08:42,551 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parenttype varchar(140)
+2025-04-23 08:08:42,559 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parentfield varchar(140)
+2025-04-23 08:08:42,713 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Lumbar Puncture Item` MODIFY `lymphocytes_lc` decimal(21,9) not null default 0, MODIFY `pnn` decimal(21,9) not null default 0
+2025-04-23 08:08:58,408 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parent varchar(140)
+2025-04-23 08:08:58,409 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parenttype varchar(140)
+2025-04-23 08:08:58,410 WARNING database DDL Query made to DB:
+alter table `tabNotice Lumbar Puncture Item` add column if not exists parentfield varchar(140)
+2025-04-23 08:08:58,528 WARNING database DDL Query made to DB:
+ALTER TABLE `tabNotice Lumbar Puncture Item` MODIFY `pnn` decimal(21,9) not null default 0, MODIFY `lymphocytes_lc` decimal(21,9) not null default 0, MODIFY `antibiogram` text

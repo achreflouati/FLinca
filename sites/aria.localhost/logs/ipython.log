@@ -1,0 +1,16 @@
+2025-03-20 10:56:19,766 INFO ipython === bench console session ===
+2025-03-20 10:56:19,766 INFO ipython import frappe
+frappe.call("linca.linca.doctype.patient_et_demande.patient_et_demande.generate_pdf", docname="NOM_DU_DOCUMENT")
+2025-03-20 10:56:19,766 INFO ipython import frappe
+frappe.call("linca.linca.doctype.patient_et_demande.patient_et_demande.generate_pdf", docname="NOM_DU_DOCUMENT")
+2025-03-20 10:56:19,766 INFO ipython === session end ===
+2025-03-20 11:49:41,406 INFO ipython === bench console session ===
+2025-03-20 11:49:41,407 INFO ipython import frappe
+frappe.call("linca.linca.doctype.patient_et_demande.patient_et_demande.generate_pdf", docname="NOM_DU_DOCUMENT")
+2025-03-20 11:49:41,408 INFO ipython === session end ===
+2025-03-20 11:56:32,715 INFO ipython === bench console session ===
+2025-03-20 11:56:32,715 INFO ipython import frappe
+frappe.call("linca.linca.doctype.patient_et_demande.patient_et_demande.generate_pdf", docname="NOM_DU_DOCUMENT")
+2025-03-20 11:56:32,715 INFO ipython import frappe
+frappe.call("linca.linca.doctype.patient_et_demande.patient_et_demande.generate_pdf", docname="NOM_DU_DOCUMENT")
+2025-03-20 11:56:32,715 INFO ipython === session end ===
